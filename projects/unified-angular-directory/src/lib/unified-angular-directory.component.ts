@@ -10,6 +10,7 @@ import { IIntegration, TIntegrationCategory } from './models/Unified';
 import { CommonModule } from '@angular/common';
 
 const APIURL = 'https://api.unified.to';
+type TIntegrationCategoryType = Exclude<TIntegrationCategory, 'auth' |'passthrough'>;
 
 @Component({
   imports: [CommonModule],
@@ -19,7 +20,7 @@ const APIURL = 'https://api.unified.to';
     <div class="unified">
       <div
         class="unified_menu"
-        *ngIf="CATEGORIES.length > 0 && filter(INTEGRATIONS).length"
+        *ngIf="!notabs && CATEGORIES.length > 0 && filter(INTEGRATIONS).length"
       >
         <button
           class="unified_button unified_button_all"
@@ -47,10 +48,11 @@ const APIURL = 'https://api.unified.to';
           <div class="unified_vendor_inner">
             <div class="unified_vendor_name">{{ integration.name }}</div>
             <div
+              *ngIf="!nocategories"
               class="unified_vendor_cats"
               *ngFor="let cat of integration.categories.filter((c) => !CATEGORIES || CATEGORIES.indexOf(c) > -1)"
             >
-              <span>{{ cat }}</span>
+              <span>{{ CATEGORY_MAP[cat] }}</span>
             </div>
           </div>
         </a>
@@ -65,19 +67,19 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
   @Input() INTEGRATIONS: IIntegration[] = [];
   @Input() selectedCategory?: TIntegrationCategory;
   @Input() CATEGORIES: TIntegrationCategory[] = [];
-  @Input() CATEGORY_MAP: { [p in Exclude<TIntegrationCategory, 'auth' |'passthrough'>]: string } = {
+  @Input() CATEGORY_MAP: { [p in TIntegrationCategoryType]: string } = {
     crm: 'CRM',
-    martech: 'Marketing Tech',
-    ticketing: 'Support Tickets',
+    martech: 'Marketing',
+    ticketing: 'Ticketing',
     // auth: 'Authentication',
     uc: 'Unified Communications',
     enrich: 'Enrichment',
-    ats: 'Applicant Tracking System',
+    ats: 'ATS',
     hris: 'HR',
     // passthrough: 'Passthrough',
   };
 
-  @Input() workspaceId?: { type: string; required: true };
+  @Input() workspace_id?: { type: string; required: true };
   @Input() categories?: string[];
   @Input() external_xref?: string;
   @Input() state?: string;
@@ -86,6 +88,9 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
   @Input() failure_redirect?: string;
   @Input() nostyle?: boolean;
   @Input() environment?: string;
+  @Input() lang?: string;
+  @Input() nocategories?: boolean;
+  @Input() notabs?: boolean;
 
   async ngOnInit() {
     await this.setup();
@@ -115,7 +120,7 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
   }
 
   unified_get_auth_url(integration: IIntegration) {
-    let url = `${APIURL}/unified/integration/auth/${this.workspaceId}/${integration.type}?redirect=1`;
+    let url = `${APIURL}/unified/integration/auth/${this.workspace_id}/${integration.type}?redirect=1`;
 
     if (this.external_xref) {
       url += `&user_xref=${encodeURIComponent(this.external_xref)}`;
@@ -125,6 +130,9 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
     }
     if (this.scopes?.length) {
       url += `&scopes=${encodeURIComponent(this.scopes.join(','))}`;
+    }
+    if (this.lang) {
+      url += `&lang=${this.lang}`;
     }
     if (this.environment && this.environment !== 'Production') {
       url += `&env=${encodeURIComponent(this.environment)}`;
@@ -163,7 +171,7 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
   async setup() {
     this.selectedCategory = undefined;
     const url = `${APIURL}/unified/integration/workspace/${
-      this.workspaceId
+      this.workspace_id
     }?summary=1${
       this.categories?.length ? '&categories=' + this.categories.join(',') : ''
     }${
@@ -178,7 +186,8 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
     this.INTEGRATIONS.forEach((integration) => {
       integration.categories?.forEach((c) => {
         if (
-          this.CATEGORY_MAP[c] &&
+          this.CATEGORY_MAP[c as TIntegrationCategoryType
+          ] &&
           (!this.categories?.length || this.categories.includes(c))
         ) {
           this.CATEGORIES.push(c);

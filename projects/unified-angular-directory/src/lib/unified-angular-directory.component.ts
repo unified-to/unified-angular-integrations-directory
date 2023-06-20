@@ -44,7 +44,7 @@ type TIntegrationCategoryType = Exclude<TIntegrationCategory, 'auth' |'passthrou
           href="{unified_get_auth_url(integration)}"
           class="unified_vendor"
         >
-          <img src="'{APIURL}{integration.logo_url}'" class="unified_image" />
+          <img src="{integration.logo_url}" class="unified_image" />
           <div class="unified_vendor_inner">
             <div class="unified_vendor_name">{{ integration.name }}</div>
             <div

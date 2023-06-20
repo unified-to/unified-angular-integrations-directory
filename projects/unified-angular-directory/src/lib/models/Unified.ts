@@ -260,6 +260,8 @@ export interface INotification {
 	description?: string; // Longer description of this notification
 	icon?: string; // The icon name
 	link_url?: string; // Link to the event
+	user_id?: string;
+	user_name?: string;
 }
 
 export interface IPermission {
@@ -298,6 +300,7 @@ export interface IUser {
 	readonly email: string;
 	workspace_id: string; // The current workspace
 	workspace_ids: string[]; // A list of all of the user's workspaces
+	environment?: string;
 	meta?: unknown;
 }
 

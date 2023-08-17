@@ -209,21 +209,6 @@ export interface IIntegration {
 	support: { [path in string]?: IIntegrationSupport };
 }
 
-export interface IIntegrationOauth {
-	oauth_credentials_url?: string; // The URL to get OAUTH2 credentials for this integration
-	scopes?: { [path in TIntegrationPermission]?: string[] };
-	scopes_array?: ( TIntegrationPermission )[];
-	has_unified_oauth2_credentials?: boolean; //  Whether Unified.to has default OAUTH2 credentials for this integration
-	client_id?: string; //  filled in from workspace.integrations[].client_id
-	client_secret?: string; // filled in from workspace.integrations[].client_secret
-	needs_apiurl?: boolean;
-	needs_tokenurl?: boolean;
-	needs_authorizeurl?: boolean;
-	needs_pem?: boolean;
-	needs_key?: boolean;
-	needs_subdomain?: boolean;
-}
-
 export interface IIntegrationSupport {
 	methods?: { [path in string]?: boolean };
 	list_sort_by_name?: boolean;

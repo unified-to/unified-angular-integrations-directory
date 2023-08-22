@@ -207,6 +207,7 @@ export interface IIntegration {
 	rate_limit_description?: string;
 	beta?: boolean; // This integration is new and is still considered "beta"
 	support: { [path in string]?: IIntegrationSupport };
+	tested_at?: string | Date;
 }
 
 export interface IIntegrationSupport {

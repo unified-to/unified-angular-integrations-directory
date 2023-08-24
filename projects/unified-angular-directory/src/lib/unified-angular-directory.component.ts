@@ -97,7 +97,7 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
         let url = `${APIURL}/unified/integration/auth/${this.workspace_id}/${integration.type}?redirect=1`;
 
         if (this.external_xref) {
-            url += `&user_xref=${encodeURIComponent(this.external_xref)}`;
+            url += `&external_xref=${encodeURIComponent(this.external_xref)}`;
         }
         if (this.state) {
             url += `&state=${encodeURIComponent(this.state)}`;

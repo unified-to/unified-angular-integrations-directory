@@ -126,7 +126,8 @@ export const ObjectType = [
 export type TObjectType = typeof ObjectType[number];
 
 export const PlanTerm = [
-	
+	'monthly',
+	'yearly'
 ] as const;
 
 export type TPlanTerm = typeof PlanTerm[number];

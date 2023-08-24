@@ -141,7 +141,8 @@ export const SupportInboundType = [
 export type TSupportInboundType = typeof SupportInboundType[number];
 
 export const SupportOutboundType = [
-	
+	'supported',
+	'not-supported'
 ] as const;
 
 export type TSupportOutboundType = typeof SupportOutboundType[number];

@@ -353,7 +353,7 @@ export interface IWorkspace {
 	readonly pay_user_id?: string;
 	readonly plan?: string;
 	readonly stripe_customer?: string;
-	readonly stripe_subscription?: string;
+	readonly stripe_subscriptions?: string[];
 	readonly secret?: string; // Workspace API secret
 	readonly integrations?: IWorkspaceIntegration[]; // Workspace active integrations
 	ip_addresses?: string[]; // a list of IP addresses that are allowed to access this workspace

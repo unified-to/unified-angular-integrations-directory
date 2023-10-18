@@ -47,8 +47,6 @@ export const IntegrationPermission = [
 	'crm_deal_write',
 	'crm_event_read',
 	'crm_event_write',
-	'crm_user_read',
-	'crm_user_write',
 	'crm_lead_read',
 	'crm_lead_write',
 	'crm_file_read',

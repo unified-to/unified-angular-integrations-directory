@@ -353,7 +353,7 @@ export interface IWebhook {
 export interface IWebhookData {
 	data: unknown[];
 	webhook: IWebhook;
-	updated_at: string | Date;
+	nonce: string; // random string
 }
 
 export interface IWorkspace {

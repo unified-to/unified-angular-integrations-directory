@@ -352,7 +352,7 @@ export interface IWebhook {
 
 export interface IWebhookData {
 	data: unknown[];
-	created_at: string | Date;
+	webhook: IWebhook;
 	updated_at: string | Date;
 }
 

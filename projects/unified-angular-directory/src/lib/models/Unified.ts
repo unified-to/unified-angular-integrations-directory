@@ -351,7 +351,7 @@ export interface IWebhook {
 }
 
 export interface IWebhookData {
-	id: string[];
+	data: unknown[];
 	created_at: string | Date;
 	updated_at: string | Date;
 }

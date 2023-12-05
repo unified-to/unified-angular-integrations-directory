@@ -4,28 +4,6 @@
 
 # Unified.to's Integrations Directory Typescript Angular Component
 
-## Installing
-
-### Package manager
-
-Using NPM:
-
-```bash
-$ npm install unified-angular-integrations-directory
-```
-
-Using yarn:
-
-```bash
-$ yarn add unified-angular-integrations-directory
-```
-
-Once the package is installed, you can import the component using `import`
-
-```ts
-import UnifiedDirectory from 'unified-angular-integrations-directory';
-```
-
 ## Example
 
 ```js

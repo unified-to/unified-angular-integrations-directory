@@ -362,6 +362,7 @@ export interface IWebhook {
 	event: TWebhookEvent;
 	runs?: string[]; // An array of the most revent virtual webhook runs
 	fields?: string;
+	webhook_type?: TIntegrationSupportWebhookType;
 	meta?: unknown;
 }
 

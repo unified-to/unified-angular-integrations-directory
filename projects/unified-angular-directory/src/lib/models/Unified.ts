@@ -360,7 +360,7 @@ export interface IWebhook {
 	environment?: string;
 	include_raw?: boolean;
 	event: TWebhookEvent;
-	runs?: string[];
+	runs?: string[]; // An array of the most revent virtual webhook runs
 	fields?: string;
 	meta?: unknown;
 }

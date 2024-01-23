@@ -1,0 +1,657 @@
+<svg version="1.1" baseProfile="full" width="1210.5" height="1714.0" viewbox="0 0 1210.5 1714" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#background: transparent
+	#edges: rounded
+	[ApiCall | 
+		id: id
+		created_at: date
+		workspace_id: id
+		integration_type: string
+		external_xref: string
+		name: string
+		path: string
+		size: number
+		status: string
+		error: string
+		connection_id: id
+		ip_address: string
+		type: ApiCallType
+		method: string
+		environment: string
+	]
+	
+	[Connection | 
+		id: id
+		created_at: date
+		updated_at: date
+		workspace_id: id
+		integration_type: string
+		external_xref: string
+		permissions: IntegrationPermission\[\]
+		categories: IntegrationCategory\[\]
+		auth: ConnectionAuth
+		is_paused: boolean
+		auth_aws_arn: string
+		environment: string
+		last_healthy_at: date
+		last_unhealthy_at: date
+		cursors_cache: object\[\]
+	]
+	
+	[ConnectionAuth | 
+		token: string
+		access_token: string
+		refresh_token: string
+		expiry_date: date
+		expires_in: number
+		emails: string\[\]
+		name: string
+		app_id: string
+		client_id: string
+		client_secret: string
+		consumer_key: string
+		consumer_secret: string
+		meta: object
+		state: string
+		other_auth_info: string\[\]
+		api_url: string
+		authorize_url: string
+		token_url: string
+		pem: string
+		key: string
+		refresh_token_expires_in: number
+		refresh_token_expires_date: date
+	]
+	
+	[Integration | 
+		type: string
+		created_at: string
+		updated_at: string
+		name: string
+		is_active: boolean
+		categories: IntegrationCategory\[\]
+		api_docs_url: string
+		logo_url: string
+		in_progress: boolean
+		color: string
+		text_color: string
+		fa_icon: string
+		token_names: string\[\]
+		token_instructions: string\[\]
+		web_url: string
+		rate_limit_description: string
+		beta: boolean
+		support: IntegrationSupport
+		tested_at: date
+	]
+	
+	[IntegrationSupport | 
+		methods: boolean
+		list_sort_by_name: boolean
+		list_sort_by_created_at: boolean
+		list_sort_by_updated_at: boolean
+		list_updated_gte: boolean
+		list_user_id: boolean
+		list_customer_id: boolean
+		list_company_id: boolean
+		list_contact_id: boolean
+		list_application_id: boolean
+		list_candidate_id: boolean
+		list_deal_id: boolean
+		list_job_id: boolean
+		list_invoice_id: boolean
+		list_order: boolean
+		list_query: boolean
+		list_limit: boolean
+		list_offset: boolean
+		search_twitter: boolean
+		search_name: boolean
+		search_linkedin_url: boolean
+		search_email: boolean
+		search_domain: boolean
+		inbound_fields: SupportInboundType
+		outbound_fields: SupportOutboundType
+		webhook_type: IntegrationSupportWebhookType
+		webhook_events: WebhookEvent\[\]
+		list_parent_id: boolean
+		list_account_id: boolean
+		list_interview_id: boolean
+		list_list_id: boolean
+		list_ticket_id: boolean
+	]
+	
+	[Notification | 
+		id: id
+		created_at: date
+		workspace_id: id
+		title: string
+		description: string
+		icon: string
+		link_url: string
+		user_id: id
+		user_name: string
+	]
+	
+	[Plan | 
+		name: string
+		description: string
+		max_connections: number
+		stripe_product_id: string
+		stripe_price_id: string
+		min_price: number
+		price_per_mille_requests: number
+		custom_oauth: boolean
+		max_requests: number
+		test_stripe_product_id: string
+		test_stripe_price_id: string
+		min_annual_price: number
+		stripe_annual_price_id: string
+		test_stripe_annual_price_id: string
+		stripe_overage_price_id: string
+		test_stripe_overage_price_id: string
+	]
+	
+	[Webhook | 
+		id: id
+		created_at: date
+		updated_at: date
+		workspace_id: id
+		connection_id: id
+		hook_url: string
+		object_type: ObjectType
+		interval: number
+		checked_at: date
+		integration_type: string
+		environment: string
+		event: WebhookEvent
+		runs: string\[\]
+		fields: string
+		webhook_type: IntegrationSupportWebhookType
+		meta: object
+		is_healthy: boolean
+	]
+	
+	[WebhookData | 
+		data: object\[\]
+		webhook: Webhook
+		nonce: string
+		sig: string
+		type: WebhookDataType
+	]
+	
+	[Workspace | 
+		id: id
+		created_at: date
+		updated_at: date
+		name: string
+		admin_ids: id\[\]
+		invited_emails: string\[\]
+		pay_user_id: string
+		plan: string
+		stripe_customer: string
+		stripe_subscriptions: string\[\]
+		stripe_prices: string\[\]
+		secret: string
+		integrations: WorkspaceIntegration\[\]
+		ip_addresses: string\[\]
+		aws_region: string
+		aws_key: string
+		aws_secret: string
+		datadog_apikey: string
+		datadog_site: string
+		environments: string\[\]
+		add_ons: string\[\]
+		checklist: object
+		plan_term: PlanTerm
+		stripe_canceling_at: date
+		domain: string
+	]
+	
+	[WorkspaceIntegration | 
+		integration_type: string
+		client_id: string
+		client_secret: string
+		consumer_key: string
+		consumer_secret: string
+		is_active: boolean
+		api_url: string
+		authorize_url: string
+		token_url: string
+		pem: string
+		key: string
+		environment: string
+		categories: IntegrationCategory\[\]
+	]
+	
+	[ApiCall] -&gt; [Workspace]
+	[ApiCall] -&gt; [Connection]
+	[Connection] -&gt; [Workspace]
+	[Connection] - [ConnectionAuth]
+	[Integration] - [IntegrationSupport]
+	[Notification] -&gt; [Workspace]
+	[Notification] -&gt; [User]
+	[Webhook] -&gt; [Workspace]
+	[Webhook] -&gt; [Integration]
+	[WebhookData] - [Webhook]
+	[Workspace] -&gt; *[User]
+	[Workspace] - *[WorkspaceIntegration]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="1714.0" width="1210.5" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<path d="M362.5 246.4 L420.75 307 L420.75 478 L420.75 478 L420.75 649 L420.75 649 L428.9217761417626 663.2198138512027 L428.9 663.2 " fill="none"></path>
+					<path d="M421.0 660.1 L428.9 663.2 L430.2 654.8 L432.2 669.0 Z"></path>
+					<path d="M170.3 279.5 L151.5 307 L151.5 335.3333333333333 L151.5 335.3 " fill="none"></path>
+					<path d="M146.2 328.7 L151.5 335.3 L156.8 328.7 L151.5 342.0 Z"></path>
+					<path d="M303.0 559.0 L471.25 649 L476.1349986180668 662.7195705869109 L476.1 662.7 " fill="none"></path>
+					<path d="M468.9 658.2 L476.1 662.7 L478.9 654.7 L478.4 669.0 Z"></path>
+					<path d="M151.5 614.0 L151.5 649 L151.5 691.5 L151.5 691.5 " fill="none"></path>
+					<path d="M953.5 1046.0 L953.5 1111 L953.5 1131 L953.5 1131.0 " fill="none"></path>
+					<path d="M582.8 569.0 L582.75 649 L581.0550012401538 662.3861440521184 L581.1 662.4 " fill="none"></path>
+					<path d="M576.6 655.1 L581.1 662.4 L587.2 656.4 L580.2 669.0 Z"></path>
+					<path d="M503.3 533.0 L335.5 649 L335.5 880 L335.5 880 L335.5 1111 L335.5 1111 L353.9373799746323 1372.3498611404125 L353.9 1372.3 " fill="none"></path>
+					<path d="M348.1 1366.1 L353.9 1372.3 L358.8 1365.3 L354.4 1379.0 Z"></path>
+					<path d="M785.3 629.0 L763 649 L709.4786298688916 708.0140167078092 L709.5 708.0 " fill="none"></path>
+					<path d="M710.0 699.5 L709.5 708.0 L717.9 706.7 L705.0 713.0 Z"></path>
+					<path d="M953.5 629.0 L953.5 649 L953.5 707.3333333333334 L953.5 707.3 " fill="none"></path>
+					<path d="M948.2 700.7 L953.5 707.3 L958.8 700.7 L953.5 714.0 Z"></path>
+					<path d="M953.5 204.5 L953.5 307 L953.5 327 L953.5 327.0 " fill="none"></path>
+					<text x="345.7" y="1371.0" stroke="none">*</text>
+					<path d="M460.1 1091.0 L451.25 1111 L362.86824146141083 1372.6838490411492 L362.9 1372.7 " fill="none"></path>
+					<path d="M359.9 1364.7 L362.9 1372.7 L370.1 1368.1 L360.7 1379.0 Z"></path>
+					<text x="581.5" y="1265.5" stroke="none">*</text>
+					<path d="M571.8 1091.0 L573.5 1111 L573.5 1273.5 L573.5 1273.5 " fill="none"></path>
+					<g data-name="ApiCall">
+						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
+							<rect x="164.5" y="7.5" height="272.0" width="198.0" data-name="ApiCall"></rect>
+							<path d="M164.5 38.5 L362.5 38.5" fill="none" data-name="ApiCall"></path>
+						</g>
+						<g transform="translate(164.5, 7.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ApiCall">
+								<text x="91.0" y="13.5" stroke="none" text-anchor="middle" data-name="ApiCall">ApiCall</text>
+								
+							</g>
+						</g>
+						<g transform="translate(164.5, 38.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ApiCall">
+								<text x="0.0" y="13.5" stroke="none" data-name="ApiCall">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="ApiCall">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="ApiCall">workspace_id: id</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="ApiCall">integration_type: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="ApiCall">external_xref: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="ApiCall">name: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="ApiCall">path: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="ApiCall">size: number</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="ApiCall">status: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="ApiCall">error: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="ApiCall">connection_id: id</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="ApiCall">ip_address: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="ApiCall">type: ApiCallType</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="ApiCall">method: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="ApiCall">environment: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Connection">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Connection">
+							<rect x="0.0" y="342.0" height="272.0" width="303.0" data-name="Connection"></rect>
+							<path d="M0.0 373.0 L303.0 373.0" fill="none" data-name="Connection"></path>
+						</g>
+						<g transform="translate(0, 342)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Connection">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Connection">
+								<text x="143.5" y="13.5" stroke="none" text-anchor="middle" data-name="Connection">Connection</text>
+								
+							</g>
+						</g>
+						<g transform="translate(0, 373)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Connection">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Connection">
+								<text x="0.0" y="13.5" stroke="none" data-name="Connection">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Connection">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Connection">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Connection">workspace_id: id</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Connection">integration_type: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Connection">external_xref: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Connection">permissions: IntegrationPermission[]</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Connection">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Connection">auth: ConnectionAuth</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Connection">is_paused: boolean</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Connection">auth_aws_arn: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Connection">environment: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Connection">last_healthy_at: date</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Connection">last_unhealthy_at: date</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Connection">cursors_cache: object[]</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ConnectionAuth">
+						<g fill="#eee8d5" stroke="#33322E" data-name="ConnectionAuth">
+							<rect x="7.5" y="691.5" height="377.0" width="288.0" data-name="ConnectionAuth"></rect>
+							<path d="M7.5 722.5 L295.5 722.5" fill="none" data-name="ConnectionAuth"></path>
+						</g>
+						<g transform="translate(7.5, 691.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConnectionAuth">
+								<text x="136.0" y="13.5" stroke="none" text-anchor="middle" data-name="ConnectionAuth">ConnectionAuth</text>
+								
+							</g>
+						</g>
+						<g transform="translate(7.5, 722.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConnectionAuth">
+								<text x="0.0" y="13.5" stroke="none" data-name="ConnectionAuth">token: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="ConnectionAuth">access_token: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="ConnectionAuth">refresh_token: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="ConnectionAuth">expiry_date: date</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="ConnectionAuth">expires_in: number</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="ConnectionAuth">emails: string[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="ConnectionAuth">name: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="ConnectionAuth">app_id: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="ConnectionAuth">client_id: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="ConnectionAuth">client_secret: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="ConnectionAuth">consumer_key: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="ConnectionAuth">consumer_secret: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="ConnectionAuth">meta: object</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="ConnectionAuth">state: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="ConnectionAuth">other_auth_info: string[]</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="ConnectionAuth">api_url: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="ConnectionAuth">authorize_url: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="ConnectionAuth">token_url: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="ConnectionAuth">pem: string</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="ConnectionAuth">key: string</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_in: number</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_date: date</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Integration">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
+							<rect x="815.5" y="714.0" height="332.0" width="276.0" data-name="Integration"></rect>
+							<path d="M815.5 745.0 L1091.5 745.0" fill="none" data-name="Integration"></path>
+						</g>
+						<g transform="translate(815.5, 714)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
+								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
+								
+							</g>
+						</g>
+						<g transform="translate(815.5, 745)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
+								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Integration">updated_at: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Integration">name: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Integration">is_active: boolean</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Integration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Integration">api_docs_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Integration">logo_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Integration">in_progress: boolean</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Integration">color: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Integration">text_color: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Integration">fa_icon: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Integration">token_names: string[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Integration">token_instructions: string[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Integration">web_url: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Integration">rate_limit_description: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Integration">beta: boolean</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Integration">tested_at: date</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="IntegrationSupport">
+						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
+							<rect x="752.5" y="1131.0" height="527.0" width="402.0" data-name="IntegrationSupport"></rect>
+							<path d="M752.5 1162.0 L1154.5 1162.0" fill="none" data-name="IntegrationSupport"></path>
+						</g>
+						<g transform="translate(752.5, 1131)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IntegrationSupport">
+								<text x="193.0" y="13.5" stroke="none" text-anchor="middle" data-name="IntegrationSupport">IntegrationSupport</text>
+								
+							</g>
+						</g>
+						<g transform="translate(752.5, 1162)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IntegrationSupport">
+								<text x="0.0" y="13.5" stroke="none" data-name="IntegrationSupport">methods: boolean</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="IntegrationSupport">list_sort_by_name: boolean</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="IntegrationSupport">list_sort_by_created_at: boolean</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="IntegrationSupport">list_sort_by_updated_at: boolean</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="IntegrationSupport">list_updated_gte: boolean</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="IntegrationSupport">list_user_id: boolean</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="IntegrationSupport">list_customer_id: boolean</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="IntegrationSupport">list_company_id: boolean</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="IntegrationSupport">list_contact_id: boolean</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="IntegrationSupport">list_application_id: boolean</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="IntegrationSupport">list_candidate_id: boolean</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="IntegrationSupport">list_deal_id: boolean</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="IntegrationSupport">list_job_id: boolean</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="IntegrationSupport">list_invoice_id: boolean</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="IntegrationSupport">list_order: boolean</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="IntegrationSupport">list_query: boolean</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="IntegrationSupport">list_limit: boolean</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="IntegrationSupport">list_offset: boolean</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="IntegrationSupport">search_twitter: boolean</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="IntegrationSupport">search_name: boolean</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="IntegrationSupport">search_linkedin_url: boolean</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="IntegrationSupport">search_email: boolean</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="IntegrationSupport">search_domain: boolean</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="IntegrationSupport">inbound_fields: SupportInboundType</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="IntegrationSupport">outbound_fields: SupportOutboundType</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="IntegrationSupport">webhook_type: IntegrationSupportWebhookType</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="IntegrationSupport">webhook_events: WebhookEvent[]</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="IntegrationSupport">list_parent_id: boolean</text>
+								<text x="0.0" y="433.5" stroke="none" data-name="IntegrationSupport">list_account_id: boolean</text>
+								<text x="0.0" y="448.5" stroke="none" data-name="IntegrationSupport">list_interview_id: boolean</text>
+								<text x="0.0" y="463.5" stroke="none" data-name="IntegrationSupport">list_list_id: boolean</text>
+								<text x="0.0" y="478.5" stroke="none" data-name="IntegrationSupport">list_ticket_id: boolean</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Notification">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Notification">
+							<rect x="503.3" y="387.0" height="182.0" width="159.0" data-name="Notification"></rect>
+							<path d="M503.3 418.0 L662.3 418.0" fill="none" data-name="Notification"></path>
+						</g>
+						<g transform="translate(503.25, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Notification">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Notification">
+								<text x="71.5" y="13.5" stroke="none" text-anchor="middle" data-name="Notification">Notification</text>
+								
+							</g>
+						</g>
+						<g transform="translate(503.25, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Notification">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Notification">
+								<text x="0.0" y="13.5" stroke="none" data-name="Notification">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Notification">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Notification">workspace_id: id</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Notification">title: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Notification">description: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Notification">icon: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Notification">link_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Notification">user_id: id</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Notification">user_name: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Plan">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Plan">
+							<rect x="507.0" y="0.0" height="287.0" width="301.0" data-name="Plan"></rect>
+							<path d="M507.0 31.0 L808.0 31.0" fill="none" data-name="Plan"></path>
+						</g>
+						<g transform="translate(507, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Plan">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Plan">
+								<text x="142.5" y="13.5" stroke="none" text-anchor="middle" data-name="Plan">Plan</text>
+								
+							</g>
+						</g>
+						<g transform="translate(507, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plan">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Plan">
+								<text x="0.0" y="13.5" stroke="none" data-name="Plan">name: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Plan">description: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Plan">max_connections: number</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Plan">stripe_product_id: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Plan">stripe_price_id: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Plan">min_price: number</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Plan">price_per_mille_requests: number</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Plan">custom_oauth: boolean</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Plan">max_requests: number</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Plan">test_stripe_product_id: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Plan">test_stripe_price_id: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Plan">min_annual_price: number</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Plan">stripe_annual_price_id: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Plan">test_stripe_annual_price_id: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Plan">stripe_overage_price_id: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Plan">test_stripe_overage_price_id: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Webhook">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Webhook">
+							<rect x="752.5" y="327.0" height="302.0" width="402.0" data-name="Webhook"></rect>
+							<path d="M752.5 358.0 L1154.5 358.0" fill="none" data-name="Webhook"></path>
+						</g>
+						<g transform="translate(752.5, 327)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Webhook">
+								<text x="193.0" y="13.5" stroke="none" text-anchor="middle" data-name="Webhook">Webhook</text>
+								
+							</g>
+						</g>
+						<g transform="translate(752.5, 358)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Webhook">
+								<text x="0.0" y="13.5" stroke="none" data-name="Webhook">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Webhook">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Webhook">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Webhook">workspace_id: id</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Webhook">connection_id: id</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Webhook">hook_url: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Webhook">object_type: ObjectType</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Webhook">interval: number</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Webhook">checked_at: date</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Webhook">integration_type: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Webhook">environment: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Webhook">event: WebhookEvent</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Webhook">runs: string[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Webhook">fields: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Webhook">webhook_type: IntegrationSupportWebhookType</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Webhook">meta: object</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Webhook">is_healthy: boolean</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="WebhookData">
+						<g fill="#eee8d5" stroke="#33322E" data-name="WebhookData">
+							<rect x="848.0" y="82.5" height="122.0" width="211.0" data-name="WebhookData"></rect>
+							<path d="M848.0 113.5 L1059.0 113.5" fill="none" data-name="WebhookData"></path>
+						</g>
+						<g transform="translate(848, 82.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebhookData">
+								<text x="97.5" y="13.5" stroke="none" text-anchor="middle" data-name="WebhookData">WebhookData</text>
+								
+							</g>
+						</g>
+						<g transform="translate(848, 113.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WebhookData">
+								<text x="0.0" y="13.5" stroke="none" data-name="WebhookData">data: object[]</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="WebhookData">webhook: Webhook</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="WebhookData">nonce: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="WebhookData">sig: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="WebhookData">type: WebhookDataType</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Workspace">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Workspace">
+							<rect x="402.0" y="669.0" height="422.0" width="303.0" data-name="Workspace"></rect>
+							<path d="M402.0 700.0 L705.0 700.0" fill="none" data-name="Workspace"></path>
+						</g>
+						<g transform="translate(402, 669)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Workspace">
+								<text x="143.5" y="13.5" stroke="none" text-anchor="middle" data-name="Workspace">Workspace</text>
+								
+							</g>
+						</g>
+						<g transform="translate(402, 700)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Workspace">
+								<text x="0.0" y="13.5" stroke="none" data-name="Workspace">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Workspace">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Workspace">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Workspace">name: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Workspace">admin_ids: id[]</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Workspace">invited_emails: string[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Workspace">pay_user_id: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Workspace">plan: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Workspace">stripe_customer: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Workspace">stripe_subscriptions: string[]</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Workspace">stripe_prices: string[]</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Workspace">secret: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Workspace">integrations: WorkspaceIntegration[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Workspace">ip_addresses: string[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Workspace">aws_region: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Workspace">aws_key: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Workspace">aws_secret: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Workspace">datadog_apikey: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Workspace">datadog_site: string</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Workspace">environments: string[]</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Workspace">add_ons: string[]</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Workspace">checklist: object</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Workspace">plan_term: PlanTerm</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Workspace">stripe_canceling_at: date</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Workspace">domain: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="WorkspaceIntegration">
+						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
+							<rect x="435.5" y="1273.5" height="242.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M435.5 1304.5 L711.5 1304.5" fill="none" data-name="WorkspaceIntegration"></path>
+						</g>
+						<g transform="translate(435.5, 1273.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
+								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
+								
+							</g>
+						</g>
+						<g transform="translate(435.5, 1304.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
+								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">integration_type: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">client_id: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="WorkspaceIntegration">client_secret: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="WorkspaceIntegration">consumer_key: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="WorkspaceIntegration">consumer_secret: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="WorkspaceIntegration">is_active: boolean</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="WorkspaceIntegration">api_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegration">authorize_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegration">token_url: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">pem: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="User">
+						<g fill="#eee8d5" stroke="#33322E" data-name="User">
+							<rect x="329.0" y="1379.0" height="31.0" width="53.0" data-name="User"></rect>
+						</g>
+						<g transform="translate(329, 1379)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User">
+								<text x="18.5" y="13.5" stroke="none" text-anchor="middle" data-name="User">User</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -60,6 +60,7 @@
 		key: string
 		refresh_token_expires_in: number
 		refresh_token_expires_date: date
+		dev_api_key: string
 	]
 	
 	[Integration | 
@@ -229,6 +230,7 @@
 		key: string
 		environment: string
 		categories: IntegrationCategory\[\]
+		dev_api_key: string
 	]
 	
 	[ApiCall] -&gt; [Workspace]
@@ -256,7 +258,7 @@
 					<path d="M146.2 336.2 L151.5 342.8 L156.8 336.2 L151.5 349.5 Z"></path>
 					<path d="M303.0 580.9 L435 664 L473.45933376083286 709.7354239318012 L473.5 709.7 " fill="none"></path>
 					<path d="M465.1 708.1 L473.5 709.7 L473.3 701.2 L477.8 714.8 Z"></path>
-					<path d="M151.5 621.5 L151.5 664 L151.5 706.5 L151.5 706.5 " fill="none"></path>
+					<path d="M151.5 621.5 L151.5 664 L151.5 699 L151.5 699.0 " fill="none"></path>
 					<path d="M1110.5 1061.0 L1110.5 1126 L1110.5 1146 L1110.5 1146.0 " fill="none"></path>
 					<path d="M726.0 576.5 L726 664 L720.1988156961659 677.850889655666 L720.2 677.9 " fill="none"></path>
 					<path d="M717.9 669.6 L720.2 677.9 L727.7 673.8 L717.6 684.0 Z"></path>
@@ -268,8 +270,8 @@
 					<text x="512.0" y="1386.0" stroke="none">*</text>
 					<path d="M535.9 1106.0 L527 1126 L527 1387.3333333333333 L527.0 1387.3 " fill="none"></path>
 					<path d="M521.7 1380.7 L527.0 1387.3 L532.3 1380.7 L527.0 1394.0 Z"></path>
-					<text x="739.5" y="1280.5" stroke="none">*</text>
-					<path d="M722.6 1106.0 L731.5 1126 L731.5 1288.5 L731.5 1288.5 " fill="none"></path>
+					<text x="739.5" y="1273.0" stroke="none">*</text>
+					<path d="M722.6 1106.0 L731.5 1126 L731.5 1281 L731.5 1281.0 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
 							<rect x="148.3" y="7.5" height="272.0" width="198.0" data-name="ApiCall"></rect>
@@ -336,16 +338,16 @@
 					</g>
 					<g data-name="ConnectionAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ConnectionAuth">
-							<rect x="7.5" y="706.5" height="377.0" width="288.0" data-name="ConnectionAuth"></rect>
-							<path d="M7.5 737.5 L295.5 737.5" fill="none" data-name="ConnectionAuth"></path>
+							<rect x="7.5" y="699.0" height="392.0" width="288.0" data-name="ConnectionAuth"></rect>
+							<path d="M7.5 730.0 L295.5 730.0" fill="none" data-name="ConnectionAuth"></path>
 						</g>
-						<g transform="translate(7.5, 706.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
+						<g transform="translate(7.5, 699)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConnectionAuth">
 								<text x="136.0" y="13.5" stroke="none" text-anchor="middle" data-name="ConnectionAuth">ConnectionAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(7.5, 737.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
+						<g transform="translate(7.5, 730)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConnectionAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="ConnectionAuth">token: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="ConnectionAuth">access_token: string</text>
@@ -369,6 +371,7 @@
 								<text x="0.0" y="298.5" stroke="none" data-name="ConnectionAuth">key: string</text>
 								<text x="0.0" y="313.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_in: number</text>
 								<text x="0.0" y="328.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_date: date</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="ConnectionAuth">dev_api_key: string</text>
 								
 							</g>
 						</g>
@@ -640,16 +643,16 @@
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="593.5" y="1288.5" height="242.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M593.5 1319.5 L869.5 1319.5" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="593.5" y="1281.0" height="257.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M593.5 1312.0 L869.5 1312.0" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(593.5, 1288.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(593.5, 1281)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(593.5, 1319.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(593.5, 1312)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">integration_type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">client_id: string</text>
@@ -664,6 +667,7 @@
 								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
 								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
 								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
 								
 							</g>
 						</g>

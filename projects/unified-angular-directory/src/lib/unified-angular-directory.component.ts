@@ -57,7 +57,12 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
         uc: 'Unified Communications',
         enrich: 'Enrichment',
         ats: 'ATS',
+        accounting: 'Accounting',
+        storage: 'Storage',
         hris: 'HR',
+        genai: 'GenAI',
+        commerce: 'Commerce',
+        payment: 'Payment',
     };
     @Input() workspace_id?: { type: string; required: true };
     @Input() categories?: string[];

@@ -1,5 +1,5 @@
 <h1>
-    <a href="https://unified.to"><img src="https://unified.to/images/logo.png" /></a>
+    <a href="https://unified.to"><img src="https://unified.to/images/unified.svg" /></a>
 </h1>
 
 # Unified.to's Integrations Directory Typescript Angular Component

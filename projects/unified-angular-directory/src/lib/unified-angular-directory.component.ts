@@ -60,9 +60,11 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
         accounting: 'Accounting',
         storage: 'Storage',
         hris: 'HR',
-        genai: 'GenAI',
-        commerce: 'Commerce',
         payment: 'Payment',
+        commerce: 'E-Commerce',
+        genai: 'Generative AI',
+        messaging: 'Messaging',
+        kms: 'KMS',
     };
     @Input() workspace_id?: { type: string; required: true };
     @Input() categories?: string[];

@@ -65,6 +65,7 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
         genai: 'Generative AI',
         messaging: 'Messaging',
         kms: 'KMS',
+        task: 'Tasks',
     };
     @Input() workspace_id?: { type: string; required: true };
     @Input() categories?: string[];

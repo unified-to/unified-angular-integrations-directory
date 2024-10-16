@@ -92,8 +92,8 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
     kms: 'KMS',
     task: 'Tasks',
     auth: 'Auth',
-    scim: 'Scim',
-    passthrough: 'Passthrough',
+    scim: 'Scim', // unused
+    passthrough: 'Passthrough', // unused
   };
   @Input() workspace_id?: { type: string; required: true };
   @Input() categories?: string[];

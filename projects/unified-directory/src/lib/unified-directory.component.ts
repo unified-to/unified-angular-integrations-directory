@@ -21,7 +21,7 @@ type TIntegrationCategoryType = Exclude<
 @Component({
   imports: [CommonModule, FilterCategoriesPipe],
   standalone: true,
-  selector: 'unified',
+  selector: 'unified-directory',
   template: `
     <div class="unified">
       <div
@@ -71,7 +71,7 @@ type TIntegrationCategoryType = Exclude<
     </div>
   `,
 })
-export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
+export class UnifiedDirectory implements OnInit, OnChanges {
   @Input() INTEGRATIONS: IIntegration[] = [];
   @Input() selectedCategory?: TIntegrationCategory;
   @Input() CATEGORIES: TIntegrationCategory[] = [];
@@ -95,7 +95,7 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
     scim: 'Scim', // unused
     passthrough: 'Passthrough', // unused
   };
-  @Input() workspace_id?: { type: string; required: true };
+  @Input({ alias: 'workspaceId', required: true }) workspace_id!: string;
   @Input() categories?: string[];
   @Input() external_xref?: string;
   @Input() state?: string;
@@ -115,12 +115,12 @@ export class UnifiedAngularDirectoryComponent implements OnInit, OnChanges {
 
   async ngOnChanges(changes: SimpleChanges) {
     if (
-      changes['workspaceId'].currentValue !==
-        changes['workspaceId'].previousValue ||
-      changes['categories'].currentValue !==
-        changes['categories'].previousValue ||
-      changes['environment'].currentValue !==
-        changes['environment'].previousValue
+      changes['workspaceId']?.currentValue !==
+        changes['workspaceId']?.previousValue ||
+      changes['categories']?.currentValue !==
+        changes['categories']?.previousValue ||
+      changes['environment']?.currentValue !==
+        changes['environment']?.previousValue
     ) {
       await this.setup();
     }

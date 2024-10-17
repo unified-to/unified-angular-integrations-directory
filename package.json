@@ -1,5 +1,5 @@
 {
-    "name": "@unified-api/angular-directory",
+    "name": "unified-angular-directory",
     "version": "1.0.6",
     "description": "Angular component for Unified.to's Integrations Directory",
     "author": "Unified API Inc.",

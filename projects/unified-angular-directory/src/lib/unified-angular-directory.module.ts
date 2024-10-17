@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { UnifiedAngularDirectoryComponent } from './unified-angular-directory.component';
+import { UnifiedDirectory } from './unified-angular-directory.component';
 
 @NgModule({
-    declarations: [],
-    imports: [UnifiedAngularDirectoryComponent],
-    exports: [UnifiedAngularDirectoryComponent],
+  declarations: [],
+  imports: [UnifiedDirectory],
+  exports: [UnifiedDirectory],
 })
 export class UnifiedAngularDirectoryModule {}

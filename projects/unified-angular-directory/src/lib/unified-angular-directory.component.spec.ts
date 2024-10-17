@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnifiedAngularDirectoryComponent } from './unified-angular-directory.component';
+import { UnifiedDirectory } from './unified-angular-directory.component';
 
-describe('UnifiedAngularDirectoryComponent', () => {
-  let component: UnifiedAngularDirectoryComponent;
-  let fixture: ComponentFixture<UnifiedAngularDirectoryComponent>;
+describe('UnifiedDirectory', () => {
+  let component: UnifiedDirectory;
+  let fixture: ComponentFixture<UnifiedDirectory>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UnifiedAngularDirectoryComponent]
+      declarations: [UnifiedDirectory],
     });
-    fixture = TestBed.createComponent(UnifiedAngularDirectoryComponent);
+    fixture = TestBed.createComponent(UnifiedDirectory);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

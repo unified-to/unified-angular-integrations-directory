@@ -1,6 +1,5 @@
 /*
- * Public API Surface of unified-angular-directory
+ * Public API Surface of @unified-api/angular-directory
  */
 
-export * from './lib/unified-angular-directory.component';
-export * from './lib/unified-angular-directory.module';
+export { UnifiedDirectory } from './lib/unified-angular-directory.component';

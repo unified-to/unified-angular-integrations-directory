@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnifiedDirectory } from './unified-directory.component';
+import { UnifiedDirectory } from './unified-angular-directory.component';
 
 describe('UnifiedDirectory', () => {
   let component: UnifiedDirectory;

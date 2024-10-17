@@ -20,8 +20,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "unified-directory": [
-        "dist/unified-directory"
+      "unified-angular-directory": [
+        "dist/unified-angular-directory"
       ]
     },
     "lib": [

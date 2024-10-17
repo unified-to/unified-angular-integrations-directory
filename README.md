@@ -2,20 +2,29 @@
     <a href="https://unified.to"><img src="https://unified.to/images/unified.svg" /></a>
 </h1>
 
-# Unified.to's Integrations Directory Typescript Angular Component
+# Unified.to's Integrations Directory Component for Angular
 
 ## Example
 
 ```js
-return (
-    <>
-        <h1>Integrations Directory</h1>
-        <UnifiedDirectory workspaceId="12345" />
-    </>
-);
+// app.component.ts or in the component you want to use it
+import { UnifiedDirectory } from '@unified-api/angular-directory';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, UnifiedDirectory],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
 ```
 
-The following are the `props` that can be passed to the component:
+```js
+// app.component.html or in the template you want to use it
+<unified-directory workspace_id="abc123def456"></unified-directory>
+```
+
+The following properties can be passed to the component as inputs:
 
 ```ts
 {

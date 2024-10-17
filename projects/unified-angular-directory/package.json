@@ -1,9 +1,9 @@
 {
   "name": "@unified-api/angular-directory",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "peerDependencies": {
-    "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0"
+    "@angular/common": ">=16.1.0",
+    "@angular/core": ">=16.1.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

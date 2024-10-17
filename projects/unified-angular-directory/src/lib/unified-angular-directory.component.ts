@@ -95,7 +95,7 @@ export class UnifiedDirectory implements OnInit, OnChanges {
     scim: 'Scim', // unused
     passthrough: 'Passthrough', // unused
   };
-  @Input({ alias: 'workspaceId', required: true }) workspace_id!: string;
+  @Input({ required: true }) workspace_id!: string;
   @Input() categories?: string[];
   @Input() external_xref?: string;
   @Input() state?: string;

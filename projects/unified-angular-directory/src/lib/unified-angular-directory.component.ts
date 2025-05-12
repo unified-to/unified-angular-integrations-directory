@@ -9,10 +9,11 @@ const MAP_REGION = {
     us_beta: 'https://api-beta.unified.to',
     eu: 'https://api-eu.unified.to',
     eu_beta: 'https://api-eu-beta.unified.to',
+    au: 'https://api-au.unified.to',
     dev: 'https://api-dev.unified.to',
 } satisfies { [path in string]: string };
 
-export type TIntegrationCategoryType = Exclude<TIntegrationCategory, 'auth' | 'passthrough' | 'scim'>;
+export type TIntegrationCategoryType = Exclude<TIntegrationCategory, 'metadata' | 'auth' | 'passthrough' | 'scim'>;
 
 @Component({
     imports: [CommonModule, FilterCategoriesPipe],
@@ -66,9 +67,10 @@ export class UnifiedDirectory implements OnInit, OnChanges {
         messaging: 'Messaging',
         kms: 'KMS',
         task: 'Tasks',
-        metadata: 'Metadata',
+        // metadata: 'Metadata',
         lms: 'LMS',
         repo: 'Repository',
+        calendar: 'Calendar',
     };
     @Input({ required: true }) workspace_id!: string;
     @Input() categories?: string[];
@@ -82,7 +84,7 @@ export class UnifiedDirectory implements OnInit, OnChanges {
     @Input() lang?: string;
     @Input() nocategories?: boolean;
     @Input() notabs?: boolean;
-    @Input() dc?: 'us' | 'eu'; // which data-center
+    @Input() dc?: 'us' | 'eu' | 'au'; // which data-center
 
     async ngOnInit() {
         await this.setup();

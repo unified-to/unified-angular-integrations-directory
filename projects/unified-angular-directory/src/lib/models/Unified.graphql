@@ -4,6 +4,7 @@ enum ENUM_ApiCallType {
 	login
 	webhook
 	inbound
+	mcp
 }
 
 enum ENUM_IntegrationAuthType {
@@ -36,10 +37,10 @@ enum ENUM_IntegrationCategory {
 	repo
 	metadata
 	calendar
+	verification
 }
 
 enum ENUM_IntegrationPermission {
-	auth_login
 	accounting_account_read
 	accounting_account_write
 	accounting_transaction_read
@@ -48,17 +49,37 @@ enum ENUM_IntegrationPermission {
 	accounting_journal_write
 	accounting_invoice_read
 	accounting_invoice_write
+	accounting_bill_read
+	accounting_bill_write
+	accounting_creditmemo_read
+	accounting_creditmemo_write
 	accounting_contact_read
 	accounting_contact_write
+	accounting_expense_read
+	accounting_expense_write
 	accounting_taxrate_read
 	accounting_taxrate_write
 	accounting_organization_read
 	accounting_order_read
 	accounting_order_write
+	accounting_purchaseorder_read
+	accounting_purchaseorder_write
+	accounting_salesorder_read
+	accounting_salesorder_write
 	accounting_report_read
 	accounting_report_write
+	accounting_trialbalance_read
+	accounting_trialbalance_write
+	accounting_profitloss_read
+	accounting_profitloss_write
+	accounting_balancesheet_read
+	accounting_balancesheet_write
+	accounting_category_read
+	accounting_category_write
 	payment_payment_read
 	payment_payment_write
+	accounting_cashflow_read
+	accounting_cashflow_write
 	payment_payout_read
 	payment_refund_read
 	payment_link_read
@@ -75,6 +96,9 @@ enum ENUM_IntegrationPermission {
 	commerce_location_write
 	commerce_review_read
 	commerce_review_write
+	verification_package_read
+	verification_request_read
+	verification_request_write
 	ats_activity_read
 	ats_activity_write
 	ats_application_read
@@ -87,6 +111,7 @@ enum ENUM_IntegrationPermission {
 	ats_job_read
 	ats_job_write
 	ats_company_read
+	ats_company_write
 	ats_document_read
 	ats_document_write
 	ats_scorecard_read
@@ -113,6 +138,8 @@ enum ENUM_IntegrationPermission {
 	ticketing_ticket_write
 	ticketing_note_read
 	ticketing_note_write
+	ticketing_category_read
+	ticketing_category_write
 	hris_employee_read
 	hris_employee_write
 	hris_group_read
@@ -121,12 +148,18 @@ enum ENUM_IntegrationPermission {
 	hris_payslip_write
 	hris_timeoff_read
 	hris_timeoff_write
+	hris_timeshift_read
+	hris_timeshift_write
 	hris_company_read
 	hris_company_write
 	hris_location_read
 	hris_location_write
 	hris_device_read
 	hris_device_write
+	hris_deduction_read
+	hris_deduction_write
+	hris_benefit_read
+	hris_benefit_write
 	uc_call_read
 	uc_contact_read
 	uc_contact_write
@@ -139,6 +172,8 @@ enum ENUM_IntegrationPermission {
 	genai_model_read
 	genai_prompt_read
 	genai_prompt_write
+	genai_embedding_read
+	genai_embedding_write
 	messaging_message_read
 	messaging_message_write
 	messaging_channel_read
@@ -152,6 +187,7 @@ enum ENUM_IntegrationPermission {
 	task_project_write
 	task_task_read
 	task_task_write
+	task_change_read
 	task_comment_read
 	task_comment_write
 	scim_users_read
@@ -183,7 +219,6 @@ enum ENUM_IntegrationPermission {
 	calendar_event_read
 	calendar_event_write
 	calendar_busy_read
-	calendar_busy_write
 	calendar_link_read
 	calendar_link_write
 	calendar_recording_read
@@ -205,7 +240,6 @@ enum ENUM_IssueStatus {
 	ON_HOLD
 	VALIDATING
 	REJECTED
-	UP_NEXT
 }
 
 enum ENUM_ObjectType {
@@ -214,10 +248,20 @@ enum ENUM_ObjectType {
 	accounting_journal
 	accounting_contact
 	accounting_invoice
+	accounting_bill
+	accounting_creditmemo
 	accounting_taxrate
 	accounting_organization
 	accounting_order
+	accounting_salesorder
+	accounting_purchaseorder
 	accounting_report
+	accounting_balancesheet
+	accounting_profitloss
+	accounting_trialbalance
+	accounting_category
+	accounting_expense
+	accounting_cashflow
 	payment_payment
 	payment_link
 	payment_payout
@@ -228,6 +272,8 @@ enum ENUM_ObjectType {
 	commerce_inventory
 	commerce_location
 	commerce_review
+	verification_package
+	verification_request
 	ats_activity
 	ats_application
 	ats_applicationstatus
@@ -250,12 +296,16 @@ enum ENUM_ObjectType {
 	hris_company
 	hris_location
 	hris_device
+	hris_timeshift
+	hris_deduction
+	hris_benefit
 	martech_list
 	martech_member
 	passthrough
 	ticketing_note
 	ticketing_ticket
 	ticketing_customer
+	ticketing_category
 	uc_contact
 	uc_call
 	uc_comment
@@ -265,6 +315,7 @@ enum ENUM_ObjectType {
 	storage_file
 	genai_model
 	genai_prompt
+	genai_embedding
 	messaging_message
 	messaging_channel
 	kms_space
@@ -273,6 +324,7 @@ enum ENUM_ObjectType {
 	task_project
 	task_task
 	task_comment
+	task_change
 	scim_users
 	scim_groups
 	lms_course
@@ -573,6 +625,7 @@ When integration.auth_type = "other", this field contains the authentication cre
 	api_url: String
 	authorize_url: String
 	token_url: String
+	refresh_url: String
 """
 the PEM X.509 certificate in Base64 ASCII format
 """
@@ -609,6 +662,7 @@ When integration.auth_type = "other", this field contains the authentication cre
 	api_url: String
 	authorize_url: String
 	token_url: String
+	refresh_url: String
 """
 the PEM X.509 certificate in Base64 ASCII format
 """
@@ -695,6 +749,7 @@ This integration is new and is still considered "beta"
 	tested_at: DateTime
 	sandbox: object
 	partnership: object
+	saml: object
 	description: String
 	api: object
 	featured: Boolean
@@ -772,6 +827,7 @@ This integration is new and is still considered "beta"
 	tested_at: DateTime
 	sandbox: object
 	partnership: object
+	saml: object
 	description: String
 	api: object
 	featured: Boolean
@@ -795,6 +851,7 @@ objects that we map from in the integration
 	list_sort_by_updated_at: ENUM_SupportInboundType
 	list_updated_gte: ENUM_SupportInboundType
 	list_user_id: ENUM_SupportInboundType
+	list_user_mentioned_id: ENUM_SupportInboundType
 	list_customer_id: ENUM_SupportInboundType
 	list_company_id: ENUM_SupportInboundType
 	list_contact_id: ENUM_SupportInboundType
@@ -807,37 +864,65 @@ objects that we map from in the integration
 	list_query: ENUM_SupportInboundType
 	list_limit: ENUM_SupportInboundType
 	list_offset: ENUM_SupportInboundType
+	list_root_id: ENUM_SupportInboundType
+	list_list_id: ENUM_SupportInboundType
+	list_interview_id: ENUM_SupportInboundType
+	list_location_id: ENUM_SupportInboundType
+	list_collection_id: ENUM_SupportInboundType
+	list_ticket_id: ENUM_SupportInboundType
+	list_parent_id: ENUM_SupportInboundType
+	list_account_id: ENUM_SupportInboundType
+	list_item_id: ENUM_SupportInboundType
+	list_space_id: ENUM_SupportInboundType
+	list_channel_id: ENUM_SupportInboundType
+	list_page_id: ENUM_SupportInboundType
+	list_type: ENUM_SupportInboundType
+	list_link_id: ENUM_SupportInboundType
+	list_project_id: ENUM_SupportInboundType
+	list_item_variant_id: ENUM_SupportInboundType
+	list_raw_fields: ENUM_SupportInboundType
+	list_student_id: ENUM_SupportInboundType
+	list_class_id: ENUM_SupportInboundType
+	list_instructor_id: ENUM_SupportInboundType
+	list_course_id: ENUM_SupportInboundType
+	list_teacher_id: ENUM_SupportInboundType
+	list_repo_id: ENUM_SupportInboundType
+	list_org_id: ENUM_SupportInboundType
+	list_calendar_id: ENUM_SupportInboundType
+	list_task_id: ENUM_SupportInboundType
 	search_twitter: ENUM_SupportInboundType
 	search_name: ENUM_SupportInboundType
 	search_linkedinurl: ENUM_SupportInboundType
 	search_email: ENUM_SupportInboundType
 	search_domain: ENUM_SupportInboundType
-	list_parent_id: ENUM_SupportInboundType
-	list_root_id: ENUM_SupportInboundType
-	list_account_id: ENUM_SupportInboundType
-	list_interview_id: ENUM_SupportInboundType
-	list_list_id: ENUM_SupportInboundType
-	list_ticket_id: ENUM_SupportInboundType
-	list_collection_id: ENUM_SupportInboundType
-	list_location_id: ENUM_SupportInboundType
-	list_item_id: ENUM_SupportInboundType
-	list_type: ENUM_SupportInboundType
-	list_space_id: ENUM_SupportInboundType
-	list_channel_id: ENUM_SupportInboundType
-	list_page_id: ENUM_SupportInboundType
-	list_link_id: ENUM_SupportInboundType
-	list_project_id: ENUM_SupportInboundType
-	list_item_variant_id: ENUM_SupportInboundType
-	list_raw_fields: ENUM_SupportInboundType
-	list_course_id: ENUM_SupportInboundType
-	list_student_id: ENUM_SupportInboundType
-	list_instructor_id: ENUM_SupportInboundType
-	list_class_id: ENUM_SupportInboundType
-	list_repo_id: ENUM_SupportInboundType
-	list_org_id: ENUM_SupportInboundType
-	list_calendar_id: ENUM_SupportInboundType
 	list_event_id: ENUM_SupportInboundType
-	list_task_id: ENUM_SupportInboundType
+	list_start_gte: ENUM_SupportInboundType
+	list_end_lt: ENUM_SupportInboundType
+"""
+@deprecated; use list_end_lt
+"""
+	list_end_le: ENUM_SupportInboundType
+	list_lead_id: ENUM_SupportInboundType
+	list_call_id: ENUM_SupportInboundType
+	list_document_id: ENUM_SupportInboundType
+	list_payment_id: ENUM_SupportInboundType
+	list_status: ENUM_SupportInboundType
+	list_branch_id: ENUM_SupportInboundType
+	list_pipeline_id: ENUM_SupportInboundType
+	list_category_id: ENUM_SupportInboundType
+	list_package_id: ENUM_SupportInboundType
+	list_expand: ENUM_SupportInboundType
+"""
+@deprecated; use list_expand
+"""
+	list_expand_recurring_events: ENUM_SupportInboundType
+	native_webhook_parent_id: ENUM_SupportInboundType
+	native_webhook_project_id: ENUM_SupportInboundType
+	native_webhook_company_id: ENUM_SupportInboundType
+	native_webhook_task_id: ENUM_SupportInboundType
+	native_webhook_channel_id: ENUM_SupportInboundType
+	native_webhook_calendar_id: ENUM_SupportInboundType
+	native_webhook_event_id: ENUM_SupportInboundType
 	virtual_webhook_updated_gte: ENUM_SupportInboundType
 	virtual_webhook_limit: ENUM_SupportInboundType
 	virtual_webhook_channel_id: ENUM_SupportInboundType
@@ -846,18 +931,40 @@ objects that we map from in the integration
 	virtual_webhook_deal_id: ENUM_SupportInboundType
 	virtual_webhook_company_id: ENUM_SupportInboundType
 	virtual_webhook_user_id: ENUM_SupportInboundType
+	virtual_webhook_user_mentioned_id: ENUM_SupportInboundType
 	virtual_webhook_type: ENUM_SupportInboundType
 	virtual_webhook_ticket_id: ENUM_SupportInboundType
-	native_webhook_parent_id: ENUM_SupportInboundType
-	native_webhook_project_id: ENUM_SupportInboundType
+	virtual_webhook_expand: ENUM_SupportInboundType
+	virtual_webhook_status: ENUM_SupportInboundType
+	virtual_webhook_start_gte: ENUM_SupportInboundType
+	virtual_webhook_end_lt: ENUM_SupportInboundType
+"""
+@deprecated; use virtual_webhook_end_lt
+"""
+	virtual_webhook_end_le: ENUM_SupportInboundType
+	virtual_webhook_task_id: ENUM_SupportInboundType
+	virtual_webhook_space_id: ENUM_SupportInboundType
+	virtual_webhook_repo_id: ENUM_SupportInboundType
+	virtual_webhook_project_id: ENUM_SupportInboundType
+	virtual_webhook_pipeline_id: ENUM_SupportInboundType
+	virtual_webhook_page_id: ENUM_SupportInboundType
+	virtual_webhook_org_id: ENUM_SupportInboundType
+	virtual_webhook_location_id: ENUM_SupportInboundType
+	virtual_webhook_list_id: ENUM_SupportInboundType
 	virtual_webhook_job_id: ENUM_SupportInboundType
-	list_start_gte: ENUM_SupportInboundType
-	list_end_le: ENUM_SupportInboundType
-	list_lead_id: ENUM_SupportInboundType
-	list_call_id: ENUM_SupportInboundType
-	list_document_id: ENUM_SupportInboundType
-	list_payment_id: ENUM_SupportInboundType
-	list_branch_id: ENUM_SupportInboundType
+	virtual_webhook_item_id: ENUM_SupportInboundType
+	virtual_webhook_fields: ENUM_SupportInboundType
+	virtual_webhook_event_id: ENUM_SupportInboundType
+	virtual_webhook_customer_id: ENUM_SupportInboundType
+	virtual_webhook_collection_id: ENUM_SupportInboundType
+	virtual_webhook_candidate_id: ENUM_SupportInboundType
+	virtual_webhook_call_id: ENUM_SupportInboundType
+	virtual_webhook_branch_id: ENUM_SupportInboundType
+	virtual_webhook_application_id: ENUM_SupportInboundType
+	virtual_webhook_item_variant_id: ENUM_SupportInboundType
+	virtual_webhook_calendar_id: ENUM_SupportInboundType
+	virtual_webhook_lead_id: ENUM_SupportInboundType
+	list_payslip_id: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -876,6 +983,7 @@ objects that we map from in the integration
 	list_sort_by_updated_at: ENUM_SupportInboundType
 	list_updated_gte: ENUM_SupportInboundType
 	list_user_id: ENUM_SupportInboundType
+	list_user_mentioned_id: ENUM_SupportInboundType
 	list_customer_id: ENUM_SupportInboundType
 	list_company_id: ENUM_SupportInboundType
 	list_contact_id: ENUM_SupportInboundType
@@ -888,37 +996,65 @@ objects that we map from in the integration
 	list_query: ENUM_SupportInboundType
 	list_limit: ENUM_SupportInboundType
 	list_offset: ENUM_SupportInboundType
+	list_root_id: ENUM_SupportInboundType
+	list_list_id: ENUM_SupportInboundType
+	list_interview_id: ENUM_SupportInboundType
+	list_location_id: ENUM_SupportInboundType
+	list_collection_id: ENUM_SupportInboundType
+	list_ticket_id: ENUM_SupportInboundType
+	list_parent_id: ENUM_SupportInboundType
+	list_account_id: ENUM_SupportInboundType
+	list_item_id: ENUM_SupportInboundType
+	list_space_id: ENUM_SupportInboundType
+	list_channel_id: ENUM_SupportInboundType
+	list_page_id: ENUM_SupportInboundType
+	list_type: ENUM_SupportInboundType
+	list_link_id: ENUM_SupportInboundType
+	list_project_id: ENUM_SupportInboundType
+	list_item_variant_id: ENUM_SupportInboundType
+	list_raw_fields: ENUM_SupportInboundType
+	list_student_id: ENUM_SupportInboundType
+	list_class_id: ENUM_SupportInboundType
+	list_instructor_id: ENUM_SupportInboundType
+	list_course_id: ENUM_SupportInboundType
+	list_teacher_id: ENUM_SupportInboundType
+	list_repo_id: ENUM_SupportInboundType
+	list_org_id: ENUM_SupportInboundType
+	list_calendar_id: ENUM_SupportInboundType
+	list_task_id: ENUM_SupportInboundType
 	search_twitter: ENUM_SupportInboundType
 	search_name: ENUM_SupportInboundType
 	search_linkedinurl: ENUM_SupportInboundType
 	search_email: ENUM_SupportInboundType
 	search_domain: ENUM_SupportInboundType
-	list_parent_id: ENUM_SupportInboundType
-	list_root_id: ENUM_SupportInboundType
-	list_account_id: ENUM_SupportInboundType
-	list_interview_id: ENUM_SupportInboundType
-	list_list_id: ENUM_SupportInboundType
-	list_ticket_id: ENUM_SupportInboundType
-	list_collection_id: ENUM_SupportInboundType
-	list_location_id: ENUM_SupportInboundType
-	list_item_id: ENUM_SupportInboundType
-	list_type: ENUM_SupportInboundType
-	list_space_id: ENUM_SupportInboundType
-	list_channel_id: ENUM_SupportInboundType
-	list_page_id: ENUM_SupportInboundType
-	list_link_id: ENUM_SupportInboundType
-	list_project_id: ENUM_SupportInboundType
-	list_item_variant_id: ENUM_SupportInboundType
-	list_raw_fields: ENUM_SupportInboundType
-	list_course_id: ENUM_SupportInboundType
-	list_student_id: ENUM_SupportInboundType
-	list_instructor_id: ENUM_SupportInboundType
-	list_class_id: ENUM_SupportInboundType
-	list_repo_id: ENUM_SupportInboundType
-	list_org_id: ENUM_SupportInboundType
-	list_calendar_id: ENUM_SupportInboundType
 	list_event_id: ENUM_SupportInboundType
-	list_task_id: ENUM_SupportInboundType
+	list_start_gte: ENUM_SupportInboundType
+	list_end_lt: ENUM_SupportInboundType
+"""
+@deprecated; use list_end_lt
+"""
+	list_end_le: ENUM_SupportInboundType
+	list_lead_id: ENUM_SupportInboundType
+	list_call_id: ENUM_SupportInboundType
+	list_document_id: ENUM_SupportInboundType
+	list_payment_id: ENUM_SupportInboundType
+	list_status: ENUM_SupportInboundType
+	list_branch_id: ENUM_SupportInboundType
+	list_pipeline_id: ENUM_SupportInboundType
+	list_category_id: ENUM_SupportInboundType
+	list_package_id: ENUM_SupportInboundType
+	list_expand: ENUM_SupportInboundType
+"""
+@deprecated; use list_expand
+"""
+	list_expand_recurring_events: ENUM_SupportInboundType
+	native_webhook_parent_id: ENUM_SupportInboundType
+	native_webhook_project_id: ENUM_SupportInboundType
+	native_webhook_company_id: ENUM_SupportInboundType
+	native_webhook_task_id: ENUM_SupportInboundType
+	native_webhook_channel_id: ENUM_SupportInboundType
+	native_webhook_calendar_id: ENUM_SupportInboundType
+	native_webhook_event_id: ENUM_SupportInboundType
 	virtual_webhook_updated_gte: ENUM_SupportInboundType
 	virtual_webhook_limit: ENUM_SupportInboundType
 	virtual_webhook_channel_id: ENUM_SupportInboundType
@@ -927,18 +1063,40 @@ objects that we map from in the integration
 	virtual_webhook_deal_id: ENUM_SupportInboundType
 	virtual_webhook_company_id: ENUM_SupportInboundType
 	virtual_webhook_user_id: ENUM_SupportInboundType
+	virtual_webhook_user_mentioned_id: ENUM_SupportInboundType
 	virtual_webhook_type: ENUM_SupportInboundType
 	virtual_webhook_ticket_id: ENUM_SupportInboundType
-	native_webhook_parent_id: ENUM_SupportInboundType
-	native_webhook_project_id: ENUM_SupportInboundType
+	virtual_webhook_expand: ENUM_SupportInboundType
+	virtual_webhook_status: ENUM_SupportInboundType
+	virtual_webhook_start_gte: ENUM_SupportInboundType
+	virtual_webhook_end_lt: ENUM_SupportInboundType
+"""
+@deprecated; use virtual_webhook_end_lt
+"""
+	virtual_webhook_end_le: ENUM_SupportInboundType
+	virtual_webhook_task_id: ENUM_SupportInboundType
+	virtual_webhook_space_id: ENUM_SupportInboundType
+	virtual_webhook_repo_id: ENUM_SupportInboundType
+	virtual_webhook_project_id: ENUM_SupportInboundType
+	virtual_webhook_pipeline_id: ENUM_SupportInboundType
+	virtual_webhook_page_id: ENUM_SupportInboundType
+	virtual_webhook_org_id: ENUM_SupportInboundType
+	virtual_webhook_location_id: ENUM_SupportInboundType
+	virtual_webhook_list_id: ENUM_SupportInboundType
 	virtual_webhook_job_id: ENUM_SupportInboundType
-	list_start_gte: ENUM_SupportInboundType
-	list_end_le: ENUM_SupportInboundType
-	list_lead_id: ENUM_SupportInboundType
-	list_call_id: ENUM_SupportInboundType
-	list_document_id: ENUM_SupportInboundType
-	list_payment_id: ENUM_SupportInboundType
-	list_branch_id: ENUM_SupportInboundType
+	virtual_webhook_item_id: ENUM_SupportInboundType
+	virtual_webhook_fields: ENUM_SupportInboundType
+	virtual_webhook_event_id: ENUM_SupportInboundType
+	virtual_webhook_customer_id: ENUM_SupportInboundType
+	virtual_webhook_collection_id: ENUM_SupportInboundType
+	virtual_webhook_candidate_id: ENUM_SupportInboundType
+	virtual_webhook_call_id: ENUM_SupportInboundType
+	virtual_webhook_branch_id: ENUM_SupportInboundType
+	virtual_webhook_application_id: ENUM_SupportInboundType
+	virtual_webhook_item_variant_id: ENUM_SupportInboundType
+	virtual_webhook_calendar_id: ENUM_SupportInboundType
+	virtual_webhook_lead_id: ENUM_SupportInboundType
+	list_payslip_id: ENUM_SupportInboundType
 }
 
 input Invoice_Input {
@@ -1133,6 +1291,7 @@ The interval (in minutes) to check for updated/new objets.  Minimum is 5 minutes
 	filters: Map_string_string
 	db_type: ENUM_WebhookDatabaseType
 	db_url: String
+	db_schema: String
 	db_name_prefix: String
 	is_paused: Boolean
 }
@@ -1174,6 +1333,7 @@ An array of the most revent virtual webhook runs
 	filters: Map_string_string
 	db_type: ENUM_WebhookDatabaseType
 	db_url: String
+	db_schema: String
 	db_name_prefix: String
 	is_paused: Boolean
 }
@@ -1192,9 +1352,13 @@ random string
 """
 	nonce: String!
 """
-HMAC-SHA1(workspace.secret, data + nonce)
+@deprecated; use sig256 instead
 """
-	sig: String!
+	sig: String
+"""
+HMAC-SHA256(workspace.secret, data + nonce)
+"""
+	sig256: String
 	type: ENUM_WebhookDataType!
 	external_xref: String
 }
@@ -1213,9 +1377,13 @@ random string
 """
 	nonce: String!
 """
-HMAC-SHA1(workspace.secret, data + nonce)
+@deprecated; use sig256 instead
 """
-	sig: String!
+	sig: String
+"""
+HMAC-SHA256(workspace.secret, data + nonce)
+"""
+	sig256: String
 	type: ENUM_WebhookDataType!
 	external_xref: String
 }
@@ -1256,6 +1424,19 @@ when set, users of the same domain will auto-join this workspace.  must not be g
 	custom_api_domain: String
 	slow_fields_opt_in: Boolean
 	notion_verification_token: String
+	favicon_url: String
+	is_baa: Boolean
+	saml_integration_type: String
+	saml_idp_url: String
+	saml_idp_entity_id: String
+"""
+the PEM X.509 certificate in Base64 ASCII format
+"""
+	saml_pem: String
+"""
+if true, only allow SAML login
+"""
+	saml_only_login: Boolean
 }
 
 type Workspace {
@@ -1312,6 +1493,19 @@ when set, users of the same domain will auto-join this workspace.  must not be g
 	custom_api_domain: String
 	slow_fields_opt_in: Boolean
 	notion_verification_token: String
+	favicon_url: String
+	is_baa: Boolean
+	saml_integration_type: String
+	saml_idp_url: String
+	saml_idp_entity_id: String
+"""
+the PEM X.509 certificate in Base64 ASCII format
+"""
+	saml_pem: String
+"""
+if true, only allow SAML login
+"""
+	saml_only_login: Boolean
 }
 
 input WorkspaceIntegration_Input {
@@ -1324,6 +1518,7 @@ input WorkspaceIntegration_Input {
 	api_url: String
 	authorize_url: String
 	token_url: String
+	refresh_url: String
 	base_url: String
 """
 the PEM X.509 certificate in Base64 ASCII format
@@ -1351,6 +1546,7 @@ type WorkspaceIntegration {
 	api_url: String
 	authorize_url: String
 	token_url: String
+	refresh_url: String
 	base_url: String
 """
 the PEM X.509 certificate in Base64 ASCII format

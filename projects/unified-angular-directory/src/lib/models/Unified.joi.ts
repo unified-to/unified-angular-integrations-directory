@@ -157,6 +157,10 @@ export const joiIntegrationPermission = Joi.string().valid(
 	'hris_location_write',
 	'hris_device_read',
 	'hris_device_write',
+	'hris_deduction_read',
+	'hris_deduction_write',
+	'hris_benefit_read',
+	'hris_benefit_write',
 	'uc_call_read',
 	'uc_contact_read',
 	'uc_contact_write',
@@ -291,6 +295,8 @@ export const joiObjectType = Joi.string().valid(
 	'hris_location',
 	'hris_device',
 	'hris_timeshift',
+	'hris_deduction',
+	'hris_benefit',
 	'martech_list',
 	'martech_member',
 	'passthrough',
@@ -473,6 +479,7 @@ export const joiIntegrationSupport = Joi.object({
 	list_sort_by_updated_at: joiSupportInboundType.optional(),
 	list_updated_gte: joiSupportInboundType.optional(),
 	list_user_id: joiSupportInboundType.optional(),
+	list_user_mentioned_id: joiSupportInboundType.optional(),
 	list_customer_id: joiSupportInboundType.optional(),
 	list_company_id: joiSupportInboundType.optional(),
 	list_contact_id: joiSupportInboundType.optional(),
@@ -546,6 +553,7 @@ export const joiIntegrationSupport = Joi.object({
 	virtual_webhook_deal_id: joiSupportInboundType.optional(),
 	virtual_webhook_company_id: joiSupportInboundType.optional(),
 	virtual_webhook_user_id: joiSupportInboundType.optional(),
+	virtual_webhook_user_mentioned_id: joiSupportInboundType.optional(),
 	virtual_webhook_type: joiSupportInboundType.optional(),
 	virtual_webhook_ticket_id: joiSupportInboundType.optional(),
 	virtual_webhook_expand: joiSupportInboundType.optional(),
@@ -575,6 +583,7 @@ export const joiIntegrationSupport = Joi.object({
 	virtual_webhook_item_variant_id: joiSupportInboundType.optional(),
 	virtual_webhook_calendar_id: joiSupportInboundType.optional(),
 	virtual_webhook_lead_id: joiSupportInboundType.optional(),
+	list_payslip_id: joiSupportInboundType.optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({

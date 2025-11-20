@@ -965,6 +965,7 @@ objects that we map from in the integration
 	virtual_webhook_calendar_id: ENUM_SupportInboundType
 	virtual_webhook_lead_id: ENUM_SupportInboundType
 	list_payslip_id: ENUM_SupportInboundType
+	list_benefit_id: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -1097,6 +1098,7 @@ objects that we map from in the integration
 	virtual_webhook_calendar_id: ENUM_SupportInboundType
 	virtual_webhook_lead_id: ENUM_SupportInboundType
 	list_payslip_id: ENUM_SupportInboundType
+	list_benefit_id: ENUM_SupportInboundType
 }
 
 input Invoice_Input {

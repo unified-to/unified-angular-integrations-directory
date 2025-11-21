@@ -97,6 +97,8 @@ export const joiIntegrationPermission = Joi.string().valid(
 	'commerce_location_write',
 	'commerce_review_read',
 	'commerce_review_write',
+	'commerce_saleschannel_read',
+	'commerce_saleschannel_write',
 	'verification_package_read',
 	'verification_request_read',
 	'verification_request_write',
@@ -270,6 +272,7 @@ export const joiObjectType = Joi.string().valid(
 	'commerce_inventory',
 	'commerce_location',
 	'commerce_review',
+	'commerce_saleschannel',
 	'verification_package',
 	'verification_request',
 	'ats_activity',
@@ -584,6 +587,9 @@ export const joiIntegrationSupport = Joi.object({
 	virtual_webhook_calendar_id: joiSupportInboundType.optional(),
 	virtual_webhook_lead_id: joiSupportInboundType.optional(),
 	list_payslip_id: joiSupportInboundType.optional(),
+	list_benefit_id: joiSupportInboundType.optional(),
+	list_saleschannel_id: joiSupportInboundType.optional(),
+	virtual_webhook_saleschannel_id: Joi.string().allow(null, '').optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({

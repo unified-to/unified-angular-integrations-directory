@@ -11,6 +11,7 @@ components:
       - login
       - webhook
       - inbound
+      - mcp
     IntegrationAuthType:
       type: string
       enum:
@@ -43,10 +44,10 @@ components:
       - repo
       - metadata
       - calendar
+      - verification
     IntegrationPermission:
       type: string
       enum:
-      - auth_login
       - accounting_account_read
       - accounting_account_write
       - accounting_transaction_read
@@ -55,17 +56,37 @@ components:
       - accounting_journal_write
       - accounting_invoice_read
       - accounting_invoice_write
+      - accounting_bill_read
+      - accounting_bill_write
+      - accounting_creditmemo_read
+      - accounting_creditmemo_write
       - accounting_contact_read
       - accounting_contact_write
+      - accounting_expense_read
+      - accounting_expense_write
       - accounting_taxrate_read
       - accounting_taxrate_write
       - accounting_organization_read
       - accounting_order_read
       - accounting_order_write
+      - accounting_purchaseorder_read
+      - accounting_purchaseorder_write
+      - accounting_salesorder_read
+      - accounting_salesorder_write
       - accounting_report_read
       - accounting_report_write
+      - accounting_trialbalance_read
+      - accounting_trialbalance_write
+      - accounting_profitloss_read
+      - accounting_profitloss_write
+      - accounting_balancesheet_read
+      - accounting_balancesheet_write
+      - accounting_category_read
+      - accounting_category_write
       - payment_payment_read
       - payment_payment_write
+      - accounting_cashflow_read
+      - accounting_cashflow_write
       - payment_payout_read
       - payment_refund_read
       - payment_link_read
@@ -82,6 +103,11 @@ components:
       - commerce_location_write
       - commerce_review_read
       - commerce_review_write
+      - commerce_saleschannel_read
+      - commerce_saleschannel_write
+      - verification_package_read
+      - verification_request_read
+      - verification_request_write
       - ats_activity_read
       - ats_activity_write
       - ats_application_read
@@ -94,6 +120,7 @@ components:
       - ats_job_read
       - ats_job_write
       - ats_company_read
+      - ats_company_write
       - ats_document_read
       - ats_document_write
       - ats_scorecard_read
@@ -120,6 +147,8 @@ components:
       - ticketing_ticket_write
       - ticketing_note_read
       - ticketing_note_write
+      - ticketing_category_read
+      - ticketing_category_write
       - hris_employee_read
       - hris_employee_write
       - hris_group_read
@@ -128,12 +157,18 @@ components:
       - hris_payslip_write
       - hris_timeoff_read
       - hris_timeoff_write
+      - hris_timeshift_read
+      - hris_timeshift_write
       - hris_company_read
       - hris_company_write
       - hris_location_read
       - hris_location_write
       - hris_device_read
       - hris_device_write
+      - hris_deduction_read
+      - hris_deduction_write
+      - hris_benefit_read
+      - hris_benefit_write
       - uc_call_read
       - uc_contact_read
       - uc_contact_write
@@ -146,6 +181,8 @@ components:
       - genai_model_read
       - genai_prompt_read
       - genai_prompt_write
+      - genai_embedding_read
+      - genai_embedding_write
       - messaging_message_read
       - messaging_message_write
       - messaging_channel_read
@@ -159,6 +196,7 @@ components:
       - task_project_write
       - task_task_read
       - task_task_write
+      - task_change_read
       - task_comment_read
       - task_comment_write
       - scim_users_read
@@ -190,7 +228,6 @@ components:
       - calendar_event_read
       - calendar_event_write
       - calendar_busy_read
-      - calendar_busy_write
       - calendar_link_read
       - calendar_link_write
       - calendar_recording_read
@@ -212,7 +249,6 @@ components:
       - ON_HOLD
       - VALIDATING
       - REJECTED
-      - UP_NEXT
     ObjectType:
       type: string
       enum:
@@ -221,10 +257,20 @@ components:
       - accounting_journal
       - accounting_contact
       - accounting_invoice
+      - accounting_bill
+      - accounting_creditmemo
       - accounting_taxrate
       - accounting_organization
       - accounting_order
+      - accounting_salesorder
+      - accounting_purchaseorder
       - accounting_report
+      - accounting_balancesheet
+      - accounting_profitloss
+      - accounting_trialbalance
+      - accounting_category
+      - accounting_expense
+      - accounting_cashflow
       - payment_payment
       - payment_link
       - payment_payout
@@ -235,6 +281,9 @@ components:
       - commerce_inventory
       - commerce_location
       - commerce_review
+      - commerce_saleschannel
+      - verification_package
+      - verification_request
       - ats_activity
       - ats_application
       - ats_applicationstatus
@@ -257,12 +306,16 @@ components:
       - hris_company
       - hris_location
       - hris_device
+      - hris_timeshift
+      - hris_deduction
+      - hris_benefit
       - martech_list
       - martech_member
       - passthrough
       - ticketing_note
       - ticketing_ticket
       - ticketing_customer
+      - ticketing_category
       - uc_contact
       - uc_call
       - uc_comment
@@ -272,6 +325,7 @@ components:
       - storage_file
       - genai_model
       - genai_prompt
+      - genai_embedding
       - messaging_message
       - messaging_channel
       - kms_space
@@ -280,6 +334,7 @@ components:
       - task_project
       - task_task
       - task_comment
+      - task_change
       - scim_users
       - scim_groups
       - lms_course
@@ -487,6 +542,8 @@ components:
           type: string
         token_url:
           type: string
+        refresh_url:
+          type: string
         pem:
           type: string
           description: the PEM X.509 certificate in Base64 ASCII format
@@ -567,6 +624,8 @@ components:
           type: object
         partnership:
           type: object
+        saml:
+          type: object
         description:
           type: string
         api:
@@ -615,6 +674,8 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         list_user_id:
           $ref: "#/components/schemas/SupportInboundType"
+        list_user_mentioned_id:
+          $ref: "#/components/schemas/SupportInboundType"
         list_customer_id:
           $ref: "#/components/schemas/SupportInboundType"
         list_company_id:
@@ -639,6 +700,58 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         list_offset:
           $ref: "#/components/schemas/SupportInboundType"
+        list_root_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_list_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_interview_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_location_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_collection_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_ticket_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_parent_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_account_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_item_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_space_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_channel_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_page_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_type:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_link_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_project_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_item_variant_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_raw_fields:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_student_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_class_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_instructor_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_course_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_teacher_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_repo_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_org_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_calendar_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_task_id:
+          $ref: "#/components/schemas/SupportInboundType"
         search_twitter:
           $ref: "#/components/schemas/SupportInboundType"
         search_name:
@@ -649,57 +762,51 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         search_domain:
           $ref: "#/components/schemas/SupportInboundType"
-        list_parent_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_root_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_account_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_interview_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_list_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_ticket_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_collection_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_location_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_item_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_type:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_space_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_channel_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_page_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_link_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_project_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_item_variant_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_raw_fields:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_course_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_student_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_instructor_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_class_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_repo_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_org_id:
-          $ref: "#/components/schemas/SupportInboundType"
-        list_calendar_id:
-          $ref: "#/components/schemas/SupportInboundType"
         list_event_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_task_id:
+        list_start_gte:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_end_lt:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_end_le:
+          $ref: "#/components/schemas/SupportInboundType"
+          description: @deprecated; use list_end_lt
+        list_lead_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_call_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_document_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_payment_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_status:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_branch_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_pipeline_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_category_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_package_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_expand:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_expand_recurring_events:
+          $ref: "#/components/schemas/SupportInboundType"
+          description: @deprecated; use list_expand
+        native_webhook_parent_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_project_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_company_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_task_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_channel_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_calendar_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_event_id:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_updated_gte:
           $ref: "#/components/schemas/SupportInboundType"
@@ -717,30 +824,75 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_user_id:
           $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_user_mentioned_id:
+          $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_type:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_ticket_id:
           $ref: "#/components/schemas/SupportInboundType"
-        native_webhook_parent_id:
+        virtual_webhook_expand:
           $ref: "#/components/schemas/SupportInboundType"
-        native_webhook_project_id:
+        virtual_webhook_status:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_start_gte:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_end_lt:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_end_le:
+          $ref: "#/components/schemas/SupportInboundType"
+          description: @deprecated; use virtual_webhook_end_lt
+        virtual_webhook_task_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_space_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_repo_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_project_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_pipeline_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_page_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_org_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_location_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_list_id:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_job_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_start_gte:
+        virtual_webhook_item_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_end_le:
+        virtual_webhook_fields:
           $ref: "#/components/schemas/SupportInboundType"
-        list_lead_id:
+        virtual_webhook_event_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_call_id:
+        virtual_webhook_customer_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_document_id:
+        virtual_webhook_collection_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_payment_id:
+        virtual_webhook_candidate_id:
           $ref: "#/components/schemas/SupportInboundType"
-        list_branch_id:
+        virtual_webhook_call_id:
           $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_branch_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_application_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_item_variant_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_calendar_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_lead_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_payslip_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_benefit_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_saleschannel_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_saleschannel_id:
+          type: string
       required:
 
     Invoice:
@@ -965,6 +1117,8 @@ components:
           $ref: "#/components/schemas/WebhookDatabaseType"
         db_url:
           type: string
+        db_schema:
+          type: string
         db_name_prefix:
           type: string
         is_paused:
@@ -989,7 +1143,10 @@ components:
           description: random string
         sig:
           type: string
-          description: HMAC-SHA1(workspace.secret, data + nonce)
+          description: @deprecated; use sig256 instead
+        sig256:
+          type: string
+          description: HMAC-SHA256(workspace.secret, data + nonce)
         type:
           $ref: "#/components/schemas/WebhookDataType"
         external_xref:
@@ -998,7 +1155,6 @@ components:
         - data
         - webhook
         - nonce
-        - sig
         - type
     Workspace:
       type: object
@@ -1076,6 +1232,22 @@ components:
           type: boolean
         notion_verification_token:
           type: string
+        favicon_url:
+          type: string
+        is_baa:
+          type: boolean
+        saml_integration_type:
+          type: string
+        saml_idp_url:
+          type: string
+        saml_idp_entity_id:
+          type: string
+        saml_pem:
+          type: string
+          description: the PEM X.509 certificate in Base64 ASCII format
+        saml_only_login:
+          type: boolean
+          description: if true, only allow SAML login
       required:
         - name
     WorkspaceIntegration:
@@ -1098,6 +1270,8 @@ components:
         authorize_url:
           type: string
         token_url:
+          type: string
+        refresh_url:
           type: string
         base_url:
           type: string

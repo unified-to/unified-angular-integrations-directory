@@ -217,7 +217,7 @@
 		list_payslip_id: SupportInboundType
 		list_benefit_id: SupportInboundType
 		list_saleschannel_id: SupportInboundType
-		virtual_webhook_saleschannel_id: string
+		virtual_webhook_saleschannel_id: SupportInboundType
 	]
 	
 	[Invoice | 
@@ -401,6 +401,7 @@
 		environment: string
 		categories: IntegrationCategory\[\]
 		dev_api_key: string
+		overriden_scopes: string
 	]
 	
 	[ApiCall] -&gt; [Connection]
@@ -462,8 +463,8 @@
 					<text x="740.6" y="2285.5" stroke="none">*</text>
 					<path d="M773.8 1252.3 L519.5 1441 L753.7735731073616 2287.0750860355815 L753.8 2287.1 " fill="none"></path>
 					<path d="M746.9 2282.1 L753.8 2287.1 L757.1 2279.2 L755.6 2293.5 Z"></path>
-					<text x="1283.3" y="2233.0" stroke="none">*</text>
-					<path d="M1170.8 1325.1 L1275.25 1441 L1275.25 2241 L1275.3 2241.0 " fill="none"></path>
+					<text x="1283.3" y="2225.5" stroke="none">*</text>
+					<path d="M1170.8 1325.1 L1275.25 1441 L1275.25 2233.5 L1275.3 2233.5 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
 							<rect x="445.5" y="0.0" height="302.0" width="198.0" data-name="ApiCall"></rect>
@@ -748,7 +749,7 @@
 								<text x="0.0" y="1753.5" stroke="none" data-name="IntegrationSupport">list_payslip_id: SupportInboundType</text>
 								<text x="0.0" y="1768.5" stroke="none" data-name="IntegrationSupport">list_benefit_id: SupportInboundType</text>
 								<text x="0.0" y="1783.5" stroke="none" data-name="IntegrationSupport">list_saleschannel_id: SupportInboundType</text>
-								<text x="0.0" y="1798.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_saleschannel_id: string</text>
+								<text x="0.0" y="1798.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_saleschannel_id: SupportInboundType</text>
 								
 							</g>
 						</g>
@@ -1045,16 +1046,16 @@
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="1137.3" y="2241.0" height="287.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M1137.3 2272.0 L1413.3 2272.0" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="1137.3" y="2233.5" height="302.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1137.3 2264.5 L1413.3 2264.5" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(1137.25, 2241)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1137.25, 2233.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1137.25, 2272)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1137.25, 2264.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">integration_type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">client_id: string</text>
@@ -1072,6 +1073,7 @@
 								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
 								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
 								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
 								
 							</g>
 						</g>

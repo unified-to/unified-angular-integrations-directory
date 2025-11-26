@@ -185,7 +185,7 @@ export const schemaIntegrationSupport = {
 	list_payslip_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 	list_benefit_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 	list_saleschannel_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
-	virtual_webhook_saleschannel_id: { type: String },
+	virtual_webhook_saleschannel_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 };
 
 export const schemaInvoice = {
@@ -277,6 +277,7 @@ export const schemaWorkspaceIntegration = {
 	environment: { type: String, default: 'Production' }, // authentication environment
 	categories: { type: [ String ], enum: [ 'passthrough', 'hris', 'ats', 'auth', 'crm', 'enrich', 'martech', 'ticketing', 'uc', 'accounting', 'storage', 'commerce', 'payment', 'genai', 'messaging', 'kms', 'task', 'scim', 'lms', 'repo', 'metadata', 'calendar', 'verification' ] },
 	dev_api_key: { type: String },
+	overriden_scopes: { type: Object },
 };
 
 export const schemaWorkspace = {

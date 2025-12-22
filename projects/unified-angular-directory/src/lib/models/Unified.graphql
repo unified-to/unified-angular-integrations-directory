@@ -179,6 +179,8 @@ enum ENUM_IntegrationPermission {
 	messaging_message_read
 	messaging_message_write
 	messaging_channel_read
+	messaging_event_read
+	messaging_event_write
 	kms_space_read
 	kms_space_write
 	kms_page_read
@@ -321,6 +323,7 @@ enum ENUM_ObjectType {
 	genai_embedding
 	messaging_message
 	messaging_channel
+	messaging_event
 	kms_space
 	kms_page
 	kms_comment
@@ -369,6 +372,7 @@ enum ENUM_WebhookDatabaseType {
 	postgres
 	mssql
 	mariadb
+	supabase
 }
 
 enum ENUM_WebhookDataType {
@@ -586,6 +590,8 @@ input Map_IntegrationPermission_string_Input {
 	messaging_message_read: String!
 	messaging_message_write: String!
 	messaging_channel_read: String!
+	messaging_event_read: String!
+	messaging_event_write: String!
 	kms_space_read: String!
 	kms_space_write: String!
 	kms_page_read: String!
@@ -775,6 +781,8 @@ type Map_IntegrationPermission_string {
 	messaging_message_read: String!
 	messaging_message_write: String!
 	messaging_channel_read: String!
+	messaging_event_read: String!
+	messaging_event_write: String!
 	kms_space_read: String!
 	kms_space_write: String!
 	kms_page_read: String!
@@ -1671,7 +1679,7 @@ The object to return (eg. CRM "contact")
 """
 	object_type: ENUM_ObjectType!
 """
-The interval (in minutes) to check for updated/new objets.  Minimum is 5 minutes.  Interval is based off of 5-minute increments.
+The interval (in minutes) to check for updated/new objets. 
 """
 	interval: Int
 	event: ENUM_WebhookEvent!
@@ -1701,7 +1709,7 @@ The object to return (eg. CRM "contact")
 """
 	object_type: ENUM_ObjectType!
 """
-The interval (in minutes) to check for updated/new objets.  Minimum is 5 minutes.  Interval is based off of 5-minute increments.
+The interval (in minutes) to check for updated/new objets. 
 """
 	interval: Int
 """

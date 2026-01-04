@@ -38,6 +38,8 @@ enum ENUM_IntegrationCategory {
 	metadata
 	calendar
 	verification
+	ads
+	forms
 }
 
 enum ENUM_IntegrationPermission {
@@ -229,6 +231,19 @@ enum ENUM_IntegrationPermission {
 	calendar_recording_write
 	enrich_person_read
 	enrich_company_read
+	ads_ad_read
+	ads_ad_write
+	ads_campaign_read
+	ads_campaign_write
+	ads_group_read
+	ads_group_write
+	ads_report_read
+	ads_organization_read
+	ads_organization_write
+	forms_form_read
+	forms_form_write
+	forms_submission_read
+	forms_submission_write
 }
 
 enum ENUM_IntegrationSupportWebhookType {
@@ -348,6 +363,13 @@ enum ENUM_ObjectType {
 	calendar_busy
 	calendar_link
 	calendar_recording
+	ads_organization
+	ads_ad
+	ads_campaign
+	ads_report
+	ads_group
+	forms_form
+	forms_submission
 }
 
 enum ENUM_PlanTerm {
@@ -640,6 +662,19 @@ input Map_IntegrationPermission_string_Input {
 	calendar_recording_write: String!
 	enrich_person_read: String!
 	enrich_company_read: String!
+	ads_ad_read: String!
+	ads_ad_write: String!
+	ads_campaign_read: String!
+	ads_campaign_write: String!
+	ads_group_read: String!
+	ads_group_write: String!
+	ads_report_read: String!
+	ads_organization_read: String!
+	ads_organization_write: String!
+	forms_form_read: String!
+	forms_form_write: String!
+	forms_submission_read: String!
+	forms_submission_write: String!
 }
 
 type Map_IntegrationPermission_string {
@@ -831,6 +866,19 @@ type Map_IntegrationPermission_string {
 	calendar_recording_write: String!
 	enrich_person_read: String!
 	enrich_company_read: String!
+	ads_ad_read: String!
+	ads_ad_write: String!
+	ads_campaign_read: String!
+	ads_campaign_write: String!
+	ads_group_read: String!
+	ads_group_write: String!
+	ads_report_read: String!
+	ads_organization_read: String!
+	ads_organization_write: String!
+	forms_form_read: String!
+	forms_form_write: String!
+	forms_submission_read: String!
+	forms_submission_write: String!
 }
 
 input ApiCall_Input {
@@ -1360,6 +1408,13 @@ objects that we map from in the integration
 	list_benefit_id: ENUM_SupportInboundType
 	list_saleschannel_id: ENUM_SupportInboundType
 	virtual_webhook_saleschannel_id: ENUM_SupportInboundType
+	list_campaign_id: ENUM_SupportInboundType
+	list_ad_id: ENUM_SupportInboundType
+	list_group_id: ENUM_SupportInboundType
+	virtual_webhook_campaign_id: ENUM_SupportInboundType
+	virtual_webhook_ad_id: ENUM_SupportInboundType
+	virtual_webhook_group_id: ENUM_SupportInboundType
+	list_form_id: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -1495,6 +1550,13 @@ objects that we map from in the integration
 	list_benefit_id: ENUM_SupportInboundType
 	list_saleschannel_id: ENUM_SupportInboundType
 	virtual_webhook_saleschannel_id: ENUM_SupportInboundType
+	list_campaign_id: ENUM_SupportInboundType
+	list_ad_id: ENUM_SupportInboundType
+	list_group_id: ENUM_SupportInboundType
+	virtual_webhook_campaign_id: ENUM_SupportInboundType
+	virtual_webhook_ad_id: ENUM_SupportInboundType
+	virtual_webhook_group_id: ENUM_SupportInboundType
+	list_form_id: ENUM_SupportInboundType
 }
 
 input Invoice_Input {

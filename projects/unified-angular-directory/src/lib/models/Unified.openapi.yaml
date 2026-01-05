@@ -45,6 +45,8 @@ components:
       - metadata
       - calendar
       - verification
+      - ads
+      - forms
     IntegrationPermission:
       type: string
       enum:
@@ -186,6 +188,8 @@ components:
       - messaging_message_read
       - messaging_message_write
       - messaging_channel_read
+      - messaging_event_read
+      - messaging_event_write
       - kms_space_read
       - kms_space_write
       - kms_page_read
@@ -234,6 +238,19 @@ components:
       - calendar_recording_write
       - enrich_person_read
       - enrich_company_read
+      - ads_ad_read
+      - ads_ad_write
+      - ads_campaign_read
+      - ads_campaign_write
+      - ads_group_read
+      - ads_group_write
+      - ads_report_read
+      - ads_organization_read
+      - ads_organization_write
+      - forms_form_read
+      - forms_form_write
+      - forms_submission_read
+      - forms_submission_write
     IntegrationSupportWebhookType:
       type: string
       enum:
@@ -328,6 +345,7 @@ components:
       - genai_embedding
       - messaging_message
       - messaging_channel
+      - messaging_event
       - kms_space
       - kms_page
       - kms_comment
@@ -352,6 +370,13 @@ components:
       - calendar_busy
       - calendar_link
       - calendar_recording
+      - ads_organization
+      - ads_ad
+      - ads_campaign
+      - ads_report
+      - ads_group
+      - forms_form
+      - forms_submission
     PlanTerm:
       type: string
       enum:
@@ -376,6 +401,7 @@ components:
       - postgres
       - mssql
       - mariadb
+      - supabase
     WebhookDataType:
       type: string
       enum:
@@ -892,7 +918,25 @@ components:
         list_saleschannel_id:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_saleschannel_id:
-          type: string
+          $ref: "#/components/schemas/SupportInboundType"
+        list_campaign_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_ad_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_group_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_campaign_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_ad_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_group_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_form_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_form_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_form_id:
+          $ref: "#/components/schemas/SupportInboundType"
       required:
 
     Invoice:
@@ -1084,7 +1128,7 @@ components:
           description: The object to return (eg. CRM "contact")
         interval:
           type: integer
-          description: The interval (in minutes) to check for updated/new objets.  Minimum is 5 minutes.  Interval is based off of 5-minute increments.
+          description: The interval (in minutes) to check for updated/new objets. 
         checked_at:
           type: string
           format: date-time
@@ -1289,6 +1333,10 @@ components:
           $ref: "#/components/schemas/IntegrationCategories"
         dev_api_key:
           type: string
+        overriden_scopes:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/IntegrationPermission"
       required:
         - integration_type
         - is_active

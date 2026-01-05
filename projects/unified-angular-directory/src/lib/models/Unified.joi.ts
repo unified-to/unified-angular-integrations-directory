@@ -827,6 +827,8 @@ export const joiIntegrationSupport = Joi.object({
 	virtual_webhook_ad_id: joiSupportInboundType.allow(null).optional(),
 	virtual_webhook_group_id: joiSupportInboundType.allow(null).optional(),
 	list_form_id: joiSupportInboundType.allow(null).optional(),
+	virtual_webhook_form_id: joiSupportInboundType.allow(null).optional(),
+	native_webhook_form_id: joiSupportInboundType.allow(null).optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({

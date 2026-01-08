@@ -1338,10 +1338,6 @@ objects that we map from in the integration
 	list_event_id: ENUM_SupportInboundType
 	list_start_gte: ENUM_SupportInboundType
 	list_end_lt: ENUM_SupportInboundType
-"""
-@deprecated; use list_end_lt
-"""
-	list_end_le: ENUM_SupportInboundType
 	list_lead_id: ENUM_SupportInboundType
 	list_call_id: ENUM_SupportInboundType
 	list_document_id: ENUM_SupportInboundType
@@ -1352,10 +1348,6 @@ objects that we map from in the integration
 	list_category_id: ENUM_SupportInboundType
 	list_package_id: ENUM_SupportInboundType
 	list_expand: ENUM_SupportInboundType
-"""
-@deprecated; use list_expand
-"""
-	list_expand_recurring_events: ENUM_SupportInboundType
 	native_webhook_parent_id: ENUM_SupportInboundType
 	native_webhook_project_id: ENUM_SupportInboundType
 	native_webhook_company_id: ENUM_SupportInboundType
@@ -1378,10 +1370,6 @@ objects that we map from in the integration
 	virtual_webhook_status: ENUM_SupportInboundType
 	virtual_webhook_start_gte: ENUM_SupportInboundType
 	virtual_webhook_end_lt: ENUM_SupportInboundType
-"""
-@deprecated; use virtual_webhook_end_lt
-"""
-	virtual_webhook_end_le: ENUM_SupportInboundType
 	virtual_webhook_task_id: ENUM_SupportInboundType
 	virtual_webhook_space_id: ENUM_SupportInboundType
 	virtual_webhook_repo_id: ENUM_SupportInboundType
@@ -1415,6 +1403,8 @@ objects that we map from in the integration
 	virtual_webhook_ad_id: ENUM_SupportInboundType
 	virtual_webhook_group_id: ENUM_SupportInboundType
 	list_form_id: ENUM_SupportInboundType
+	virtual_webhook_form_id: ENUM_SupportInboundType
+	native_webhook_form_id: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -1480,10 +1470,6 @@ objects that we map from in the integration
 	list_event_id: ENUM_SupportInboundType
 	list_start_gte: ENUM_SupportInboundType
 	list_end_lt: ENUM_SupportInboundType
-"""
-@deprecated; use list_end_lt
-"""
-	list_end_le: ENUM_SupportInboundType
 	list_lead_id: ENUM_SupportInboundType
 	list_call_id: ENUM_SupportInboundType
 	list_document_id: ENUM_SupportInboundType
@@ -1494,10 +1480,6 @@ objects that we map from in the integration
 	list_category_id: ENUM_SupportInboundType
 	list_package_id: ENUM_SupportInboundType
 	list_expand: ENUM_SupportInboundType
-"""
-@deprecated; use list_expand
-"""
-	list_expand_recurring_events: ENUM_SupportInboundType
 	native_webhook_parent_id: ENUM_SupportInboundType
 	native_webhook_project_id: ENUM_SupportInboundType
 	native_webhook_company_id: ENUM_SupportInboundType
@@ -1520,10 +1502,6 @@ objects that we map from in the integration
 	virtual_webhook_status: ENUM_SupportInboundType
 	virtual_webhook_start_gte: ENUM_SupportInboundType
 	virtual_webhook_end_lt: ENUM_SupportInboundType
-"""
-@deprecated; use virtual_webhook_end_lt
-"""
-	virtual_webhook_end_le: ENUM_SupportInboundType
 	virtual_webhook_task_id: ENUM_SupportInboundType
 	virtual_webhook_space_id: ENUM_SupportInboundType
 	virtual_webhook_repo_id: ENUM_SupportInboundType
@@ -1557,6 +1535,8 @@ objects that we map from in the integration
 	virtual_webhook_ad_id: ENUM_SupportInboundType
 	virtual_webhook_group_id: ENUM_SupportInboundType
 	list_form_id: ENUM_SupportInboundType
+	virtual_webhook_form_id: ENUM_SupportInboundType
+	native_webhook_form_id: ENUM_SupportInboundType
 }
 
 input Invoice_Input {

@@ -201,6 +201,9 @@ export const schemaIntegrationSupport = {
 	list_shipment_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 	virtual_webhook_shipment_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 	native_webhook_shipment_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
+	list_label_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
+	virtual_webhook_label_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
+	native_webhook_label_id: { type: String, enum: [ 'supported-required', 'supported', 'not-supported' ] },
 };
 
 export const schemaInvoice = {

@@ -41,7 +41,8 @@ export const joiIntegrationCategory = Joi.string().valid(
 	'calendar',
 	'verification',
 	'ads',
-	'forms');
+	'forms',
+	'shipping');
 
 export const joiIntegrationPermission = Joi.string().valid(
 	'accounting_account_read',
@@ -244,7 +245,14 @@ export const joiIntegrationPermission = Joi.string().valid(
 	'forms_form_read',
 	'forms_form_write',
 	'forms_submission_read',
-	'forms_submission_write');
+	'forms_submission_write',
+	'shipping_shipment_read',
+	'shipping_shipment_write',
+	'shipping_label_read',
+	'shipping_label_write',
+	'shipping_tracking_read',
+	'shipping_rate_read',
+	'shipping_carrier_read');
 
 export const joiIntegrationSupportWebhookType = Joi.string().valid(
 	'virtual',
@@ -367,7 +375,12 @@ export const joiObjectType = Joi.string().valid(
 	'ads_report',
 	'ads_group',
 	'forms_form',
-	'forms_submission');
+	'forms_submission',
+	'shipping_carrier',
+	'shipping_rate',
+	'shipping_shipment',
+	'shipping_label',
+	'shipping_tracking');
 
 export const joiPlanTerm = Joi.string().valid(
 	'monthly',
@@ -631,6 +644,13 @@ export const joimap_IntegrationPermission_string = Joi.object({
 	forms_form_write: Joi.string().allow(null, '').optional(),
 	forms_submission_read: Joi.string().allow(null, '').optional(),
 	forms_submission_write: Joi.string().allow(null, '').optional(),
+	shipping_shipment_read: Joi.string().allow(null, '').optional(),
+	shipping_shipment_write: Joi.string().allow(null, '').optional(),
+	shipping_label_read: Joi.string().allow(null, '').optional(),
+	shipping_label_write: Joi.string().allow(null, '').optional(),
+	shipping_tracking_read: Joi.string().allow(null, '').optional(),
+	shipping_rate_read: Joi.string().allow(null, '').optional(),
+	shipping_carrier_read: Joi.string().allow(null, '').optional(),
 }).label('map_IntegrationPermission_string');
 
 export const joiApiCall = Joi.object({
@@ -826,6 +846,15 @@ export const joiIntegrationSupport = Joi.object({
 	list_form_id: joiSupportInboundType.allow(null).optional(),
 	virtual_webhook_form_id: joiSupportInboundType.allow(null).optional(),
 	native_webhook_form_id: joiSupportInboundType.allow(null).optional(),
+	list_order_id: joiSupportInboundType.allow(null).optional(),
+	virtual_webhook_order_id: joiSupportInboundType.allow(null).optional(),
+	native_webhook_order_id: joiSupportInboundType.allow(null).optional(),
+	list_carrier_id: joiSupportInboundType.allow(null).optional(),
+	virtual_webhook_carrier_id: joiSupportInboundType.allow(null).optional(),
+	native_webhook_carrier_id: joiSupportInboundType.allow(null).optional(),
+	list_shipment_id: joiSupportInboundType.allow(null).optional(),
+	virtual_webhook_shipment_id: joiSupportInboundType.allow(null).optional(),
+	native_webhook_shipment_id: joiSupportInboundType.allow(null).optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({

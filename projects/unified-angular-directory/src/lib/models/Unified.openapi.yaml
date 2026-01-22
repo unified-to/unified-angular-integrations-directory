@@ -47,6 +47,7 @@ components:
       - verification
       - ads
       - forms
+      - shipping
     IntegrationPermission:
       type: string
       enum:
@@ -107,6 +108,8 @@ components:
       - commerce_review_write
       - commerce_saleschannel_read
       - commerce_saleschannel_write
+      - commerce_itemvariant_read
+      - commerce_itemvariant_write
       - verification_package_read
       - verification_request_read
       - verification_request_write
@@ -247,10 +250,21 @@ components:
       - ads_report_read
       - ads_organization_read
       - ads_organization_write
+      - ads_creative_read
+      - ads_creative_write
+      - ads_insertionorder_read
+      - ads_insertionorder_write
       - forms_form_read
       - forms_form_write
       - forms_submission_read
       - forms_submission_write
+      - shipping_shipment_read
+      - shipping_shipment_write
+      - shipping_label_read
+      - shipping_label_write
+      - shipping_tracking_read
+      - shipping_rate_read
+      - shipping_carrier_read
     IntegrationSupportWebhookType:
       type: string
       enum:
@@ -299,6 +313,7 @@ components:
       - commerce_location
       - commerce_review
       - commerce_saleschannel
+      - commerce_itemvariant
       - verification_package
       - verification_request
       - ats_activity
@@ -375,8 +390,15 @@ components:
       - ads_campaign
       - ads_report
       - ads_group
+      - ads_creative
+      - ads_insertionorder
       - forms_form
       - forms_submission
+      - shipping_carrier
+      - shipping_rate
+      - shipping_shipment
+      - shipping_label
+      - shipping_tracking
     PlanTerm:
       type: string
       enum:
@@ -415,63 +437,6 @@ components:
       - updated
       - created
       - deleted
-    ApiCall:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for this API call
-        created_at:
-          type: string
-          format: date-time
-          description: The date that this object was created
-        connection_id:
-          type: string
-        workspace_id:
-          type: string
-        integration_type:
-          type: string
-          description: The integration type
-        external_xref:
-          type: string
-          description: your customer's user ID
-        name:
-          type: string
-          description: The called name of the API method
-        path:
-          type: string
-          description: The called API method's HTTP verb and route path (PUT /crm/{integration}/deak/{id})
-        size:
-          type: integer
-          description: The size of the response
-        status:
-          type: string
-          description: The resulting HTTP status code (200)
-        error:
-          type: string
-          description: The error description (if status code is >= 400)
-        ip_address:
-          type: string
-        type:
-          $ref: "#/components/schemas/ApiCallType"
-          description: The type of API Call being logged
-        method:
-          type: string
-        environment:
-          type: string
-          default: "Production"
-        webhook_id:
-          type: string
-        is_billable:
-          type: boolean
-      required:
-        - workspace_id
-        - integration_type
-        - name
-        - path
-        - status
-        - type
-        - method
     Connection:
       type: object
       description: A connection represents a specific authentication of an integration.
@@ -794,9 +759,6 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         list_end_lt:
           $ref: "#/components/schemas/SupportInboundType"
-        list_end_le:
-          $ref: "#/components/schemas/SupportInboundType"
-          description: @deprecated; use list_end_lt
         list_lead_id:
           $ref: "#/components/schemas/SupportInboundType"
         list_call_id:
@@ -817,9 +779,6 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         list_expand:
           $ref: "#/components/schemas/SupportInboundType"
-        list_expand_recurring_events:
-          $ref: "#/components/schemas/SupportInboundType"
-          description: @deprecated; use list_expand
         native_webhook_parent_id:
           $ref: "#/components/schemas/SupportInboundType"
         native_webhook_project_id:
@@ -864,9 +823,6 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_end_lt:
           $ref: "#/components/schemas/SupportInboundType"
-        virtual_webhook_end_le:
-          $ref: "#/components/schemas/SupportInboundType"
-          description: @deprecated; use virtual_webhook_end_lt
         virtual_webhook_task_id:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_space_id:
@@ -936,6 +892,30 @@ components:
         virtual_webhook_form_id:
           $ref: "#/components/schemas/SupportInboundType"
         native_webhook_form_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_order_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_order_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_order_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_carrier_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_carrier_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_carrier_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_shipment_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_shipment_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_shipment_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_label_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_label_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_label_id:
           $ref: "#/components/schemas/SupportInboundType"
       required:
 

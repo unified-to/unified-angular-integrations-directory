@@ -243,6 +243,10 @@ enum ENUM_IntegrationPermission {
 	ads_report_read
 	ads_organization_read
 	ads_organization_write
+	ads_creative_read
+	ads_creative_write
+	ads_insertionorder_read
+	ads_insertionorder_write
 	forms_form_read
 	forms_form_write
 	forms_submission_read
@@ -379,6 +383,8 @@ enum ENUM_ObjectType {
 	ads_campaign
 	ads_report
 	ads_group
+	ads_creative
+	ads_insertionorder
 	forms_form
 	forms_submission
 	shipping_carrier
@@ -689,6 +695,10 @@ input Map_IntegrationPermission_string_Input {
 	ads_report_read: String!
 	ads_organization_read: String!
 	ads_organization_write: String!
+	ads_creative_read: String!
+	ads_creative_write: String!
+	ads_insertionorder_read: String!
+	ads_insertionorder_write: String!
 	forms_form_read: String!
 	forms_form_write: String!
 	forms_submission_read: String!
@@ -902,6 +912,10 @@ type Map_IntegrationPermission_string {
 	ads_report_read: String!
 	ads_organization_read: String!
 	ads_organization_write: String!
+	ads_creative_read: String!
+	ads_creative_write: String!
+	ads_insertionorder_read: String!
+	ads_insertionorder_write: String!
 	forms_form_read: String!
 	forms_form_write: String!
 	forms_submission_read: String!
@@ -913,97 +927,6 @@ type Map_IntegrationPermission_string {
 	shipping_tracking_read: String!
 	shipping_rate_read: String!
 	shipping_carrier_read: String!
-}
-
-input ApiCall_Input {
-	connection_id: ID
-"""
-The integration type
-"""
-	integration_type: String!
-"""
-your customer's user ID
-"""
-	external_xref: String
-"""
-The called name of the API method
-"""
-	name: String!
-"""
-The called API method's HTTP verb and route path (PUT /crm/{integration}/deak/{id})
-"""
-	path: String!
-"""
-The size of the response
-"""
-	size: Int
-"""
-The resulting HTTP status code (200)
-"""
-	status: String!
-"""
-The error description (if status code is >= 400)
-"""
-	error: String
-	ip_address: String
-"""
-The type of API Call being logged
-"""
-	type: ENUM_ApiCallType!
-	method: String!
-	environment: String
-	webhook_id: ID
-	is_billable: Boolean
-}
-
-type ApiCall {
-"""
-Unique identifier for this API call
-"""
-	id: ID
-"""
-The date that this object was created
-"""
-	created_at: DateTime
-	connection_id: ID
-	workspace_id: ID!
-"""
-The integration type
-"""
-	integration_type: String!
-"""
-your customer's user ID
-"""
-	external_xref: String
-"""
-The called name of the API method
-"""
-	name: String!
-"""
-The called API method's HTTP verb and route path (PUT /crm/{integration}/deak/{id})
-"""
-	path: String!
-"""
-The size of the response
-"""
-	size: Int
-"""
-The resulting HTTP status code (200)
-"""
-	status: String!
-"""
-The error description (if status code is >= 400)
-"""
-	error: String
-	ip_address: String
-"""
-The type of API Call being logged
-"""
-	type: ENUM_ApiCallType!
-	method: String!
-	environment: String
-	webhook_id: ID
-	is_billable: Boolean
 }
 
 """
@@ -1030,6 +953,18 @@ the AWS ARN / secretID for the stored auth field
 """
 	auth_aws_arn: String
 	environment: String
+"""
+the Azure Key Vault ID for the stored auth field
+"""
+	auth_azure_keyvault_id: String
+"""
+the Google Cloud Secret Manager name for the stored auth field
+"""
+	auth_gcp_secret_name: String
+"""
+the HashiCorp Vault path for the stored auth field
+"""
+	auth_hashi_vault_path: String
 }
 
 type Connection {
@@ -1070,6 +1005,18 @@ the AWS ARN / secretID for the stored auth field
 """
 	auth_aws_arn: String
 	environment: String
+"""
+the Azure Key Vault ID for the stored auth field
+"""
+	auth_azure_keyvault_id: String
+"""
+the Google Cloud Secret Manager name for the stored auth field
+"""
+	auth_gcp_secret_name: String
+"""
+the HashiCorp Vault path for the stored auth field
+"""
+	auth_hashi_vault_path: String
 	last_healthy_at: DateTime
 	last_unhealthy_at: DateTime
 }
@@ -1935,6 +1882,21 @@ the PEM X.509 certificate in Base64 ASCII format
 if true, only allow SAML login
 """
 	saml_only_login: Boolean
+	azure_keyvault_url: String
+	azure_tenant_id: String
+	azure_client_id: String
+	azure_client_secret: String
+	gcp_project_id: String
+	gcp_client_email: String
+	gcp_private_key: String
+	hashicorp_vault_url: String
+	hashicorp_vault_token: String
+	hashicorp_vault_namespace: String
+	hashicorp_vault_kv_mount: String
+"""
+1 or 2
+"""
+	hashicorp_vault_kv_version: String
 }
 
 type Workspace {
@@ -2004,6 +1966,21 @@ the PEM X.509 certificate in Base64 ASCII format
 if true, only allow SAML login
 """
 	saml_only_login: Boolean
+	azure_keyvault_url: String
+	azure_tenant_id: String
+	azure_client_id: String
+	azure_client_secret: String
+	gcp_project_id: String
+	gcp_client_email: String
+	gcp_private_key: String
+	hashicorp_vault_url: String
+	hashicorp_vault_token: String
+	hashicorp_vault_namespace: String
+	hashicorp_vault_kv_mount: String
+"""
+1 or 2
+"""
+	hashicorp_vault_kv_version: String
 }
 
 input WorkspaceIntegration_Input {

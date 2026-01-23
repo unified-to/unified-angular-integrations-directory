@@ -21,6 +21,8 @@ export const schemaApiCall = {
 	webhook_id: { type: SchemaTypes.ObjectId, ref: 'Webhook' },
 	is_billable: { type: Boolean },
 	user_agent: { type: String },
+	unified_response_time: { type: Number },
+	endapi_response_time: { type: Number },
 };
 
 export const schemaConnectionAuth = {

@@ -1306,6 +1306,16 @@ components:
         hashicorp_vault_kv_version:
           type: string
           description: 1 or 2
+        grafana_apikey:
+          type: string
+        grafana_site:
+          type: string
+        clickhouse_url:
+          type: string
+        clickhouse_username:
+          type: string
+        clickhouse_password:
+          type: string
       required:
         - name
     WorkspaceIntegration:

@@ -239,6 +239,8 @@ components:
       - calendar_link_write
       - calendar_recording_read
       - calendar_recording_write
+      - calendar_webinar_read
+      - calendar_webinar_write
       - enrich_person_read
       - enrich_company_read
       - ads_ad_read
@@ -385,6 +387,7 @@ components:
       - calendar_busy
       - calendar_link
       - calendar_recording
+      - calendar_webinar
       - ads_organization
       - ads_ad
       - ads_campaign

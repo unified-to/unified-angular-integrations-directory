@@ -232,6 +232,8 @@ enum ENUM_IntegrationPermission {
 	calendar_link_write
 	calendar_recording_read
 	calendar_recording_write
+	calendar_webinar_read
+	calendar_webinar_write
 	enrich_person_read
 	enrich_company_read
 	ads_ad_read
@@ -378,6 +380,7 @@ enum ENUM_ObjectType {
 	calendar_busy
 	calendar_link
 	calendar_recording
+	calendar_webinar
 	ads_organization
 	ads_ad
 	ads_campaign
@@ -684,6 +687,8 @@ input Map_IntegrationPermission_string_Input {
 	calendar_link_write: String!
 	calendar_recording_read: String!
 	calendar_recording_write: String!
+	calendar_webinar_read: String!
+	calendar_webinar_write: String!
 	enrich_person_read: String!
 	enrich_company_read: String!
 	ads_ad_read: String!
@@ -901,6 +906,8 @@ type Map_IntegrationPermission_string {
 	calendar_link_write: String!
 	calendar_recording_read: String!
 	calendar_recording_write: String!
+	calendar_webinar_read: String!
+	calendar_webinar_write: String!
 	enrich_person_read: String!
 	enrich_company_read: String!
 	ads_ad_read: String!
@@ -1897,6 +1904,11 @@ if true, only allow SAML login
 1 or 2
 """
 	hashicorp_vault_kv_version: String
+	grafana_apikey: String
+	grafana_site: String
+	clickhouse_url: String
+	clickhouse_username: String
+	clickhouse_password: String
 }
 
 type Workspace {
@@ -1981,6 +1993,11 @@ if true, only allow SAML login
 1 or 2
 """
 	hashicorp_vault_kv_version: String
+	grafana_apikey: String
+	grafana_site: String
+	clickhouse_url: String
+	clickhouse_username: String
+	clickhouse_password: String
 }
 
 input WorkspaceIntegration_Input {

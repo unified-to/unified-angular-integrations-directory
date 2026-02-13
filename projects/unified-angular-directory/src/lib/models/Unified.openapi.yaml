@@ -48,6 +48,7 @@ components:
       - ads
       - forms
       - shipping
+      - assessment
     IntegrationPermission:
       type: string
       enum:
@@ -113,6 +114,9 @@ components:
       - verification_package_read
       - verification_request_read
       - verification_request_write
+      - assessment_package_read
+      - assessment_package_write
+      - assessment_order_write
       - ats_activity_read
       - ats_activity_write
       - ats_application_read
@@ -146,6 +150,10 @@ components:
       - martech_list_write
       - martech_member_read
       - martech_member_write
+      - martech_campaign_read
+      - martech_campaign_write
+      - martech_report_read
+      - martech_report_write
       - ticketing_customer_read
       - ticketing_customer_write
       - ticketing_ticket_read
@@ -218,6 +226,12 @@ components:
       - lms_student_write
       - lms_instructor_read
       - lms_instructor_write
+      - lms_content_read
+      - lms_content_write
+      - lms_collection_read
+      - lms_collection_write
+      - lms_activity_read
+      - lms_activity_write
       - repo_organization_read
       - repo_organization_write
       - repo_repository_read
@@ -318,6 +332,8 @@ components:
       - commerce_itemvariant
       - verification_package
       - verification_request
+      - assessment_package
+      - assessment_order
       - ats_activity
       - ats_application
       - ats_applicationstatus
@@ -345,6 +361,8 @@ components:
       - hris_benefit
       - martech_list
       - martech_member
+      - martech_campaign
+      - martech_report
       - passthrough
       - ticketing_note
       - ticketing_ticket
@@ -376,6 +394,9 @@ components:
       - lms_class
       - lms_student
       - lms_instructor
+      - lms_content
+      - lms_collection
+      - lms_activity
       - repo_organization
       - repo_repository
       - repo_branch
@@ -928,6 +949,22 @@ components:
         virtual_webhook_label_id:
           $ref: "#/components/schemas/SupportInboundType"
         native_webhook_label_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_member_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_member_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_member_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_content_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_course_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_course_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_student_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_student_id:
           $ref: "#/components/schemas/SupportInboundType"
       required:
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
-import { IIntegration, TIntegrationCategory } from './models/Unified';
+import { IIntegration, TIntegrationCategory, CATEGORIES } from './models/Unified';
 import { CommonModule } from '@angular/common';
 import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
 
@@ -51,27 +51,13 @@ export class UnifiedDirectory implements OnInit, OnChanges {
     @Input() INTEGRATIONS: IIntegration[] = [];
     @Input() selectedCategory?: TIntegrationCategoryType;
     @Input() CATEGORIES: TIntegrationCategoryType[] = [];
-    @Input() CATEGORY_MAP: { [p in TIntegrationCategoryType]: string } = {
-        crm: 'CRM',
-        martech: 'Marketing',
-        ticketing: 'Ticketing',
-        uc: 'Unified Communications',
-        enrich: 'Enrichment',
-        ats: 'ATS',
-        accounting: 'Accounting',
-        storage: 'Storage',
-        hris: 'HR',
-        payment: 'Payment',
-        commerce: 'E-Commerce',
-        genai: 'Generative AI',
-        messaging: 'Messaging',
-        kms: 'KMS',
-        task: 'Tasks',
-        // metadata: 'Metadata',
-        lms: 'LMS',
-        repo: 'Repository',
-        calendar: 'Calendar',
-    };
+    @Input() CATEGORY_MAP: { [path in TIntegrationCategory]?: string } = CATEGORIES.reduce(
+        (acc, category) => {
+            acc[category.category] = category.label;
+            return acc;
+        },
+        {} as { [path in TIntegrationCategory]: string }
+    );
     @Input({ required: true }) workspace_id!: string;
     @Input() categories?: string[];
     @Input() external_xref?: string;

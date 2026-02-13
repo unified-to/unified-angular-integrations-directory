@@ -25,6 +25,9 @@ export const schemaApiCall = {
 	endapi_response_time: { type: Number },
 };
 
+export const schemaCategories = {
+};
+
 export const schemaConnectionAuth = {
 	token: { type: String },
 	access_token: { type: String },

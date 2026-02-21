@@ -83,6 +83,7 @@
 		api_docs_url: string
 		logo_url: string
 		in_progress: boolean
+		is_hidden: boolean
 		color: string
 		text_color: string
 		fa_icon: string
@@ -488,7 +489,7 @@
 					<path d="M671.0 680.0 L897.75 814 L900.4144577089835 827.4602304971538 L900.4 827.5 " fill="none"></path>
 					<path d="M893.9 822.0 L900.4 827.5 L904.4 819.9 L901.7 834.0 Z"></path>
 					<path d="M368.0 680.7 L144 814 L144 1066.5 L144.0 1066.5 " fill="none"></path>
-					<path d="M1855.5 1503.5 L1855.5 1741 L1855.5 1761 L1855.5 1761.0 " fill="none"></path>
+					<path d="M1855.5 1511.0 L1855.5 1741 L1855.5 1761 L1855.5 1761.0 " fill="none"></path>
 					<path d="M969.5 704.0 L969.5 814 L970.0756000462883 827.3395310727311 L970.1 827.3 " fill="none"></path>
 					<path d="M964.5 820.9 L970.1 827.3 L975.1 820.4 L970.4 834.0 Z"></path>
 					<path d="M1165.6 294.5 L1228 367 L1228 590.5 L1228 590.5 L1228 814 L1228 814 L1191.0502870909704 885.807932634529 L1191.1 885.8 " fill="none"></path>
@@ -506,8 +507,8 @@
 					<path d="M1161.0 1731.7 L1153.7 1727.3 L1151.0 1735.4 L1151.4 1721.0 Z"></path>
 					<path d="M1497.5 726.6 L1368.5 814 L1192.220069217135 1029.582448332079 L1192.2 1029.6 " fill="none"></path>
 					<path d="M1192.3 1021.0 L1192.2 1029.6 L1200.6 1027.8 L1188.0 1034.7 Z"></path>
-					<path d="M1841.5 794.0 L1855.5 814 L1855.5 1044.8333333333333 L1855.5 1044.8 " fill="none"></path>
-					<path d="M1850.2 1038.2 L1855.5 1044.8 L1860.8 1038.2 L1855.5 1051.5 Z"></path>
+					<path d="M1841.5 794.0 L1855.5 814 L1855.5 1037.3333333333333 L1855.5 1037.3 " fill="none"></path>
+					<path d="M1850.2 1030.7 L1855.5 1037.3 L1860.8 1030.7 L1855.5 1044.0 Z"></path>
 					<path d="M2035.5 249.5 L2035.5 367 L1899.5 457.1958456973294 L1899.5 457.2 " fill="none"></path>
 					<text x="760.7" y="2780.5" stroke="none">*</text>
 					<path d="M791.0 1473.3 L519.5 1741 L774.1554755795737 2782.024269110753 L774.2 2782.0 " fill="none"></path>
@@ -630,16 +631,16 @@
 					</g>
 					<g data-name="Integration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
-							<rect x="1702.0" y="1051.5" height="452.0" width="307.0" data-name="Integration"></rect>
-							<path d="M1702.0 1082.5 L2009.0 1082.5" fill="none" data-name="Integration"></path>
+							<rect x="1702.0" y="1044.0" height="467.0" width="307.0" data-name="Integration"></rect>
+							<path d="M1702.0 1075.0 L2009.0 1075.0" fill="none" data-name="Integration"></path>
 						</g>
-						<g transform="translate(1702, 1051.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+						<g transform="translate(1702, 1044)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
 								<text x="145.5" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1702, 1082.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+						<g transform="translate(1702, 1075)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
 								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
@@ -650,24 +651,25 @@
 								<text x="0.0" y="103.5" stroke="none" data-name="Integration">api_docs_url: string</text>
 								<text x="0.0" y="118.5" stroke="none" data-name="Integration">logo_url: string</text>
 								<text x="0.0" y="133.5" stroke="none" data-name="Integration">in_progress: boolean</text>
-								<text x="0.0" y="148.5" stroke="none" data-name="Integration">color: string</text>
-								<text x="0.0" y="163.5" stroke="none" data-name="Integration">text_color: string</text>
-								<text x="0.0" y="178.5" stroke="none" data-name="Integration">fa_icon: string</text>
-								<text x="0.0" y="193.5" stroke="none" data-name="Integration">token_names: string[]</text>
-								<text x="0.0" y="208.5" stroke="none" data-name="Integration">token_instructions: string[]</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="Integration">web_url: string</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="Integration">rate_limit_description: string</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="Integration">beta: boolean</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="Integration">tested_at: date</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="Integration">sandbox: object</text>
-								<text x="0.0" y="313.5" stroke="none" data-name="Integration">partnership: object</text>
-								<text x="0.0" y="328.5" stroke="none" data-name="Integration">saml: object</text>
-								<text x="0.0" y="343.5" stroke="none" data-name="Integration">description: string</text>
-								<text x="0.0" y="358.5" stroke="none" data-name="Integration">api: object</text>
-								<text x="0.0" y="373.5" stroke="none" data-name="Integration">featured: boolean</text>
-								<text x="0.0" y="388.5" stroke="none" data-name="Integration">popularity: number</text>
-								<text x="0.0" y="403.5" stroke="none" data-name="Integration">active_healthy_connections: number</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Integration">is_hidden: boolean</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Integration">color: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Integration">text_color: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Integration">fa_icon: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Integration">token_names: string[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Integration">token_instructions: string[]</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Integration">web_url: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Integration">rate_limit_description: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Integration">beta: boolean</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Integration">tested_at: date</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Integration">sandbox: object</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Integration">partnership: object</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Integration">saml: object</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Integration">description: string</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Integration">api: object</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="Integration">featured: boolean</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="Integration">popularity: number</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="Integration">active_healthy_connections: number</text>
 								
 							</g>
 						</g>

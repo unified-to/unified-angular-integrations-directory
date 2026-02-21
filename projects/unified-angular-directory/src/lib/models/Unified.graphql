@@ -1469,6 +1469,7 @@ objects that we map from in the integration
 	native_webhook_course_id: ENUM_SupportInboundType
 	virtual_webhook_student_id: ENUM_SupportInboundType
 	native_webhook_student_id: ENUM_SupportInboundType
+	native_webhook_type: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -1621,6 +1622,7 @@ objects that we map from in the integration
 	native_webhook_course_id: ENUM_SupportInboundType
 	virtual_webhook_student_id: ENUM_SupportInboundType
 	native_webhook_student_id: ENUM_SupportInboundType
+	native_webhook_type: ENUM_SupportInboundType
 }
 
 input Invoice_Input {

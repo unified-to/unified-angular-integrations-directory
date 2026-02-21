@@ -218,24 +218,25 @@ message Integration {
 	optional string api_docs_url = 7; // The URL of the integration's API documentation
 	optional string logo_url = 8; // The URL of the integration's logo
 	optional bool in_progress = 9; // If this integration is not yet available as it is currently being built by unified.to
-	optional string color = 10; // button background color for AUTH
-	optional string text_color = 11; // text color for AUTH
-	optional string fa_icon = 12; // font-awesome icon
-	repeated string token_names = 13; // if auth_types = 'token'
-	repeated string token_instructions = 14; // instructions for the user on how to find the token/key
-	optional string web_url = 15; // URL for the software vendor
-	optional string rate_limit_description = 16;
-	optional bool beta = 17; // This integration is new and is still considered "beta"
-	map<string, IntegrationSupport> support = 18;
-	optional string tested_at = 19;
-	optional google.protobuf.Struct sandbox = 20;
-	optional google.protobuf.Struct partnership = 21;
-	optional google.protobuf.Struct saml = 22;
-	optional string description = 23;
-	optional google.protobuf.Struct api = 24;
-	optional bool featured = 25;
-	optional int32 popularity = 26;
-	optional int32 active_healthy_connections = 27;
+	optional bool is_hidden = 10;
+	optional string color = 11; // button background color for AUTH
+	optional string text_color = 12; // text color for AUTH
+	optional string fa_icon = 13; // font-awesome icon
+	repeated string token_names = 14; // if auth_types = 'token'
+	repeated string token_instructions = 15; // instructions for the user on how to find the token/key
+	optional string web_url = 16; // URL for the software vendor
+	optional string rate_limit_description = 17;
+	optional bool beta = 18; // This integration is new and is still considered "beta"
+	map<string, IntegrationSupport> support = 19;
+	optional string tested_at = 20;
+	optional google.protobuf.Struct sandbox = 21;
+	optional google.protobuf.Struct partnership = 22;
+	optional google.protobuf.Struct saml = 23;
+	optional string description = 24;
+	optional google.protobuf.Struct api = 25;
+	optional bool featured = 26;
+	optional int32 popularity = 27;
+	optional int32 active_healthy_connections = 28;
 }
 
 message Invoice {

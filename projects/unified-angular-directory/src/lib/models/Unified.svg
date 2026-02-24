@@ -465,7 +465,7 @@
 	]
 	
 	[WorkspaceIntegrationAuth | 
-		client_id: id
+		client_id: string
 		client_secret: string
 		consumer_key: string
 		consumer_secret: string
@@ -1226,7 +1226,7 @@
 						</g>
 						<g transform="translate(1603, 4084)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegrationAuth">
-								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: id</text>
+								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_secret: string</text>
 								<text x="0.0" y="43.5" stroke="none" data-name="WorkspaceIntegrationAuth">consumer_key: string</text>
 								<text x="0.0" y="58.5" stroke="none" data-name="WorkspaceIntegrationAuth">consumer_secret: string</text>

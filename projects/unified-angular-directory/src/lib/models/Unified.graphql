@@ -2181,7 +2181,7 @@ authentication environment
 }
 
 input WorkspaceIntegrationAuth_Input {
-	client_id: ID
+	client_id: String
 	client_secret: String
 	consumer_key: String
 	consumer_secret: String
@@ -2197,7 +2197,7 @@ the private KEY X.509 certificate in Base64 ASCII format
 }
 
 type WorkspaceIntegrationAuth {
-	client_id: ID
+	client_id: String
 	client_secret: String
 	consumer_key: String
 	consumer_secret: String

@@ -942,6 +942,7 @@ export const joiIntegrationSupport = Joi.object({
 	list_bill_id: joiSupportInboundType.allow(null).optional(),
 	virtual_webhook_benefit_id: joiSupportInboundType.allow(null).optional(),
 	virtual_webhook_payment_id: joiSupportInboundType.allow(null).optional(),
+	list_fulltext: joiSupportInboundType.allow(null).optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({

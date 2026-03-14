@@ -272,6 +272,8 @@ components:
       - ads_creative_write
       - ads_insertionorder_read
       - ads_insertionorder_write
+      - ads_target_read
+      - ads_promoted_read
       - forms_form_read
       - forms_form_write
       - forms_submission_read
@@ -419,6 +421,8 @@ components:
       - ads_group
       - ads_creative
       - ads_insertionorder
+      - ads_target
+      - ads_promoted
       - forms_form
       - forms_submission
       - shipping_carrier
@@ -986,6 +990,8 @@ components:
         virtual_webhook_benefit_id:
           $ref: "#/components/schemas/SupportInboundType"
         virtual_webhook_payment_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_fulltext:
           $ref: "#/components/schemas/SupportInboundType"
       required:
 

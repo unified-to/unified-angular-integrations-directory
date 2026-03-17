@@ -266,6 +266,8 @@ export const joiIntegrationPermission = Joi.string().valid(
 	'ads_creative_write',
 	'ads_insertionorder_read',
 	'ads_insertionorder_write',
+	'ads_target_read',
+	'ads_promoted_read',
 	'forms_form_read',
 	'forms_form_write',
 	'forms_submission_read',
@@ -410,6 +412,8 @@ export const joiObjectType = Joi.string().valid(
 	'ads_group',
 	'ads_creative',
 	'ads_insertionorder',
+	'ads_target',
+	'ads_promoted',
 	'forms_form',
 	'forms_submission',
 	'shipping_carrier',
@@ -699,6 +703,8 @@ export const joimap_IntegrationPermission_string = Joi.object({
 	ads_creative_write: Joi.string().allow(null, '').optional(),
 	ads_insertionorder_read: Joi.string().allow(null, '').optional(),
 	ads_insertionorder_write: Joi.string().allow(null, '').optional(),
+	ads_target_read: Joi.string().allow(null, '').optional(),
+	ads_promoted_read: Joi.string().allow(null, '').optional(),
 	forms_form_read: Joi.string().allow(null, '').optional(),
 	forms_form_write: Joi.string().allow(null, '').optional(),
 	forms_submission_read: Joi.string().allow(null, '').optional(),
@@ -943,6 +949,7 @@ export const joiIntegrationSupport = Joi.object({
 	virtual_webhook_benefit_id: joiSupportInboundType.allow(null).optional(),
 	virtual_webhook_payment_id: joiSupportInboundType.allow(null).optional(),
 	list_fulltext: joiSupportInboundType.allow(null).optional(),
+	list_io_id: joiSupportInboundType.allow(null).optional(),
 }).label('IntegrationSupport');
 
 export const joiIntegration = Joi.object({
@@ -1185,5 +1192,6 @@ export const joiWorkspace = Joi.object({
 	clickhouse_url: Joi.string().uri().allow(null, '').optional(),
 	clickhouse_username: Joi.string().allow(null, '').optional(),
 	clickhouse_password: Joi.string().allow(null, '').optional(),
+	auto_join: Joi.boolean().allow(null).default(true).optional(),
 }).label('Workspace').description('The User\'s workspace object. A workspace is like an organization that one or more users belong to.');
 

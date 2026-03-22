@@ -111,6 +111,10 @@ components:
       - commerce_saleschannel_write
       - commerce_itemvariant_read
       - commerce_itemvariant_write
+      - commerce_reservation_read
+      - commerce_reservation_write
+      - commerce_availability_read
+      - commerce_availability_write
       - verification_package_read
       - verification_request_read
       - verification_request_write
@@ -334,6 +338,8 @@ components:
       - commerce_review
       - commerce_saleschannel
       - commerce_itemvariant
+      - commerce_reservation
+      - commerce_availability
       - verification_package
       - verification_request
       - assessment_package
@@ -993,6 +999,12 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         list_fulltext:
           $ref: "#/components/schemas/SupportInboundType"
+        list_io_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_io_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        native_webhook_io_id:
+          $ref: "#/components/schemas/SupportInboundType"
       required:
 
     Invoice:
@@ -1383,6 +1395,9 @@ components:
           type: string
         clickhouse_password:
           type: string
+        auto_join:
+          type: boolean
+          default: "true"
       required:
         - name
     WorkspaceIntegration:

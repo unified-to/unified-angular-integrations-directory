@@ -927,7 +927,6 @@ export interface IWorkspace {
 	stripe_subscriptions?: string[];
 	stripe_prices?: string[];
 	secret?: string; // Workspace API secret
-	integrations?: IWorkspaceIntegration[]; // @deprecated: use integrations collection instead
 	ip_addresses?: string[]; // a list of IP addresses that are allowed to access this workspace
 	aws_region?: string;
 	aws_key?: string;
@@ -972,6 +971,7 @@ export interface IWorkspace {
 	clickhouse_username?: string;
 	clickhouse_password?: string;
 	auto_join?: boolean;
+	grafana_username?: string; // Required when `grafana_auth_type` is `basic` (e.g. Grafana Cloud user / instance id)
 }
 
 export interface IWorkspaceIntegration {

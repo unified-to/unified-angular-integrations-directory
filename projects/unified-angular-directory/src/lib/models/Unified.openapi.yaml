@@ -1005,6 +1005,8 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         native_webhook_io_id:
           $ref: "#/components/schemas/SupportInboundType"
+        list_size:
+          $ref: "#/components/schemas/SupportInboundType"
       required:
 
     Invoice:
@@ -1388,6 +1390,11 @@ components:
         grafana_apikey:
           type: string
         grafana_site:
+          type: string
+        grafana_username:
+          type: string
+          description: Required when `grafana_auth_type` is `basic` (e.g. Grafana Cloud user / instance id)
+        grafana_auth_type:
           type: string
         clickhouse_url:
           type: string

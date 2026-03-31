@@ -973,6 +973,7 @@ export interface IWorkspace {
 	clickhouse_username?: string;
 	clickhouse_password?: string;
 	auto_join?: boolean;
+	ip_allowlist?: string[];
 }
 
 export interface IWorkspaceIntegration {

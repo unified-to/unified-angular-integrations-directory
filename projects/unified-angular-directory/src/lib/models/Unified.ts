@@ -974,6 +974,7 @@ export interface IWorkspace {
 	clickhouse_username?: string;
 	clickhouse_password?: string;
 	auto_join?: boolean;
+	auth_aws_external_id?: string; // External ID will be the identifier used by the customer to verify the role assumption.
 }
 
 export interface IWorkspaceIntegration {

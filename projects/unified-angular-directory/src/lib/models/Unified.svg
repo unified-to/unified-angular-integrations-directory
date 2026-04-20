@@ -1,4 +1,4 @@
-<svg version="1.1" baseProfile="full" width="2709.8" height="4399.0" viewbox="0 0 2709.75 4399" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<svg version="1.1" baseProfile="full" width="2709.8" height="4429.0" viewbox="0 0 2709.75 4429" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
 	<desc >#background: transparent
 	#edges: rounded
 	[ApiCall | 
@@ -268,6 +268,8 @@
 		virtual_webhook_template_id: SupportInboundType
 		native_webhook_template_id: SupportInboundType
 		native_webhook_list_id: SupportInboundType
+		list_reference: SupportInboundType
+		virtual_webhook_reference: SupportInboundType
 	]
 	
 	[Invoice | 
@@ -526,7 +528,7 @@
 	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
 		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
 			<g stroke="transparent" fill="transparent">
-				<rect x="0.0" y="0.0" height="4399.0" width="2709.8" stroke="none"></rect>
+				<rect x="0.0" y="0.0" height="4429.0" width="2709.8" stroke="none"></rect>
 			</g>
 			<g transform="translate(8, 8)" fill="#33322E">
 				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
@@ -544,27 +546,27 @@
 					<path d="M967.5 853.5 L974.8 857.8 L977.4 849.6 L977.2 864.0 Z"></path>
 					<path d="M1130.0 294.5 L1113 367 L1113 605.5 L1113 605.5 L1113 844 L1113 844 L1114.3406635468689 857.3666156613205 L1114.3 857.4 " fill="none"></path>
 					<path d="M1108.4 851.3 L1114.3 857.4 L1119.0 850.2 L1115.0 864.0 Z"></path>
-					<path d="M1037.0 201.8 L328 367 L328 605.5 L328 605.5 L328 844 L328 844 L328 1345 L328 1345 L328 1846 L328 1846 L922.1655240596332 3007.564756549978 L922.2 3007.6 " fill="none"></path>
-					<path d="M914.4 3004.1 L922.2 3007.6 L923.9 2999.2 L925.2 3013.5 Z"></path>
+					<path d="M1037.0 201.8 L328 367 L328 605.5 L328 605.5 L328 844 L328 844 L328 1345 L328 1345 L328 1846 L328 1846 L922.7422455834638 3022.550290874627 L922.7 3022.6 " fill="none"></path>
+					<path d="M915.0 3019.0 L922.7 3022.6 L924.5 3014.2 L925.7 3028.5 Z"></path>
 					<path d="M1280.0 225.1 L1614 367 L1621.7007829682561 388.23279465814 L1621.7 388.2 " fill="none"></path>
 					<path d="M1614.4 383.8 L1621.7 388.2 L1624.4 380.1 L1624.0 394.5 Z"></path>
 					<path d="M1037.0 215.2 L595.25 367 L571.8592535210691 440.64611267623803 L571.9 440.6 " fill="none"></path>
 					<path d="M568.8 432.7 L571.9 440.6 L579.0 435.9 L569.8 447.0 Z"></path>
-					<path d="M941.9 3013.5 L559.5 1846 L959.6196553420469 1513.9752425236181 L959.6 1514.0 " fill="none"></path>
+					<path d="M942.3 3028.5 L559.5 1846 L959.6196553420469 1513.9752425236181 L959.6 1514.0 " fill="none"></path>
 					<path d="M957.9 1522.3 L959.6 1514.0 L951.1 1514.1 L964.8 1509.7 Z"></path>
 					<text x="1369.8" y="1506.4" stroke="none">*</text>
-					<path d="M1036.4 3013.5 L1866.5 1846 L1367.1797111535016 1490.2808891402833 L1367.2 1490.3 " fill="none"></path>
+					<path d="M1035.7 3028.5 L1866.5 1846 L1367.1797111535016 1490.2808891402833 L1367.2 1490.3 " fill="none"></path>
 					<path d="M1375.7 1489.8 L1367.2 1490.3 L1369.5 1498.5 L1361.8 1486.4 Z"></path>
 					<path d="M1700.5 816.5 L1700.5 844 L1366.6256629626412 1155.3467526397706 L1366.6 1155.3 " fill="none"></path>
 					<path d="M1367.9 1146.9 L1366.6 1155.3 L1375.1 1154.7 L1361.8 1159.9 Z"></path>
 					<path d="M1901.5 672.9 L2412.25 844 L2412.25 1104.8333333333333 L2412.3 1104.8 " fill="none"></path>
 					<path d="M2406.9 1098.2 L2412.3 1104.8 L2417.6 1098.2 L2412.3 1111.5 Z"></path>
 					<path d="M2132.5 249.5 L2132.5 367 L1901.5 494.53125 L1901.5 494.5 " fill="none"></path>
-					<text x="924.0" y="3005.5" stroke="none">*</text>
-					<path d="M964.8 1499.5 L519.5 1846 L936.7940150282417 3007.226131372122 L936.8 3007.2 " fill="none"></path>
-					<path d="M929.5 3002.8 L936.8 3007.2 L939.6 2999.1 L939.0 3013.5 Z"></path>
-					<text x="2012.5" y="3050.5" stroke="none">*</text>
-					<path d="M1361.8 1463.2 L2004.5 1846 L2004.5 3058.5 L2004.5 3058.5 " fill="none"></path>
+					<text x="924.4" y="3020.5" stroke="none">*</text>
+					<path d="M964.8 1499.5 L519.5 1846 L937.2027566548823 3022.2177127694695 L937.2 3022.2 " fill="none"></path>
+					<path d="M929.9 3017.7 L937.2 3022.2 L940.0 3014.2 L939.4 3028.5 Z"></path>
+					<text x="2012.5" y="3065.5" stroke="none">*</text>
+					<path d="M1361.8 1463.2 L2004.5 1846 L2004.5 3073.5 L2004.5 3073.5 " fill="none"></path>
 					<path d="M1947.8 792.8 L1910 844 L1367.2861428171484 1208.1106694993084 L1367.3 1208.1 " fill="none"></path>
 					<path d="M1369.9 1200.0 L1367.3 1208.1 L1375.8 1208.8 L1361.8 1211.8 Z"></path>
 					<path d="M2104.1 824.0 L2105.75 844 L2105.75 1269 L2105.8 1269.0 " fill="none"></path>
@@ -730,7 +732,7 @@
 					</g>
 					<g data-name="IntegrationSupport">
 						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
-							<rect x="2170.8" y="1866.0" height="2477.0" width="483.0" data-name="IntegrationSupport"></rect>
+							<rect x="2170.8" y="1866.0" height="2507.0" width="483.0" data-name="IntegrationSupport"></rect>
 							<path d="M2170.8 1897.0 L2653.8 1897.0" fill="none" data-name="IntegrationSupport"></path>
 						</g>
 						<g transform="translate(2170.75, 1866)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
@@ -903,6 +905,8 @@
 								<text x="0.0" y="2398.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_template_id: SupportInboundType</text>
 								<text x="0.0" y="2413.5" stroke="none" data-name="IntegrationSupport">native_webhook_template_id: SupportInboundType</text>
 								<text x="0.0" y="2428.5" stroke="none" data-name="IntegrationSupport">native_webhook_list_id: SupportInboundType</text>
+								<text x="0.0" y="2443.5" stroke="none" data-name="IntegrationSupport">list_reference: SupportInboundType</text>
+								<text x="0.0" y="2458.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_reference: SupportInboundType</text>
 								
 							</g>
 						</g>
@@ -1052,16 +1056,16 @@
 					</g>
 					<g data-name="User">
 						<g fill="#eee8d5" stroke="#33322E" data-name="User">
-							<rect x="887.8" y="3013.5" height="182.0" width="168.0" data-name="User"></rect>
-							<path d="M887.8 3044.5 L1055.8 3044.5" fill="none" data-name="User"></path>
+							<rect x="887.8" y="3028.5" height="182.0" width="168.0" data-name="User"></rect>
+							<path d="M887.8 3059.5 L1055.8 3059.5" fill="none" data-name="User"></path>
 						</g>
-						<g transform="translate(887.75, 3013.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
+						<g transform="translate(887.75, 3028.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User">
 								<text x="76.0" y="13.5" stroke="none" text-anchor="middle" data-name="User">User</text>
 								
 							</g>
 						</g>
-						<g transform="translate(887.75, 3044.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
+						<g transform="translate(887.75, 3059.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="User">
 								<text x="0.0" y="13.5" stroke="none" data-name="User">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="User">created_at: date</text>
@@ -1289,16 +1293,16 @@
 					</g>
 					<g data-name="WorkspaceIpAllowlistEntry">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIpAllowlistEntry">
-							<rect x="1892.5" y="3058.5" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
-							<path d="M1892.5 3089.5 L2116.5 3089.5" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
+							<rect x="1892.5" y="3073.5" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
+							<path d="M1892.5 3104.5 L2116.5 3104.5" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
 						</g>
-						<g transform="translate(1892.5, 3058.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(1892.5, 3073.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIpAllowlistEntry">
 								<text x="104.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIpAllowlistEntry">WorkspaceIpAllowlistEntry</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1892.5, 3089.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(1892.5, 3104.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIpAllowlistEntry">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">ip_address: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">name: string</text>

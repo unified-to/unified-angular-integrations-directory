@@ -1,9 +1,6 @@
-<svg version="1.1" baseProfile="full" width="2918.3" height="4339.0" viewbox="0 0 2918.25 4339" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<svg version="1.1" baseProfile="full" width="2843.8" height="4339.0" viewbox="0 0 2843.75 4339" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
 	<desc >#background: transparent
 	#edges: rounded
-	[ | 
-	]
-	
 	[ApiCall | 
 		id: id
 		created_at: date
@@ -487,11 +484,8 @@
 		refresh_url: string
 		base_url: string
 		prompt_region: boolean
-		pem: string
-		key: string
 		environment: string
 		categories: IntegrationCategory\[\]
-		dev_api_key: string
 		overriden_scopes: string
 		auth: WorkspaceIntegrationAuth
 		secretsmanager_id: id
@@ -543,86 +537,70 @@
 	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
 		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
 			<g stroke="transparent" fill="transparent">
-				<rect x="0.0" y="0.0" height="4339.0" width="2918.3" stroke="none"></rect>
+				<rect x="0.0" y="0.0" height="4339.0" width="2843.8" stroke="none"></rect>
 			</g>
 			<g transform="translate(8, 8)" fill="#33322E">
 				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
-					<path d="M579.0 278.8 L467.25 367 L493.86587291577985 448.16523621841776 L493.9 448.2 " fill="none"></path>
+					<path d="M501.5 327.5 L467.25 367 L493.86587291577985 448.16523621841776 L493.9 448.2 " fill="none"></path>
 					<path d="M486.7 443.5 L493.9 448.2 L496.9 440.2 L495.9 454.5 Z"></path>
-					<path d="M846.0 317.6 L891.75 367 L891.75 598 L891.75 598 L891.75 829 L891.75 829 L1036.445662116493 1000.1364521723126 L1036.4 1000.1 " fill="none"></path>
-					<path d="M1028.1 998.5 L1036.4 1000.1 L1036.2 991.6 L1040.8 1005.2 Z"></path>
-					<path d="M846.0 198.9 L1730.25 367 L2148.9955741185718 521.5211303856072 L2149.0 521.5 " fill="none"></path>
-					<path d="M2140.9 524.2 L2149.0 521.5 L2144.6 514.2 L2155.3 523.8 Z"></path>
-					<path d="M694.5 663.4 L1078.5 829 L1083.8940522348835 842.7913248431545 L1083.9 842.8 " fill="none"></path>
-					<path d="M1076.5 838.5 L1083.9 842.8 L1086.4 834.6 L1086.3 849.0 Z"></path>
+					<path d="M768.5 274.1 L891.75 367 L891.75 598 L891.75 598 L891.75 829 L891.75 829 L1011.386547376409 981.5853249703772 L1011.4 981.6 " fill="none"></path>
+					<path d="M1003.1 979.6 L1011.4 981.6 L1011.5 973.0 L1015.5 986.8 Z"></path>
+					<path d="M768.5 199.1 L1643.5 367 L2062.2455741185718 521.5211303856072 L2062.2 521.5 " fill="none"></path>
+					<path d="M2054.1 524.2 L2062.2 521.5 L2057.8 514.2 L2068.5 523.8 Z"></path>
+					<path d="M694.5 669.2 L1034.75 829 L1040.8075236276316 842.8892173554065 L1040.8 842.9 " fill="none"></path>
+					<path d="M1033.3 838.9 L1040.8 842.9 L1043.0 834.6 L1043.5 849.0 Z"></path>
 					<path d="M543.0 741.5 L543 829 L543 1240 L543 1240 L543 1651 L543 1651 L1086.837773056734 2887.397577493749 L1086.8 2887.4 " fill="none"></path>
 					<path d="M1079.3 2883.4 L1086.8 2887.4 L1089.0 2879.1 L1089.5 2893.5 Z"></path>
 					<path d="M391.5 685.7 L144 829 L144 1021.5 L144.0 1021.5 " fill="none"></path>
-					<path d="M2620.8 1473.5 L2620.75 1651 L2620.75 1671 L2620.8 1671.0 " fill="none"></path>
-					<path d="M1150.3 711.5 L1150.25 829 L1153.1699683887587 842.48434840202 L1153.2 842.5 " fill="none"></path>
-					<path d="M1146.5 837.1 L1153.2 842.5 L1157.0 834.8 L1154.6 849.0 Z"></path>
-					<path d="M1348.5 302.0 L1408.75 367 L1408.75 598 L1408.75 598 L1408.75 829 L1408.75 829 L1403.0435504041916 842.8368777809868 L1403.0 842.8 " fill="none"></path>
-					<path d="M1400.7 834.6 L1403.0 842.8 L1410.5 838.7 L1400.5 849.0 Z"></path>
+					<path d="M2546.3 1473.5 L2546.25 1651 L2546.25 1671 L2546.3 1671.0 " fill="none"></path>
+					<path d="M1106.5 711.5 L1106.5 829 L1110.044178938664 842.5503027329381 L1110.0 842.6 " fill="none"></path>
+					<path d="M1103.2 837.5 L1110.0 842.6 L1113.5 834.8 L1111.7 849.0 Z"></path>
+					<path d="M1319.5 302.0 L1365 367 L1365 598 L1365 598 L1365 829 L1365 829 L1359.951124989242 842.7423021815993 L1360.0 842.7 " fill="none"></path>
+					<path d="M1357.2 834.6 L1360.0 842.7 L1367.3 838.3 L1357.7 849.0 Z"></path>
 					<path d="M1108.0 199.6 L328 367 L328 598 L328 598 L328 829 L328 829 L328 1240 L328 1240 L328 1651 L328 1651 L383.5810021600921 2879.340147738036 L383.6 2879.3 " fill="none"></path>
 					<path d="M378.0 2872.9 L383.6 2879.3 L388.6 2872.4 L383.9 2886.0 Z"></path>
-					<path d="M1351.0 217.0 L1770.25 367 L2149.0478244003375 516.3213266834096 L2149.0 516.3 " fill="none"></path>
-					<path d="M2140.9 518.8 L2149.0 516.3 L2144.8 508.9 L2155.3 518.8 Z"></path>
+					<path d="M1351.0 225.3 L1683.5 367 L2062.2978244003375 516.3213266834096 L2062.3 516.3 " fill="none"></path>
+					<path d="M2054.1 518.8 L2062.3 516.3 L2058.1 508.9 L2068.5 518.8 Z"></path>
 					<path d="M1108.0 225.3 L775.25 367 L692.0032631874435 449.7986919427364 L692.0 449.8 " fill="none"></path>
 					<path d="M693.0 441.3 L692.0 449.8 L700.5 448.9 L687.3 454.5 Z"></path>
-					<path d="M1181.7 2893.5 L2006.25 1651 L1443.6261914170568 1349.5157948792835 L1443.6 1349.5 " fill="none"></path>
-					<path d="M1452.0 1348.0 L1443.6 1349.5 L1447.0 1357.4 L1437.8 1346.4 Z"></path>
-					<path d="M392.1 2886.0 L447.25 1651 L1034.8326545077387 1346.0802133804539 L1034.8 1346.1 " fill="none"></path>
-					<path d="M1031.4 1353.9 L1034.8 1346.1 L1026.5 1344.4 L1040.8 1343.0 Z"></path>
-					<text x="1048.8" y="1368.5" stroke="none">*</text>
-					<path d="M394.8 2886.0 L487.25 1651 L1034.9000405518238 1351.6859485813836 L1034.9 1351.7 " fill="none"></path>
-					<path d="M1031.6 1359.6 L1034.9 1351.7 L1026.5 1350.2 L1040.8 1348.5 Z"></path>
-					<path d="M2155.3 673.1 L1738 829 L1442.8948613605205 1072.184384923962 L1442.9 1072.2 " fill="none"></path>
-					<path d="M1444.6 1063.8 L1442.9 1072.2 L1451.4 1072.1 L1437.8 1076.4 Z"></path>
-					<path d="M2557.3 773.5 L2620.75 829 L2620.75 999.8333333333334 L2620.8 999.8 " fill="none"></path>
-					<path d="M2615.4 993.2 L2620.8 999.8 L2626.1 993.2 L2620.8 1006.5 Z"></path>
-					<path d="M2481.5 249.5 L2481.5 367 L2470.655844155844 387 L2470.7 387.0 " fill="none"></path>
+					<path d="M1177.0 2893.5 L1931.75 1651 L1418.2853091454258 1356.9784215378195 L1418.3 1357.0 " fill="none"></path>
+					<path d="M1426.7 1355.7 L1418.3 1357.0 L1421.4 1364.9 L1412.5 1353.7 Z"></path>
+					<path d="M392.1 2886.0 L447.25 1651 L1009.6242360206869 1349.55127355135 L1009.6 1349.6 " fill="none"></path>
+					<path d="M1006.3 1357.4 L1009.6 1349.6 L1001.2 1348.0 L1015.5 1346.4 Z"></path>
+					<text x="1023.5" y="1372.3" stroke="none">*</text>
+					<path d="M394.8 2886.0 L487.25 1651 L1009.6970286573728 1355.5397608831368 L1009.7 1355.5 " fill="none"></path>
+					<path d="M1006.5 1363.5 L1009.7 1355.5 L1001.3 1354.2 L1015.5 1352.3 Z"></path>
+					<path d="M2068.5 674.6 L1663.5 829 L1417.420036337437 1054.003036852755 L1417.4 1054.0 " fill="none"></path>
+					<path d="M1418.7 1045.6 L1417.4 1054.0 L1425.9 1053.4 L1412.5 1058.5 Z"></path>
+					<path d="M2470.5 765.8 L2546.25 829 L2546.25 999.8333333333334 L2546.3 999.8 " fill="none"></path>
+					<path d="M2540.9 993.2 L2546.3 999.8 L2551.6 993.2 L2546.3 1006.5 Z"></path>
+					<path d="M2481.5 249.5 L2481.5 367 L2463.1450216450216 387 L2463.1 387.0 " fill="none"></path>
 					<text x="374.3" y="2878.0" stroke="none">*</text>
-					<path d="M1040.8 1338.1 L407.25 1651 L389.41785053705325 2879.3340357333686 L389.4 2879.3 " fill="none"></path>
+					<path d="M1015.5 1341.1 L407.25 1651 L389.41785053705325 2879.3340357333686 L389.4 2879.3 " fill="none"></path>
 					<path d="M384.2 2872.6 L389.4 2879.3 L394.8 2872.7 L389.3 2886.0 Z"></path>
-					<path d="M1239.3 1631.0 L1239.25 1651 L1133.9318346182608 2886.8574097007618 L1133.9 2886.9 " fill="none"></path>
-					<path d="M1129.2 2879.8 L1133.9 2886.9 L1139.8 2880.7 L1133.4 2893.5 Z"></path>
-					<path d="M1437.8 1389.2 L1786 1651 L1170.765058054694 2887.531311890073 L1170.8 2887.5 " fill="none"></path>
-					<path d="M1169.0 2879.2 L1170.8 2887.5 L1178.5 2883.9 L1167.8 2893.5 Z"></path>
-					<text x="2167.5" y="2923.0" stroke="none">*</text>
-					<path d="M1437.8 1328.7 L2159.5 1651 L2159.5 2931 L2159.5 2931.0 " fill="none"></path>
-					<path d="M1767.8 759.6 L1827 829 L1443.2134014641847 1097.3731042079457 L1443.2 1097.4 " fill="none"></path>
-					<path d="M1445.6 1089.2 L1443.2 1097.4 L1451.7 1097.9 L1437.8 1101.2 Z"></path>
-					<path d="M1767.8 692.7 L1966.25 829 L1966.25 1240 L1966.25 1240 L1966.25 1651 L1966.25 1651 L1182.7135477126646 2887.868256825008 L1182.7 2887.9 " fill="none"></path>
-					<path d="M1181.8 2879.4 L1182.7 2887.9 L1190.8 2885.1 L1179.1 2893.5 Z"></path>
-					<path d="M1491.8 632.1 L696 829 L696 1164 L696.0 1164.0 " fill="none"></path>
-					<g >
-						<g fill="#eee8d5" stroke="#33322E">
-							<rect x="539.0" y="165.5" height="16.0" width="0.0"></rect>
-							<path d="M539.0 173.5 L539.0 173.5" fill="none"></path>
-						</g>
-						<g transform="translate(539, 165.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal">
-							<g transform="translate(8, 8)" fill="#33322E">
-								
-							</g>
-						</g>
-						<g transform="translate(539, 173.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
-							<g transform="translate(8, 8)" fill="#33322E">
-								
-							</g>
-						</g>
-					</g>
+					<path d="M1214.0 1631.0 L1214 1651 L1132.2159488984519 2886.847883312283 L1132.2 2886.8 " fill="none"></path>
+					<path d="M1127.3 2879.8 L1132.2 2886.8 L1138.0 2880.5 L1131.8 2893.5 Z"></path>
+					<path d="M1412.5 1408.1 L1699.25 1651 L1164.9770771742435 2887.380271670075 L1165.0 2887.4 " fill="none"></path>
+					<path d="M1162.7 2879.1 L1165.0 2887.4 L1172.5 2883.4 L1162.3 2893.5 Z"></path>
+					<text x="2093.0" y="2923.0" stroke="none">*</text>
+					<path d="M1412.5 1333.7 L2085 1651 L2085 2931 L2085.0 2931.0 " fill="none"></path>
+					<path d="M1681.0 750.2 L1752.5 829 L1417.799487619014 1084.4538729593041 L1417.8 1084.5 " fill="none"></path>
+					<path d="M1419.9 1076.2 L1417.8 1084.5 L1426.3 1084.6 L1412.5 1088.5 Z"></path>
+					<path d="M1681.0 689.4 L1891.75 829 L1891.75 1240 L1891.75 1240 L1891.75 1651 L1891.75 1651 L1177.787678901672 2887.7263720135634 L1177.8 2887.7 " fill="none"></path>
+					<path d="M1176.5 2879.3 L1177.8 2887.7 L1185.7 2884.6 L1174.5 2893.5 Z"></path>
+					<path d="M1405.0 635.6 L696 829 L696 1164 L696.0 1164.0 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
-							<rect x="579.0" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
-							<path d="M579.0 31.0 L846.0 31.0" fill="none" data-name="ApiCall"></path>
+							<rect x="501.5" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
+							<path d="M501.5 31.0 L768.5 31.0" fill="none" data-name="ApiCall"></path>
 						</g>
-						<g transform="translate(579, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
+						<g transform="translate(501.5, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ApiCall">
 								<text x="125.5" y="13.5" stroke="none" text-anchor="middle" data-name="ApiCall">ApiCall</text>
 								
 							</g>
 						</g>
-						<g transform="translate(579, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
+						<g transform="translate(501.5, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ApiCall">
 								<text x="0.0" y="13.5" stroke="none" data-name="ApiCall">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="ApiCall">created_at: date</text>
@@ -726,16 +704,16 @@
 					</g>
 					<g data-name="Integration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
-							<rect x="2467.3" y="1006.5" height="467.0" width="307.0" data-name="Integration"></rect>
-							<path d="M2467.3 1037.5 L2774.3 1037.5" fill="none" data-name="Integration"></path>
+							<rect x="2392.8" y="1006.5" height="467.0" width="307.0" data-name="Integration"></rect>
+							<path d="M2392.8 1037.5 L2699.8 1037.5" fill="none" data-name="Integration"></path>
 						</g>
-						<g transform="translate(2467.25, 1006.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+						<g transform="translate(2392.75, 1006.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
 								<text x="145.5" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2467.25, 1037.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+						<g transform="translate(2392.75, 1037.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
 								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
@@ -771,16 +749,16 @@
 					</g>
 					<g data-name="IntegrationSupport">
 						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
-							<rect x="2379.3" y="1671.0" height="2612.0" width="483.0" data-name="IntegrationSupport"></rect>
-							<path d="M2379.3 1702.0 L2862.3 1702.0" fill="none" data-name="IntegrationSupport"></path>
+							<rect x="2304.8" y="1671.0" height="2612.0" width="483.0" data-name="IntegrationSupport"></rect>
+							<path d="M2304.8 1702.0 L2787.8 1702.0" fill="none" data-name="IntegrationSupport"></path>
 						</g>
-						<g transform="translate(2379.25, 1671)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
+						<g transform="translate(2304.75, 1671)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IntegrationSupport">
 								<text x="233.5" y="13.5" stroke="none" text-anchor="middle" data-name="IntegrationSupport">IntegrationSupport</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2379.25, 1702)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
+						<g transform="translate(2304.75, 1702)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IntegrationSupport">
 								<text x="0.0" y="13.5" stroke="none" data-name="IntegrationSupport">methods: boolean</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="IntegrationSupport">inbound_fields: SupportInboundType</text>
@@ -959,16 +937,16 @@
 					</g>
 					<g data-name="Invoice">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Invoice">
-							<rect x="886.0" y="112.5" height="122.0" width="182.0" data-name="Invoice"></rect>
-							<path d="M886.0 143.5 L1068.0 143.5" fill="none" data-name="Invoice"></path>
+							<rect x="808.5" y="112.5" height="122.0" width="182.0" data-name="Invoice"></rect>
+							<path d="M808.5 143.5 L990.5 143.5" fill="none" data-name="Invoice"></path>
 						</g>
-						<g transform="translate(886, 112.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Invoice">
+						<g transform="translate(808.5, 112.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Invoice">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Invoice">
 								<text x="83.0" y="13.5" stroke="none" text-anchor="middle" data-name="Invoice">Invoice</text>
 								
 							</g>
 						</g>
-						<g transform="translate(886, 143.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Invoice">
+						<g transform="translate(808.5, 143.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Invoice">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Invoice">
 								<text x="0.0" y="13.5" stroke="none" data-name="Invoice">stripe_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Invoice">created_at: date</text>
@@ -981,16 +959,16 @@
 					</g>
 					<g data-name="Issue">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Issue">
-							<rect x="1046.8" y="484.5" height="227.0" width="207.0" data-name="Issue"></rect>
-							<path d="M1046.8 515.5 L1253.8 515.5" fill="none" data-name="Issue"></path>
+							<rect x="1003.0" y="484.5" height="227.0" width="207.0" data-name="Issue"></rect>
+							<path d="M1003.0 515.5 L1210.0 515.5" fill="none" data-name="Issue"></path>
 						</g>
-						<g transform="translate(1046.75, 484.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Issue">
+						<g transform="translate(1003, 484.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Issue">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Issue">
 								<text x="95.5" y="13.5" stroke="none" text-anchor="middle" data-name="Issue">Issue</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1046.75, 515.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Issue">
+						<g transform="translate(1003, 515.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Issue">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Issue">
 								<text x="0.0" y="13.5" stroke="none" data-name="Issue">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Issue">created_at: string</text>
@@ -1175,16 +1153,16 @@
 					</g>
 					<g data-name="Webhook">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Webhook">
-							<rect x="2155.3" y="387.0" height="422.0" width="402.0" data-name="Webhook"></rect>
-							<path d="M2155.3 418.0 L2557.3 418.0" fill="none" data-name="Webhook"></path>
+							<rect x="2068.5" y="387.0" height="422.0" width="402.0" data-name="Webhook"></rect>
+							<path d="M2068.5 418.0 L2470.5 418.0" fill="none" data-name="Webhook"></path>
 						</g>
-						<g transform="translate(2155.25, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
+						<g transform="translate(2068.5, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Webhook">
 								<text x="193.0" y="13.5" stroke="none" text-anchor="middle" data-name="Webhook">Webhook</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2155.25, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
+						<g transform="translate(2068.5, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Webhook">
 								<text x="0.0" y="13.5" stroke="none" data-name="Webhook">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Webhook">created_at: date</text>
@@ -1241,16 +1219,16 @@
 					</g>
 					<g data-name="Workspace">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Workspace">
-							<rect x="1040.8" y="849.0" height="782.0" width="397.0" data-name="Workspace"></rect>
-							<path d="M1040.8 880.0 L1437.8 880.0" fill="none" data-name="Workspace"></path>
+							<rect x="1015.5" y="849.0" height="782.0" width="397.0" data-name="Workspace"></rect>
+							<path d="M1015.5 880.0 L1412.5 880.0" fill="none" data-name="Workspace"></path>
 						</g>
-						<g transform="translate(1040.75, 849)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
+						<g transform="translate(1015.5, 849)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Workspace">
 								<text x="190.5" y="13.5" stroke="none" text-anchor="middle" data-name="Workspace">Workspace</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1040.75, 880)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
+						<g transform="translate(1015.5, 880)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Workspace">
 								<text x="0.0" y="13.5" stroke="none" data-name="Workspace">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Workspace">created_at: date</text>
@@ -1307,16 +1285,16 @@
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="1491.8" y="417.0" height="362.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M1491.8 448.0 L1767.8 448.0" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="1405.0" y="439.5" height="317.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1405.0 470.5 L1681.0 470.5" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(1491.75, 417)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1405, 439.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1491.75, 448)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1405, 470.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">created_at: date</text>
@@ -1330,15 +1308,12 @@
 								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">refresh_url: string</text>
 								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">base_url: string</text>
 								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">prompt_region: boolean</text>
-								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">pem: string</text>
-								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
-								<text x="0.0" y="313.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
 								
 							</g>
 						</g>
@@ -1369,16 +1344,16 @@
 					</g>
 					<g data-name="WorkspaceIpAllowlistEntry">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIpAllowlistEntry">
-							<rect x="2047.5" y="2931.0" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
-							<path d="M2047.5 2962.0 L2271.5 2962.0" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
+							<rect x="1973.0" y="2931.0" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
+							<path d="M1973.0 2962.0 L2197.0 2962.0" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
 						</g>
-						<g transform="translate(2047.5, 2931)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(1973, 2931)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIpAllowlistEntry">
 								<text x="104.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIpAllowlistEntry">WorkspaceIpAllowlistEntry</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2047.5, 2962)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(1973, 2962)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIpAllowlistEntry">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">ip_address: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">name: string</text>

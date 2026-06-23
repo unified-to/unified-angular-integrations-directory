@@ -1,6 +1,9 @@
-<svg version="1.1" baseProfile="full" width="2711.5" height="4654.0" viewbox="0 0 2711.5 4654" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<svg version="1.1" baseProfile="full" width="2918.3" height="4339.0" viewbox="0 0 2918.25 4339" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
 	<desc >#background: transparent
 	#edges: rounded
+	[ | 
+	]
+	
 	[ApiCall | 
 		id: id
 		created_at: date
@@ -36,11 +39,7 @@
 		categories: IntegrationCategory\[\]
 		auth: ConnectionAuth
 		is_paused: boolean
-		auth_aws_arn: string
 		environment: string
-		auth_azure_keyvault_id: string
-		auth_gcp_secret_name: string
-		auth_hashi_vault_path: string
 		last_healthy_at: date
 		last_unhealthy_at: date
 		secretsmanager_id: id
@@ -363,8 +362,14 @@
 		name: string
 		workspace_id: id
 		auth: string
-		environments: string\[\]
 		dcs: string\[\]
+	]
+	
+	[SecretsManagerInstructions | 
+		type: SecretsManagerType
+		key: string
+		label: string
+		instructions: string
 	]
 	
 	[User | 
@@ -432,11 +437,6 @@
 		secret: string
 		ip_allowlist: WorkspaceIpAllowlistEntry\[\]
 		restrict_ips: boolean
-		aws_region: string
-		aws_key: string
-		aws_secret: string
-		auth_aws_external_id: string
-		auth_aws_arn: string
 		datadog_apikey: string
 		datadog_site: string
 		environments: string\[\]
@@ -461,18 +461,6 @@
 		saml_only_login: boolean
 		sync_objects: RegionSyncType\[\]
 		sync_parent_dc: string
-		azure_keyvault_url: string
-		azure_tenant_id: string
-		azure_client_id: string
-		azure_client_secret: string
-		gcp_project_id: string
-		gcp_client_email: string
-		gcp_private_key: string
-		hashicorp_vault_url: string
-		hashicorp_vault_token: string
-		hashicorp_vault_namespace: string
-		hashicorp_vault_kv_mount: string
-		hashicorp_vault_kv_version: string
 		grafana_apikey: string
 		grafana_site: string
 		grafana_username: string
@@ -492,10 +480,6 @@
 		updated_at: date
 		workspace_id: id
 		integration_type: string
-		client_id: string
-		client_secret: string
-		consumer_key: string
-		consumer_secret: string
 		is_active: boolean
 		api_url: string
 		authorize_url: string
@@ -510,10 +494,6 @@
 		dev_api_key: string
 		overriden_scopes: string
 		auth: WorkspaceIntegrationAuth
-		auth_aws_arn: string
-		auth_azure_keyvault_id: string
-		auth_gcp_secret_name: string
-		auth_hashi_vault_path: string
 		secretsmanager_id: id
 		secretsmanager_key: string
 	]
@@ -563,70 +543,86 @@
 	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
 		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
 			<g stroke="transparent" fill="transparent">
-				<rect x="0.0" y="0.0" height="4654.0" width="2711.5" stroke="none"></rect>
+				<rect x="0.0" y="0.0" height="4339.0" width="2918.3" stroke="none"></rect>
 			</g>
 			<g transform="translate(8, 8)" fill="#33322E">
 				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
-					<path d="M572.8 281.6 L467.25 367 L490.7869276630654 448.09753293808666 L490.8 448.1 " fill="none"></path>
-					<path d="M483.8 443.2 L490.8 448.1 L494.1 440.2 L492.6 454.5 Z"></path>
-					<path d="M839.8 312.8 L891.75 367 L891.75 628 L891.75 628 L891.75 889 L891.75 889 L1012.076670117708 1090.073427023695 L1012.1 1090.1 " fill="none"></path>
-					<path d="M1004.1 1087.1 L1012.1 1090.1 L1013.2 1081.6 L1015.5 1095.8 Z"></path>
-					<path d="M839.8 201.1 L1643.5 367 L1994.7107843137255 531.2024446142093 L1994.7 531.2 " fill="none"></path>
-					<path d="M1986.4 533.2 L1994.7 531.2 L1990.9 523.5 L2000.8 534.0 Z"></path>
-					<path d="M694.5 708.4 L1034.75 889 L1039.301839632622 902.6745642519771 L1039.3 902.7 " fill="none"></path>
-					<path d="M1032.1 898.0 L1039.3 902.7 L1042.3 894.7 L1041.4 909.0 Z"></path>
-					<path d="M543.0 801.5 L543 889 L543 1427.5 L543 1427.5 L543 1966 L543 1966 L1126.9037713531739 3194.9784139909657 L1126.9 3195.0 " fill="none"></path>
-					<path d="M1119.2 3191.2 L1126.9 3195.0 L1128.9 3186.7 L1129.8 3201.0 Z"></path>
-					<path d="M391.5 727.1 L144 889 L144 1209 L144.0 1209.0 " fill="none"></path>
-					<path d="M2414.0 1661.0 L2414 1966 L2414 1986 L2414.0 1986.0 " fill="none"></path>
-					<path d="M1106.5 741.5 L1106.5 889 L1109.187465857353 902.4623289691583 L1109.2 902.5 " fill="none"></path>
-					<path d="M1102.7 897.0 L1109.2 902.5 L1113.1 894.9 L1110.5 909.0 Z"></path>
-					<path d="M1343.4 302.0 L1365 367 L1365 628 L1365 628 L1365 889 L1365 889 L1361.191793673784 902.5809212362069 L1361.2 902.6 " fill="none"></path>
-					<path d="M1357.9 894.7 L1361.2 902.6 L1368.1 897.6 L1359.4 909.0 Z"></path>
-					<path d="M1179.3 197.7 L328 367 L328 628 L328 628 L328 889 L328 889 L328 1427.5 L328 1427.5 L328 1966 L328 1966 L383.5810021600921 3194.340147738036 L383.6 3194.3 " fill="none"></path>
-					<path d="M378.0 3187.9 L383.6 3194.3 L388.6 3187.4 L383.9 3201.0 Z"></path>
-					<path d="M1422.3 230.3 L1714.75 367 L1994.874005065713 517.1280602097559 L1994.9 517.1 " fill="none"></path>
-					<path d="M1986.5 518.7 L1994.9 517.1 L1991.5 509.3 L2000.8 520.3 Z"></path>
-					<path d="M1179.3 218.2 L775.25 367 L698.931756502579 452.7656041025915 L698.9 452.8 " fill="none"></path>
-					<path d="M699.4 444.2 L698.9 452.8 L707.3 451.3 L694.5 457.7 Z"></path>
-					<path d="M1220.6 3201.0 L1867.25 1966 L1417.6441551699024 1595.3719901400573 L1417.6 1595.4 " fill="none"></path>
-					<path d="M1426.2 1595.5 L1417.6 1595.4 L1419.4 1603.7 L1412.5 1591.1 Z"></path>
-					<path d="M392.1 3201.0 L447.25 1966 L1010.0443937823527 1570.7410745982434 L1010.0 1570.7 " fill="none"></path>
-					<path d="M1007.7 1578.9 L1010.0 1570.7 L1001.5 1570.2 L1015.5 1566.9 Z"></path>
-					<text x="1023.5" y="1594.6" stroke="none">*</text>
-					<path d="M394.8 3201.0 L487.25 1966 L1010.1435396484777 1578.5515361531402 L1010.1 1578.6 " fill="none"></path>
-					<path d="M1008.0 1586.8 L1010.1 1578.6 L1001.6 1578.2 L1015.5 1574.6 Z"></path>
-					<path d="M2000.8 715.0 L1599 889 L1416.3773025535122 1144.434604090737 L1416.4 1144.4 " fill="none"></path>
-					<path d="M1415.9 1135.9 L1416.4 1144.4 L1424.6 1142.1 L1412.5 1149.9 Z"></path>
-					<path d="M2373.3 839.0 L2414 889 L2414 1187.3333333333333 L2414.0 1187.3 " fill="none"></path>
-					<path d="M2408.7 1180.7 L2414.0 1187.3 L2419.3 1180.7 L2414.0 1194.0 Z"></path>
-					<path d="M2346.0 249.5 L2346 367 L2318.3659003831417 417 L2318.4 417.0 " fill="none"></path>
-					<text x="374.3" y="3193.0" stroke="none">*</text>
-					<path d="M1015.5 1560.0 L407.25 1966 L389.41785053705325 3194.3340357333686 L389.4 3194.3 " fill="none"></path>
-					<path d="M384.2 3187.6 L389.4 3194.3 L394.8 3187.7 L389.3 3201.0 Z"></path>
-					<path d="M1214.0 1946.0 L1214 1966 L1176.0197607592477 3194.3365178838426 L1176.0 3194.3 " fill="none"></path>
-					<path d="M1170.9 3187.5 L1176.0 3194.3 L1181.6 3187.8 L1175.8 3201.0 Z"></path>
-					<path d="M1412.5 1647.8 L1699.25 1966 L1211.574406528907 3194.8034906274 L1211.6 3194.8 " fill="none"></path>
-					<path d="M1209.1 3186.6 L1211.6 3194.8 L1219.0 3190.6 L1209.1 3201.0 Z"></path>
-					<text x="2028.5" y="3238.0" stroke="none">*</text>
-					<path d="M1412.5 1560.0 L2020.5 1966 L2020.5 3246 L2020.5 3246.0 " fill="none"></path>
-					<path d="M1676.9 869.0 L1688 889 L1416.9048143931732 1196.984720357123 L1416.9 1197.0 " fill="none"></path>
-					<path d="M1417.3 1188.5 L1416.9 1197.0 L1425.3 1195.5 L1412.5 1202.0 Z"></path>
-					<path d="M1681.0 754.7 L1827.25 889 L1827.25 1427.5 L1827.25 1427.5 L1827.25 1966 L1827.25 1966 L1220.8493310652864 3195.021455112618 L1220.8 3195.0 " fill="none"></path>
-					<path d="M1219.0 3186.7 L1220.8 3195.0 L1228.6 3191.4 L1217.9 3201.0 Z"></path>
-					<path d="M1405.0 670.5 L696 889 L696 1351.5 L696.0 1351.5 " fill="none"></path>
+					<path d="M579.0 278.8 L467.25 367 L493.86587291577985 448.16523621841776 L493.9 448.2 " fill="none"></path>
+					<path d="M486.7 443.5 L493.9 448.2 L496.9 440.2 L495.9 454.5 Z"></path>
+					<path d="M846.0 317.6 L891.75 367 L891.75 598 L891.75 598 L891.75 829 L891.75 829 L1036.445662116493 1000.1364521723126 L1036.4 1000.1 " fill="none"></path>
+					<path d="M1028.1 998.5 L1036.4 1000.1 L1036.2 991.6 L1040.8 1005.2 Z"></path>
+					<path d="M846.0 198.9 L1730.25 367 L2148.9955741185718 521.5211303856072 L2149.0 521.5 " fill="none"></path>
+					<path d="M2140.9 524.2 L2149.0 521.5 L2144.6 514.2 L2155.3 523.8 Z"></path>
+					<path d="M694.5 663.4 L1078.5 829 L1083.8940522348835 842.7913248431545 L1083.9 842.8 " fill="none"></path>
+					<path d="M1076.5 838.5 L1083.9 842.8 L1086.4 834.6 L1086.3 849.0 Z"></path>
+					<path d="M543.0 741.5 L543 829 L543 1240 L543 1240 L543 1651 L543 1651 L1086.837773056734 2887.397577493749 L1086.8 2887.4 " fill="none"></path>
+					<path d="M1079.3 2883.4 L1086.8 2887.4 L1089.0 2879.1 L1089.5 2893.5 Z"></path>
+					<path d="M391.5 685.7 L144 829 L144 1021.5 L144.0 1021.5 " fill="none"></path>
+					<path d="M2620.8 1473.5 L2620.75 1651 L2620.75 1671 L2620.8 1671.0 " fill="none"></path>
+					<path d="M1150.3 711.5 L1150.25 829 L1153.1699683887587 842.48434840202 L1153.2 842.5 " fill="none"></path>
+					<path d="M1146.5 837.1 L1153.2 842.5 L1157.0 834.8 L1154.6 849.0 Z"></path>
+					<path d="M1348.5 302.0 L1408.75 367 L1408.75 598 L1408.75 598 L1408.75 829 L1408.75 829 L1403.0435504041916 842.8368777809868 L1403.0 842.8 " fill="none"></path>
+					<path d="M1400.7 834.6 L1403.0 842.8 L1410.5 838.7 L1400.5 849.0 Z"></path>
+					<path d="M1108.0 199.6 L328 367 L328 598 L328 598 L328 829 L328 829 L328 1240 L328 1240 L328 1651 L328 1651 L383.5810021600921 2879.340147738036 L383.6 2879.3 " fill="none"></path>
+					<path d="M378.0 2872.9 L383.6 2879.3 L388.6 2872.4 L383.9 2886.0 Z"></path>
+					<path d="M1351.0 217.0 L1770.25 367 L2149.0478244003375 516.3213266834096 L2149.0 516.3 " fill="none"></path>
+					<path d="M2140.9 518.8 L2149.0 516.3 L2144.8 508.9 L2155.3 518.8 Z"></path>
+					<path d="M1108.0 225.3 L775.25 367 L692.0032631874435 449.7986919427364 L692.0 449.8 " fill="none"></path>
+					<path d="M693.0 441.3 L692.0 449.8 L700.5 448.9 L687.3 454.5 Z"></path>
+					<path d="M1181.7 2893.5 L2006.25 1651 L1443.6261914170568 1349.5157948792835 L1443.6 1349.5 " fill="none"></path>
+					<path d="M1452.0 1348.0 L1443.6 1349.5 L1447.0 1357.4 L1437.8 1346.4 Z"></path>
+					<path d="M392.1 2886.0 L447.25 1651 L1034.8326545077387 1346.0802133804539 L1034.8 1346.1 " fill="none"></path>
+					<path d="M1031.4 1353.9 L1034.8 1346.1 L1026.5 1344.4 L1040.8 1343.0 Z"></path>
+					<text x="1048.8" y="1368.5" stroke="none">*</text>
+					<path d="M394.8 2886.0 L487.25 1651 L1034.9000405518238 1351.6859485813836 L1034.9 1351.7 " fill="none"></path>
+					<path d="M1031.6 1359.6 L1034.9 1351.7 L1026.5 1350.2 L1040.8 1348.5 Z"></path>
+					<path d="M2155.3 673.1 L1738 829 L1442.8948613605205 1072.184384923962 L1442.9 1072.2 " fill="none"></path>
+					<path d="M1444.6 1063.8 L1442.9 1072.2 L1451.4 1072.1 L1437.8 1076.4 Z"></path>
+					<path d="M2557.3 773.5 L2620.75 829 L2620.75 999.8333333333334 L2620.8 999.8 " fill="none"></path>
+					<path d="M2615.4 993.2 L2620.8 999.8 L2626.1 993.2 L2620.8 1006.5 Z"></path>
+					<path d="M2481.5 249.5 L2481.5 367 L2470.655844155844 387 L2470.7 387.0 " fill="none"></path>
+					<text x="374.3" y="2878.0" stroke="none">*</text>
+					<path d="M1040.8 1338.1 L407.25 1651 L389.41785053705325 2879.3340357333686 L389.4 2879.3 " fill="none"></path>
+					<path d="M384.2 2872.6 L389.4 2879.3 L394.8 2872.7 L389.3 2886.0 Z"></path>
+					<path d="M1239.3 1631.0 L1239.25 1651 L1133.9318346182608 2886.8574097007618 L1133.9 2886.9 " fill="none"></path>
+					<path d="M1129.2 2879.8 L1133.9 2886.9 L1139.8 2880.7 L1133.4 2893.5 Z"></path>
+					<path d="M1437.8 1389.2 L1786 1651 L1170.765058054694 2887.531311890073 L1170.8 2887.5 " fill="none"></path>
+					<path d="M1169.0 2879.2 L1170.8 2887.5 L1178.5 2883.9 L1167.8 2893.5 Z"></path>
+					<text x="2167.5" y="2923.0" stroke="none">*</text>
+					<path d="M1437.8 1328.7 L2159.5 1651 L2159.5 2931 L2159.5 2931.0 " fill="none"></path>
+					<path d="M1767.8 759.6 L1827 829 L1443.2134014641847 1097.3731042079457 L1443.2 1097.4 " fill="none"></path>
+					<path d="M1445.6 1089.2 L1443.2 1097.4 L1451.7 1097.9 L1437.8 1101.2 Z"></path>
+					<path d="M1767.8 692.7 L1966.25 829 L1966.25 1240 L1966.25 1240 L1966.25 1651 L1966.25 1651 L1182.7135477126646 2887.868256825008 L1182.7 2887.9 " fill="none"></path>
+					<path d="M1181.8 2879.4 L1182.7 2887.9 L1190.8 2885.1 L1179.1 2893.5 Z"></path>
+					<path d="M1491.8 632.1 L696 829 L696 1164 L696.0 1164.0 " fill="none"></path>
+					<g >
+						<g fill="#eee8d5" stroke="#33322E">
+							<rect x="539.0" y="165.5" height="16.0" width="0.0"></rect>
+							<path d="M539.0 173.5 L539.0 173.5" fill="none"></path>
+						</g>
+						<g transform="translate(539, 165.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal">
+							<g transform="translate(8, 8)" fill="#33322E">
+								
+							</g>
+						</g>
+						<g transform="translate(539, 173.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+							<g transform="translate(8, 8)" fill="#33322E">
+								
+							</g>
+						</g>
+					</g>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
-							<rect x="572.8" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
-							<path d="M572.8 31.0 L839.8 31.0" fill="none" data-name="ApiCall"></path>
+							<rect x="579.0" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
+							<path d="M579.0 31.0 L846.0 31.0" fill="none" data-name="ApiCall"></path>
 						</g>
-						<g transform="translate(572.75, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
+						<g transform="translate(579, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ApiCall">
 								<text x="125.5" y="13.5" stroke="none" text-anchor="middle" data-name="ApiCall">ApiCall</text>
 								
 							</g>
 						</g>
-						<g transform="translate(572.75, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
+						<g transform="translate(579, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ApiCall">
 								<text x="0.0" y="13.5" stroke="none" data-name="ApiCall">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="ApiCall">created_at: date</text>
@@ -654,7 +650,7 @@
 					</g>
 					<g data-name="Connection">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Connection">
-							<rect x="391.5" y="454.5" height="347.0" width="303.0" data-name="Connection"></rect>
+							<rect x="391.5" y="454.5" height="287.0" width="303.0" data-name="Connection"></rect>
 							<path d="M391.5 485.5 L694.5 485.5" fill="none" data-name="Connection"></path>
 						</g>
 						<g transform="translate(391.5, 454.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Connection">
@@ -676,31 +672,27 @@
 								<text x="0.0" y="133.5" stroke="none" data-name="Connection">categories: IntegrationCategory[]</text>
 								<text x="0.0" y="148.5" stroke="none" data-name="Connection">auth: ConnectionAuth</text>
 								<text x="0.0" y="163.5" stroke="none" data-name="Connection">is_paused: boolean</text>
-								<text x="0.0" y="178.5" stroke="none" data-name="Connection">auth_aws_arn: string</text>
-								<text x="0.0" y="193.5" stroke="none" data-name="Connection">environment: string</text>
-								<text x="0.0" y="208.5" stroke="none" data-name="Connection">auth_azure_keyvault_id: string</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="Connection">auth_gcp_secret_name: string</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="Connection">auth_hashi_vault_path: string</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="Connection">last_healthy_at: date</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="Connection">last_unhealthy_at: date</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="Connection">secretsmanager_id: id</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="Connection">secretsmanager_key: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Connection">environment: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Connection">last_healthy_at: date</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Connection">last_unhealthy_at: date</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Connection">secretsmanager_id: id</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Connection">secretsmanager_key: string</text>
 								
 							</g>
 						</g>
 					</g>
 					<g data-name="ConnectionAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ConnectionAuth">
-							<rect x="0.0" y="1209.0" height="437.0" width="288.0" data-name="ConnectionAuth"></rect>
-							<path d="M0.0 1240.0 L288.0 1240.0" fill="none" data-name="ConnectionAuth"></path>
+							<rect x="0.0" y="1021.5" height="437.0" width="288.0" data-name="ConnectionAuth"></rect>
+							<path d="M0.0 1052.5 L288.0 1052.5" fill="none" data-name="ConnectionAuth"></path>
 						</g>
-						<g transform="translate(0, 1209)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
+						<g transform="translate(0, 1021.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConnectionAuth">
 								<text x="136.0" y="13.5" stroke="none" text-anchor="middle" data-name="ConnectionAuth">ConnectionAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(0, 1240)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
+						<g transform="translate(0, 1052.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConnectionAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="ConnectionAuth">token: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="ConnectionAuth">access_token: string</text>
@@ -734,16 +726,16 @@
 					</g>
 					<g data-name="Integration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
-							<rect x="2260.5" y="1194.0" height="467.0" width="307.0" data-name="Integration"></rect>
-							<path d="M2260.5 1225.0 L2567.5 1225.0" fill="none" data-name="Integration"></path>
+							<rect x="2467.3" y="1006.5" height="467.0" width="307.0" data-name="Integration"></rect>
+							<path d="M2467.3 1037.5 L2774.3 1037.5" fill="none" data-name="Integration"></path>
 						</g>
-						<g transform="translate(2260.5, 1194)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+						<g transform="translate(2467.25, 1006.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
 								<text x="145.5" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2260.5, 1225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+						<g transform="translate(2467.25, 1037.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
 								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
@@ -779,16 +771,16 @@
 					</g>
 					<g data-name="IntegrationSupport">
 						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
-							<rect x="2172.5" y="1986.0" height="2612.0" width="483.0" data-name="IntegrationSupport"></rect>
-							<path d="M2172.5 2017.0 L2655.5 2017.0" fill="none" data-name="IntegrationSupport"></path>
+							<rect x="2379.3" y="1671.0" height="2612.0" width="483.0" data-name="IntegrationSupport"></rect>
+							<path d="M2379.3 1702.0 L2862.3 1702.0" fill="none" data-name="IntegrationSupport"></path>
 						</g>
-						<g transform="translate(2172.5, 1986)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
+						<g transform="translate(2379.25, 1671)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IntegrationSupport">
 								<text x="233.5" y="13.5" stroke="none" text-anchor="middle" data-name="IntegrationSupport">IntegrationSupport</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2172.5, 2017)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
+						<g transform="translate(2379.25, 1702)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IntegrationSupport">
 								<text x="0.0" y="13.5" stroke="none" data-name="IntegrationSupport">methods: boolean</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="IntegrationSupport">inbound_fields: SupportInboundType</text>
@@ -967,16 +959,16 @@
 					</g>
 					<g data-name="Invoice">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Invoice">
-							<rect x="879.8" y="112.5" height="122.0" width="182.0" data-name="Invoice"></rect>
-							<path d="M879.8 143.5 L1061.8 143.5" fill="none" data-name="Invoice"></path>
+							<rect x="886.0" y="112.5" height="122.0" width="182.0" data-name="Invoice"></rect>
+							<path d="M886.0 143.5 L1068.0 143.5" fill="none" data-name="Invoice"></path>
 						</g>
-						<g transform="translate(879.75, 112.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Invoice">
+						<g transform="translate(886, 112.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Invoice">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Invoice">
 								<text x="83.0" y="13.5" stroke="none" text-anchor="middle" data-name="Invoice">Invoice</text>
 								
 							</g>
 						</g>
-						<g transform="translate(879.75, 143.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Invoice">
+						<g transform="translate(886, 143.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Invoice">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Invoice">
 								<text x="0.0" y="13.5" stroke="none" data-name="Invoice">stripe_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Invoice">created_at: date</text>
@@ -989,16 +981,16 @@
 					</g>
 					<g data-name="Issue">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Issue">
-							<rect x="1003.0" y="514.5" height="227.0" width="207.0" data-name="Issue"></rect>
-							<path d="M1003.0 545.5 L1210.0 545.5" fill="none" data-name="Issue"></path>
+							<rect x="1046.8" y="484.5" height="227.0" width="207.0" data-name="Issue"></rect>
+							<path d="M1046.8 515.5 L1253.8 515.5" fill="none" data-name="Issue"></path>
 						</g>
-						<g transform="translate(1003, 514.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Issue">
+						<g transform="translate(1046.75, 484.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Issue">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Issue">
 								<text x="95.5" y="13.5" stroke="none" text-anchor="middle" data-name="Issue">Issue</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1003, 545.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Issue">
+						<g transform="translate(1046.75, 515.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Issue">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Issue">
 								<text x="0.0" y="13.5" stroke="none" data-name="Issue">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Issue">created_at: string</text>
@@ -1018,16 +1010,16 @@
 					</g>
 					<g data-name="Notification">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Notification">
-							<rect x="1179.3" y="45.0" height="257.0" width="243.0" data-name="Notification"></rect>
-							<path d="M1179.3 76.0 L1422.3 76.0" fill="none" data-name="Notification"></path>
+							<rect x="1108.0" y="45.0" height="257.0" width="243.0" data-name="Notification"></rect>
+							<path d="M1108.0 76.0 L1351.0 76.0" fill="none" data-name="Notification"></path>
 						</g>
-						<g transform="translate(1179.25, 45)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Notification">
+						<g transform="translate(1108, 45)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Notification">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Notification">
 								<text x="113.5" y="13.5" stroke="none" text-anchor="middle" data-name="Notification">Notification</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1179.25, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Notification">
+						<g transform="translate(1108, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Notification">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Notification">
 								<text x="0.0" y="13.5" stroke="none" data-name="Notification">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Notification">created_at: date</text>
@@ -1049,16 +1041,16 @@
 					</g>
 					<g data-name="Permission">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Permission">
-							<rect x="1462.3" y="67.5" height="212.0" width="326.0" data-name="Permission"></rect>
-							<path d="M1462.3 98.5 L1788.3 98.5" fill="none" data-name="Permission"></path>
+							<rect x="1391.0" y="67.5" height="212.0" width="326.0" data-name="Permission"></rect>
+							<path d="M1391.0 98.5 L1717.0 98.5" fill="none" data-name="Permission"></path>
 						</g>
-						<g transform="translate(1462.25, 67.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Permission">
+						<g transform="translate(1391, 67.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Permission">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Permission">
 								<text x="155.0" y="13.5" stroke="none" text-anchor="middle" data-name="Permission">Permission</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1462.25, 98.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Permission">
+						<g transform="translate(1391, 98.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Permission">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Permission">
 								<text x="0.0" y="13.5" stroke="none" data-name="Permission">can_create_org: boolean</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Permission">can_leave_org: boolean</text>
@@ -1077,16 +1069,16 @@
 					</g>
 					<g data-name="Plan">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Plan">
-							<rect x="1828.3" y="22.5" height="302.0" width="301.0" data-name="Plan"></rect>
-							<path d="M1828.3 53.5 L2129.3 53.5" fill="none" data-name="Plan"></path>
+							<rect x="1757.0" y="22.5" height="302.0" width="301.0" data-name="Plan"></rect>
+							<path d="M1757.0 53.5 L2058.0 53.5" fill="none" data-name="Plan"></path>
 						</g>
-						<g transform="translate(1828.25, 22.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Plan">
+						<g transform="translate(1757, 22.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Plan">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Plan">
 								<text x="142.5" y="13.5" stroke="none" text-anchor="middle" data-name="Plan">Plan</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1828.25, 53.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plan">
+						<g transform="translate(1757, 53.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plan">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Plan">
 								<text x="0.0" y="13.5" stroke="none" data-name="Plan">name: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Plan">description: string</text>
@@ -1111,16 +1103,16 @@
 					</g>
 					<g data-name="SecretsManager">
 						<g fill="#eee8d5" stroke="#33322E" data-name="SecretsManager">
-							<rect x="1058.5" y="3201.0" height="182.0" width="229.0" data-name="SecretsManager"></rect>
-							<path d="M1058.5 3232.0 L1287.5 3232.0" fill="none" data-name="SecretsManager"></path>
+							<rect x="1011.8" y="2893.5" height="167.0" width="229.0" data-name="SecretsManager"></rect>
+							<path d="M1011.8 2924.5 L1240.8 2924.5" fill="none" data-name="SecretsManager"></path>
 						</g>
-						<g transform="translate(1058.5, 3201)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="SecretsManager">
+						<g transform="translate(1011.75, 2893.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="SecretsManager">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SecretsManager">
 								<text x="106.5" y="13.5" stroke="none" text-anchor="middle" data-name="SecretsManager">SecretsManager</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1058.5, 3232)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SecretsManager">
+						<g transform="translate(1011.75, 2924.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SecretsManager">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="SecretsManager">
 								<text x="0.0" y="13.5" stroke="none" data-name="SecretsManager">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="SecretsManager">created_at: date</text>
@@ -1129,24 +1121,44 @@
 								<text x="0.0" y="73.5" stroke="none" data-name="SecretsManager">name: string</text>
 								<text x="0.0" y="88.5" stroke="none" data-name="SecretsManager">workspace_id: id</text>
 								<text x="0.0" y="103.5" stroke="none" data-name="SecretsManager">auth: string</text>
-								<text x="0.0" y="118.5" stroke="none" data-name="SecretsManager">environments: string[]</text>
-								<text x="0.0" y="133.5" stroke="none" data-name="SecretsManager">dcs: string[]</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="SecretsManager">dcs: string[]</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="SecretsManagerInstructions">
+						<g fill="#eee8d5" stroke="#33322E" data-name="SecretsManagerInstructions">
+							<rect x="2098.0" y="120.0" height="107.0" width="238.0" data-name="SecretsManagerInstructions"></rect>
+							<path d="M2098.0 151.0 L2336.0 151.0" fill="none" data-name="SecretsManagerInstructions"></path>
+						</g>
+						<g transform="translate(2098, 120)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="SecretsManagerInstructions">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SecretsManagerInstructions">
+								<text x="111.0" y="13.5" stroke="none" text-anchor="middle" data-name="SecretsManagerInstructions">SecretsManagerInstructions</text>
+								
+							</g>
+						</g>
+						<g transform="translate(2098, 151)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SecretsManagerInstructions">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="SecretsManagerInstructions">
+								<text x="0.0" y="13.5" stroke="none" data-name="SecretsManagerInstructions">type: SecretsManagerType</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="SecretsManagerInstructions">key: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="SecretsManagerInstructions">label: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="SecretsManagerInstructions">instructions: string</text>
 								
 							</g>
 						</g>
 					</g>
 					<g data-name="User">
 						<g fill="#eee8d5" stroke="#33322E" data-name="User">
-							<rect x="304.0" y="3201.0" height="182.0" width="168.0" data-name="User"></rect>
-							<path d="M304.0 3232.0 L472.0 3232.0" fill="none" data-name="User"></path>
+							<rect x="304.0" y="2886.0" height="182.0" width="168.0" data-name="User"></rect>
+							<path d="M304.0 2917.0 L472.0 2917.0" fill="none" data-name="User"></path>
 						</g>
-						<g transform="translate(304, 3201)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
+						<g transform="translate(304, 2886)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User">
 								<text x="76.0" y="13.5" stroke="none" text-anchor="middle" data-name="User">User</text>
 								
 							</g>
 						</g>
-						<g transform="translate(304, 3232)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
+						<g transform="translate(304, 2917)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="User">
 								<text x="0.0" y="13.5" stroke="none" data-name="User">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="User">created_at: date</text>
@@ -1163,16 +1175,16 @@
 					</g>
 					<g data-name="Webhook">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Webhook">
-							<rect x="2000.8" y="417.0" height="422.0" width="402.0" data-name="Webhook"></rect>
-							<path d="M2000.8 448.0 L2402.8 448.0" fill="none" data-name="Webhook"></path>
+							<rect x="2155.3" y="387.0" height="422.0" width="402.0" data-name="Webhook"></rect>
+							<path d="M2155.3 418.0 L2557.3 418.0" fill="none" data-name="Webhook"></path>
 						</g>
-						<g transform="translate(2000.75, 417)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
+						<g transform="translate(2155.25, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Webhook">
 								<text x="193.0" y="13.5" stroke="none" text-anchor="middle" data-name="Webhook">Webhook</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2000.75, 448)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
+						<g transform="translate(2155.25, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Webhook">
 								<text x="0.0" y="13.5" stroke="none" data-name="Webhook">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Webhook">created_at: date</text>
@@ -1205,16 +1217,16 @@
 					</g>
 					<g data-name="WebhookData">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WebhookData">
-							<rect x="2240.5" y="97.5" height="152.0" width="211.0" data-name="WebhookData"></rect>
-							<path d="M2240.5 128.5 L2451.5 128.5" fill="none" data-name="WebhookData"></path>
+							<rect x="2376.0" y="97.5" height="152.0" width="211.0" data-name="WebhookData"></rect>
+							<path d="M2376.0 128.5 L2587.0 128.5" fill="none" data-name="WebhookData"></path>
 						</g>
-						<g transform="translate(2240.5, 97.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
+						<g transform="translate(2376, 97.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebhookData">
 								<text x="97.5" y="13.5" stroke="none" text-anchor="middle" data-name="WebhookData">WebhookData</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2240.5, 128.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
+						<g transform="translate(2376, 128.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WebhookData">
 								<text x="0.0" y="13.5" stroke="none" data-name="WebhookData">data: object[]</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WebhookData">webhook: Webhook</text>
@@ -1229,16 +1241,16 @@
 					</g>
 					<g data-name="Workspace">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Workspace">
-							<rect x="1015.5" y="909.0" height="1037.0" width="397.0" data-name="Workspace"></rect>
-							<path d="M1015.5 940.0 L1412.5 940.0" fill="none" data-name="Workspace"></path>
+							<rect x="1040.8" y="849.0" height="782.0" width="397.0" data-name="Workspace"></rect>
+							<path d="M1040.8 880.0 L1437.8 880.0" fill="none" data-name="Workspace"></path>
 						</g>
-						<g transform="translate(1015.5, 909)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
+						<g transform="translate(1040.75, 849)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Workspace">
 								<text x="190.5" y="13.5" stroke="none" text-anchor="middle" data-name="Workspace">Workspace</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1015.5, 940)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
+						<g transform="translate(1040.75, 880)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Workspace">
 								<text x="0.0" y="13.5" stroke="none" data-name="Workspace">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Workspace">created_at: date</text>
@@ -1254,120 +1266,95 @@
 								<text x="0.0" y="178.5" stroke="none" data-name="Workspace">secret: string</text>
 								<text x="0.0" y="193.5" stroke="none" data-name="Workspace">ip_allowlist: WorkspaceIpAllowlistEntry[]</text>
 								<text x="0.0" y="208.5" stroke="none" data-name="Workspace">restrict_ips: boolean</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="Workspace">aws_region: string</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="Workspace">aws_key: string</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="Workspace">aws_secret: string</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="Workspace">auth_aws_external_id: string</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="Workspace">auth_aws_arn: string</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="Workspace">datadog_apikey: string</text>
-								<text x="0.0" y="313.5" stroke="none" data-name="Workspace">datadog_site: string</text>
-								<text x="0.0" y="328.5" stroke="none" data-name="Workspace">environments: string[]</text>
-								<text x="0.0" y="343.5" stroke="none" data-name="Workspace">add_ons: string[]</text>
-								<text x="0.0" y="358.5" stroke="none" data-name="Workspace">checklist: object</text>
-								<text x="0.0" y="373.5" stroke="none" data-name="Workspace">plan_term: PlanTerm</text>
-								<text x="0.0" y="388.5" stroke="none" data-name="Workspace">stripe_canceling_at: date</text>
-								<text x="0.0" y="403.5" stroke="none" data-name="Workspace">domain: string</text>
-								<text x="0.0" y="418.5" stroke="none" data-name="Workspace">event_webhook_url: string</text>
-								<text x="0.0" y="433.5" stroke="none" data-name="Workspace">event_webhook_events: WorkspaceEventType[]</text>
-								<text x="0.0" y="448.5" stroke="none" data-name="Workspace">custom_auth_domain: string</text>
-								<text x="0.0" y="463.5" stroke="none" data-name="Workspace">custom_auth_domain_valid: boolean</text>
-								<text x="0.0" y="478.5" stroke="none" data-name="Workspace">custom_api_domain: string</text>
-								<text x="0.0" y="493.5" stroke="none" data-name="Workspace">slow_fields_opt_in: boolean</text>
-								<text x="0.0" y="508.5" stroke="none" data-name="Workspace">notion_verification_token: string</text>
-								<text x="0.0" y="523.5" stroke="none" data-name="Workspace">favicon_url: string</text>
-								<text x="0.0" y="538.5" stroke="none" data-name="Workspace">is_baa: boolean</text>
-								<text x="0.0" y="553.5" stroke="none" data-name="Workspace">saml_integration_type: string</text>
-								<text x="0.0" y="568.5" stroke="none" data-name="Workspace">saml_idp_url: string</text>
-								<text x="0.0" y="583.5" stroke="none" data-name="Workspace">saml_idp_entity_id: string</text>
-								<text x="0.0" y="598.5" stroke="none" data-name="Workspace">saml_pem: string</text>
-								<text x="0.0" y="613.5" stroke="none" data-name="Workspace">saml_only_login: boolean</text>
-								<text x="0.0" y="628.5" stroke="none" data-name="Workspace">sync_objects: RegionSyncType[]</text>
-								<text x="0.0" y="643.5" stroke="none" data-name="Workspace">sync_parent_dc: string</text>
-								<text x="0.0" y="658.5" stroke="none" data-name="Workspace">azure_keyvault_url: string</text>
-								<text x="0.0" y="673.5" stroke="none" data-name="Workspace">azure_tenant_id: string</text>
-								<text x="0.0" y="688.5" stroke="none" data-name="Workspace">azure_client_id: string</text>
-								<text x="0.0" y="703.5" stroke="none" data-name="Workspace">azure_client_secret: string</text>
-								<text x="0.0" y="718.5" stroke="none" data-name="Workspace">gcp_project_id: string</text>
-								<text x="0.0" y="733.5" stroke="none" data-name="Workspace">gcp_client_email: string</text>
-								<text x="0.0" y="748.5" stroke="none" data-name="Workspace">gcp_private_key: string</text>
-								<text x="0.0" y="763.5" stroke="none" data-name="Workspace">hashicorp_vault_url: string</text>
-								<text x="0.0" y="778.5" stroke="none" data-name="Workspace">hashicorp_vault_token: string</text>
-								<text x="0.0" y="793.5" stroke="none" data-name="Workspace">hashicorp_vault_namespace: string</text>
-								<text x="0.0" y="808.5" stroke="none" data-name="Workspace">hashicorp_vault_kv_mount: string</text>
-								<text x="0.0" y="823.5" stroke="none" data-name="Workspace">hashicorp_vault_kv_version: string</text>
-								<text x="0.0" y="838.5" stroke="none" data-name="Workspace">grafana_apikey: string</text>
-								<text x="0.0" y="853.5" stroke="none" data-name="Workspace">grafana_site: string</text>
-								<text x="0.0" y="868.5" stroke="none" data-name="Workspace">grafana_username: string</text>
-								<text x="0.0" y="883.5" stroke="none" data-name="Workspace">grafana_auth_type: string</text>
-								<text x="0.0" y="898.5" stroke="none" data-name="Workspace">clickhouse_url: string</text>
-								<text x="0.0" y="913.5" stroke="none" data-name="Workspace">clickhouse_username: string</text>
-								<text x="0.0" y="928.5" stroke="none" data-name="Workspace">clickhouse_password: string</text>
-								<text x="0.0" y="943.5" stroke="none" data-name="Workspace">auto_join: boolean</text>
-								<text x="0.0" y="958.5" stroke="none" data-name="Workspace">jwt_secret: string</text>
-								<text x="0.0" y="973.5" stroke="none" data-name="Workspace">default_secretsmanager_id: id</text>
-								<text x="0.0" y="988.5" stroke="none" data-name="Workspace">default_secretsmanager_env_ids: id</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Workspace">datadog_apikey: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Workspace">datadog_site: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Workspace">environments: string[]</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Workspace">add_ons: string[]</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Workspace">checklist: object</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Workspace">plan_term: PlanTerm</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Workspace">stripe_canceling_at: date</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Workspace">domain: string</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Workspace">event_webhook_url: string</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Workspace">event_webhook_events: WorkspaceEventType[]</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Workspace">custom_auth_domain: string</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="Workspace">custom_auth_domain_valid: boolean</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="Workspace">custom_api_domain: string</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="Workspace">slow_fields_opt_in: boolean</text>
+								<text x="0.0" y="433.5" stroke="none" data-name="Workspace">notion_verification_token: string</text>
+								<text x="0.0" y="448.5" stroke="none" data-name="Workspace">favicon_url: string</text>
+								<text x="0.0" y="463.5" stroke="none" data-name="Workspace">is_baa: boolean</text>
+								<text x="0.0" y="478.5" stroke="none" data-name="Workspace">saml_integration_type: string</text>
+								<text x="0.0" y="493.5" stroke="none" data-name="Workspace">saml_idp_url: string</text>
+								<text x="0.0" y="508.5" stroke="none" data-name="Workspace">saml_idp_entity_id: string</text>
+								<text x="0.0" y="523.5" stroke="none" data-name="Workspace">saml_pem: string</text>
+								<text x="0.0" y="538.5" stroke="none" data-name="Workspace">saml_only_login: boolean</text>
+								<text x="0.0" y="553.5" stroke="none" data-name="Workspace">sync_objects: RegionSyncType[]</text>
+								<text x="0.0" y="568.5" stroke="none" data-name="Workspace">sync_parent_dc: string</text>
+								<text x="0.0" y="583.5" stroke="none" data-name="Workspace">grafana_apikey: string</text>
+								<text x="0.0" y="598.5" stroke="none" data-name="Workspace">grafana_site: string</text>
+								<text x="0.0" y="613.5" stroke="none" data-name="Workspace">grafana_username: string</text>
+								<text x="0.0" y="628.5" stroke="none" data-name="Workspace">grafana_auth_type: string</text>
+								<text x="0.0" y="643.5" stroke="none" data-name="Workspace">clickhouse_url: string</text>
+								<text x="0.0" y="658.5" stroke="none" data-name="Workspace">clickhouse_username: string</text>
+								<text x="0.0" y="673.5" stroke="none" data-name="Workspace">clickhouse_password: string</text>
+								<text x="0.0" y="688.5" stroke="none" data-name="Workspace">auto_join: boolean</text>
+								<text x="0.0" y="703.5" stroke="none" data-name="Workspace">jwt_secret: string</text>
+								<text x="0.0" y="718.5" stroke="none" data-name="Workspace">default_secretsmanager_id: id</text>
+								<text x="0.0" y="733.5" stroke="none" data-name="Workspace">default_secretsmanager_env_ids: id</text>
 								
 							</g>
 						</g>
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="1405.0" y="387.0" height="482.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M1405.0 418.0 L1681.0 418.0" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="1491.8" y="417.0" height="362.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1491.8 448.0 L1767.8 448.0" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(1405, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1491.75, 417)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1405, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1491.75, 448)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">created_at: date</text>
 								<text x="0.0" y="43.5" stroke="none" data-name="WorkspaceIntegration">updated_at: date</text>
 								<text x="0.0" y="58.5" stroke="none" data-name="WorkspaceIntegration">workspace_id: id</text>
 								<text x="0.0" y="73.5" stroke="none" data-name="WorkspaceIntegration">integration_type: string</text>
-								<text x="0.0" y="88.5" stroke="none" data-name="WorkspaceIntegration">client_id: string</text>
-								<text x="0.0" y="103.5" stroke="none" data-name="WorkspaceIntegration">client_secret: string</text>
-								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegration">consumer_key: string</text>
-								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegration">consumer_secret: string</text>
-								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">is_active: boolean</text>
-								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">api_url: string</text>
-								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">authorize_url: string</text>
-								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">token_url: string</text>
-								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">refresh_url: string</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">base_url: string</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">prompt_region: boolean</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">pem: string</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
-								<text x="0.0" y="313.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
-								<text x="0.0" y="328.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
-								<text x="0.0" y="343.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
-								<text x="0.0" y="358.5" stroke="none" data-name="WorkspaceIntegration">auth_aws_arn: string</text>
-								<text x="0.0" y="373.5" stroke="none" data-name="WorkspaceIntegration">auth_azure_keyvault_id: string</text>
-								<text x="0.0" y="388.5" stroke="none" data-name="WorkspaceIntegration">auth_gcp_secret_name: string</text>
-								<text x="0.0" y="403.5" stroke="none" data-name="WorkspaceIntegration">auth_hashi_vault_path: string</text>
-								<text x="0.0" y="418.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
-								<text x="0.0" y="433.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="WorkspaceIntegration">is_active: boolean</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="WorkspaceIntegration">api_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegration">authorize_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegration">token_url: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">refresh_url: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">base_url: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">prompt_region: boolean</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">pem: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
 								
 							</g>
 						</g>
 					</g>
 					<g data-name="WorkspaceIntegrationAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegrationAuth">
-							<rect x="583.0" y="1351.5" height="152.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
-							<path d="M583.0 1382.5 L809.0 1382.5" fill="none" data-name="WorkspaceIntegrationAuth"></path>
+							<rect x="583.0" y="1164.0" height="152.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
+							<path d="M583.0 1195.0 L809.0 1195.0" fill="none" data-name="WorkspaceIntegrationAuth"></path>
 						</g>
-						<g transform="translate(583, 1351.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1164)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegrationAuth">
 								<text x="105.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegrationAuth">WorkspaceIntegrationAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(583, 1382.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1195)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegrationAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_secret: string</text>
@@ -1382,16 +1369,16 @@
 					</g>
 					<g data-name="WorkspaceIpAllowlistEntry">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIpAllowlistEntry">
-							<rect x="1908.5" y="3246.0" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
-							<path d="M1908.5 3277.0 L2132.5 3277.0" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
+							<rect x="2047.5" y="2931.0" height="92.0" width="224.0" data-name="WorkspaceIpAllowlistEntry"></rect>
+							<path d="M2047.5 2962.0 L2271.5 2962.0" fill="none" data-name="WorkspaceIpAllowlistEntry"></path>
 						</g>
-						<g transform="translate(1908.5, 3246)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(2047.5, 2931)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIpAllowlistEntry">
 								<text x="104.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIpAllowlistEntry">WorkspaceIpAllowlistEntry</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1908.5, 3277)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
+						<g transform="translate(2047.5, 2962)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIpAllowlistEntry">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIpAllowlistEntry">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">ip_address: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIpAllowlistEntry">name: string</text>

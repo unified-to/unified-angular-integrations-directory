@@ -504,6 +504,7 @@
 		refresh_url: string
 		base_url: string
 		prompt_region: boolean
+		use_unified_redirect: boolean
 		auth_type: IntegrationAuthType
 		environment: string
 		categories: IntegrationCategory\[\]
@@ -1340,16 +1341,16 @@
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="1405.0" y="432.0" height="332.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M1405.0 463.0 L1681.0 463.0" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="1405.0" y="424.5" height="347.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1405.0 455.5 L1681.0 455.5" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(1405, 432)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1405, 424.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1405, 463)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1405, 455.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">created_at: date</text>
@@ -1363,13 +1364,14 @@
 								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">refresh_url: string</text>
 								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">base_url: string</text>
 								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">prompt_region: boolean</text>
-								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">auth_type: IntegrationAuthType</text>
-								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
-								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
-								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
-								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
-								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">use_unified_redirect: boolean</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">auth_type: IntegrationAuthType</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="WorkspaceIntegration">auth: WorkspaceIntegrationAuth</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_id: id</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="WorkspaceIntegration">secretsmanager_key: string</text>
 								
 							</g>
 						</g>

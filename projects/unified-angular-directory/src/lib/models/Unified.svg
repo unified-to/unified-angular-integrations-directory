@@ -91,6 +91,7 @@
 		web_url: string
 		rate_limit_description: string
 		beta: boolean
+		requires_cname: boolean
 		support: IntegrationSupport
 		tested_at: date
 		sandbox: object
@@ -577,7 +578,7 @@
 					<path d="M543.0 741.5 L543 829 L543 1240 L543 1240 L543 1651 L543 1651 L1089.889359499535 2999.8218493614763 L1089.9 2999.8 " fill="none"></path>
 					<path d="M1082.4 2995.6 L1089.9 2999.8 L1092.3 2991.6 L1092.4 3006.0 Z"></path>
 					<path d="M391.5 685.7 L144 829 L144 1021.5 L144.0 1021.5 " fill="none"></path>
-					<path d="M2664.8 1473.5 L2664.75 1651 L2664.75 1671 L2664.8 1671.0 " fill="none"></path>
+					<path d="M2664.8 1481.0 L2664.75 1651 L2664.75 1671 L2664.8 1671.0 " fill="none"></path>
 					<path d="M1106.5 711.5 L1106.5 829 L1110.9108012709967 842.6560400932555 L1110.9 842.7 " fill="none"></path>
 					<path d="M1103.8 838.0 L1110.9 842.7 L1113.9 834.7 L1113.0 849.0 Z"></path>
 					<path d="M1297.3 297.7 L1365 367 L1365 598 L1365 598 L1365 829 L1365 829 L1360.8312664157131 842.6250457506317 L1360.8 842.6 " fill="none"></path>
@@ -597,8 +598,8 @@
 					<path d="M1031.6 1359.6 L1034.9 1351.7 L1026.5 1350.2 L1040.8 1348.5 Z"></path>
 					<path d="M2187.0 662.1 L1663.5 829 L1442.5382240867084 1043.0607893939018 L1442.5 1043.1 " fill="none"></path>
 					<path d="M1443.6 1034.6 L1442.5 1043.1 L1451.0 1042.3 L1437.8 1047.7 Z"></path>
-					<path d="M2589.0 765.8 L2664.75 829 L2664.75 999.8333333333334 L2664.8 999.8 " fill="none"></path>
-					<path d="M2659.4 993.2 L2664.8 999.8 L2670.1 993.2 L2664.8 1006.5 Z"></path>
+					<path d="M2589.0 765.8 L2664.75 829 L2664.75 992.3333333333334 L2664.8 992.3 " fill="none"></path>
+					<path d="M2659.4 985.7 L2664.8 992.3 L2670.1 985.7 L2664.8 999.0 Z"></path>
 					<path d="M2664.8 249.5 L2664.75 367 L2589 430.2276422764228 L2589.0 430.2 " fill="none"></path>
 					<text x="374.2" y="2990.5" stroke="none">*</text>
 					<path d="M1040.8 1338.1 L407.25 1651 L389.3069668710819 2991.8339301791525 L389.3 2991.8 " fill="none"></path>
@@ -729,16 +730,16 @@
 					</g>
 					<g data-name="Integration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
-							<rect x="2511.3" y="1006.5" height="467.0" width="307.0" data-name="Integration"></rect>
-							<path d="M2511.3 1037.5 L2818.3 1037.5" fill="none" data-name="Integration"></path>
+							<rect x="2511.3" y="999.0" height="482.0" width="307.0" data-name="Integration"></rect>
+							<path d="M2511.3 1030.0 L2818.3 1030.0" fill="none" data-name="Integration"></path>
 						</g>
-						<g transform="translate(2511.25, 1006.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+						<g transform="translate(2511.25, 999)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
 								<text x="145.5" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2511.25, 1037.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+						<g transform="translate(2511.25, 1030)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
 								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
@@ -758,16 +759,17 @@
 								<text x="0.0" y="238.5" stroke="none" data-name="Integration">web_url: string</text>
 								<text x="0.0" y="253.5" stroke="none" data-name="Integration">rate_limit_description: string</text>
 								<text x="0.0" y="268.5" stroke="none" data-name="Integration">beta: boolean</text>
-								<text x="0.0" y="283.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
-								<text x="0.0" y="298.5" stroke="none" data-name="Integration">tested_at: date</text>
-								<text x="0.0" y="313.5" stroke="none" data-name="Integration">sandbox: object</text>
-								<text x="0.0" y="328.5" stroke="none" data-name="Integration">partnership: object</text>
-								<text x="0.0" y="343.5" stroke="none" data-name="Integration">saml: object</text>
-								<text x="0.0" y="358.5" stroke="none" data-name="Integration">description: string</text>
-								<text x="0.0" y="373.5" stroke="none" data-name="Integration">api: object</text>
-								<text x="0.0" y="388.5" stroke="none" data-name="Integration">featured: boolean</text>
-								<text x="0.0" y="403.5" stroke="none" data-name="Integration">popularity: number</text>
-								<text x="0.0" y="418.5" stroke="none" data-name="Integration">active_healthy_connections: number</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Integration">requires_cname: boolean</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Integration">tested_at: date</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Integration">sandbox: object</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Integration">partnership: object</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Integration">saml: object</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Integration">description: string</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="Integration">api: object</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="Integration">featured: boolean</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="Integration">popularity: number</text>
+								<text x="0.0" y="433.5" stroke="none" data-name="Integration">active_healthy_connections: number</text>
 								
 							</g>
 						</g>

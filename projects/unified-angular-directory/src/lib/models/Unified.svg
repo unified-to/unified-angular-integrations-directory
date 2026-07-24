@@ -530,6 +530,9 @@
 		pem: string
 		key: string
 		dev_api_key: string
+		saml_idp_url: string
+		saml_idp_entity_id: string
+		saml_pem: string
 	]
 	
 	[WorkspaceIpAllowlistEntry | 
@@ -618,7 +621,7 @@
 					<path d="M1444.8 1068.5 L1443.0 1076.9 L1451.5 1076.9 L1437.8 1081.0 Z"></path>
 					<path d="M1681.0 689.4 L1891.75 829 L1891.75 1240 L1891.75 1240 L1891.75 1651 L1891.75 1651 L1172.8585389108102 3030.0883221547683 L1172.9 3030.1 " fill="none"></path>
 					<path d="M1171.2 3021.7 L1172.9 3030.1 L1180.7 3026.6 L1169.8 3036.0 Z"></path>
-					<path d="M1405.0 635.6 L696 829 L696 1164 L696.0 1164.0 " fill="none"></path>
+					<path d="M1405.0 635.6 L696 829 L696 1141.5 L696.0 1141.5 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
 							<rect x="447.8" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
@@ -1394,16 +1397,16 @@
 					</g>
 					<g data-name="WorkspaceIntegrationAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegrationAuth">
-							<rect x="583.0" y="1164.0" height="152.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
-							<path d="M583.0 1195.0 L809.0 1195.0" fill="none" data-name="WorkspaceIntegrationAuth"></path>
+							<rect x="583.0" y="1141.5" height="197.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
+							<path d="M583.0 1172.5 L809.0 1172.5" fill="none" data-name="WorkspaceIntegrationAuth"></path>
 						</g>
-						<g transform="translate(583, 1164)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1141.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegrationAuth">
 								<text x="105.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegrationAuth">WorkspaceIntegrationAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(583, 1195)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1172.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegrationAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_secret: string</text>
@@ -1412,6 +1415,9 @@
 								<text x="0.0" y="73.5" stroke="none" data-name="WorkspaceIntegrationAuth">pem: string</text>
 								<text x="0.0" y="88.5" stroke="none" data-name="WorkspaceIntegrationAuth">key: string</text>
 								<text x="0.0" y="103.5" stroke="none" data-name="WorkspaceIntegrationAuth">dev_api_key: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_idp_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_idp_entity_id: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_pem: string</text>
 								
 							</g>
 						</g>

@@ -450,7 +450,6 @@
 		data: object\[\]
 		webhook: Webhook
 		nonce: string
-		sig: string
 		sig256: string
 		type: WebhookDataType
 		external_xref: string
@@ -543,6 +542,7 @@
 		saml_idp_url: string
 		saml_idp_entity_id: string
 		saml_pem: string
+		needs_pkce: boolean
 	]
 	
 	[WorkspaceIpAllowlistEntry | 
@@ -617,7 +617,7 @@
 					<path d="M1443.5 1038.5 L1442.5 1047.0 L1451.0 1046.1 L1437.8 1051.7 Z"></path>
 					<path d="M2589.0 764.4 L2667 829 L2667 999.8333333333334 L2667.0 999.8 " fill="none"></path>
 					<path d="M2661.7 993.2 L2667.0 999.8 L2672.3 993.2 L2667.0 1006.5 Z"></path>
-					<path d="M2667.0 249.5 L2667 367 L2589 431.58064516129036 L2589.0 431.6 " fill="none"></path>
+					<path d="M2667.0 242.0 L2667 367 L2589 431.58064516129036 L2589.0 431.6 " fill="none"></path>
 					<text x="374.2" y="3088.0" stroke="none">*</text>
 					<path d="M1040.8 1347.3 L407.25 1666 L389.2360769602074 3089.3338671960787 L389.2 3089.3 " fill="none"></path>
 					<path d="M384.0 3082.6 L389.2 3089.3 L394.7 3082.7 L389.2 3096.0 Z"></path>
@@ -631,7 +631,7 @@
 					<path d="M1444.7 1073.1 L1442.9 1081.4 L1451.5 1081.4 L1437.8 1085.6 Z"></path>
 					<path d="M1681.0 689.4 L1891.75 829 L1891.75 1247.5 L1891.75 1247.5 L1891.75 1666 L1891.75 1666 L1171.271564895618 3097.5450029964272 L1171.3 3097.5 " fill="none"></path>
 					<path d="M1169.5 3089.2 L1171.3 3097.5 L1179.0 3094.0 L1168.3 3103.5 Z"></path>
-					<path d="M1405.0 635.6 L696 829 L696 1149 L696.0 1149.0 " fill="none"></path>
+					<path d="M1405.0 635.6 L696 829 L696 1141.5 L696.0 1141.5 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
 							<rect x="447.8" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
@@ -1289,24 +1289,23 @@
 					</g>
 					<g data-name="WebhookData">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WebhookData">
-							<rect x="2561.5" y="97.5" height="152.0" width="211.0" data-name="WebhookData"></rect>
-							<path d="M2561.5 128.5 L2772.5 128.5" fill="none" data-name="WebhookData"></path>
+							<rect x="2561.5" y="105.0" height="137.0" width="211.0" data-name="WebhookData"></rect>
+							<path d="M2561.5 136.0 L2772.5 136.0" fill="none" data-name="WebhookData"></path>
 						</g>
-						<g transform="translate(2561.5, 97.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
+						<g transform="translate(2561.5, 105)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebhookData">
 								<text x="97.5" y="13.5" stroke="none" text-anchor="middle" data-name="WebhookData">WebhookData</text>
 								
 							</g>
 						</g>
-						<g transform="translate(2561.5, 128.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
+						<g transform="translate(2561.5, 136)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WebhookData">
 								<text x="0.0" y="13.5" stroke="none" data-name="WebhookData">data: object[]</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WebhookData">webhook: Webhook</text>
 								<text x="0.0" y="43.5" stroke="none" data-name="WebhookData">nonce: string</text>
-								<text x="0.0" y="58.5" stroke="none" data-name="WebhookData">sig: string</text>
-								<text x="0.0" y="73.5" stroke="none" data-name="WebhookData">sig256: string</text>
-								<text x="0.0" y="88.5" stroke="none" data-name="WebhookData">type: WebhookDataType</text>
-								<text x="0.0" y="103.5" stroke="none" data-name="WebhookData">external_xref: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="WebhookData">sig256: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="WebhookData">type: WebhookDataType</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="WebhookData">external_xref: string</text>
 								
 							</g>
 						</g>
@@ -1417,16 +1416,16 @@
 					</g>
 					<g data-name="WorkspaceIntegrationAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegrationAuth">
-							<rect x="583.0" y="1149.0" height="197.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
-							<path d="M583.0 1180.0 L809.0 1180.0" fill="none" data-name="WorkspaceIntegrationAuth"></path>
+							<rect x="583.0" y="1141.5" height="212.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
+							<path d="M583.0 1172.5 L809.0 1172.5" fill="none" data-name="WorkspaceIntegrationAuth"></path>
 						</g>
-						<g transform="translate(583, 1149)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1141.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegrationAuth">
 								<text x="105.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegrationAuth">WorkspaceIntegrationAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(583, 1180)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(583, 1172.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegrationAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_secret: string</text>
@@ -1438,6 +1437,7 @@
 								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_idp_url: string</text>
 								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_idp_entity_id: string</text>
 								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegrationAuth">saml_pem: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegrationAuth">needs_pkce: boolean</text>
 								
 							</g>
 						</g>

@@ -80,10 +80,20 @@ export class UnifiedDirectory implements OnInit, OnChanges {
         if (
             changes['workspaceId']?.currentValue !== changes['workspaceId']?.previousValue ||
             changes['categories']?.currentValue !== changes['categories']?.previousValue ||
+            changes['scopes']?.currentValue !== changes['scopes']?.previousValue ||
             changes['environment']?.currentValue !== changes['environment']?.previousValue
         ) {
             await this.setup();
         }
+    }
+
+    // `categories` wins; otherwise list only the integrations in the categories of the requested `scopes` (`crm_event_read` is `crm`)
+    get scopedCategories(): string[] {
+        if (this.categories?.length) {
+            return this.categories;
+        }
+        const categories = (this.scopes || []).map((scope) => scope.split('_')[0]).filter((c) => this.CATEGORY_MAP[c as TIntegrationCategoryType]);
+        return [...new Set(categories)];
     }
 
     filter(integrations: IIntegration[]) {
@@ -142,7 +152,7 @@ export class UnifiedDirectory implements OnInit, OnChanges {
 
         this.selectedCategory = undefined;
         const url = `${APIURL}/unified/integration/workspace/${this.workspace_id}?summary=1${
-            this.categories?.length ? '&categories=' + this.categories.join(',') : ''
+            this.scopedCategories.length ? '&categories=' + this.scopedCategories.join(',') : ''
         }${this.environment === 'Production' || !this.environment ? '' : '&env=' + encodeURIComponent(this.environment)}`;
 
         this.INTEGRATIONS = (await this.load_data<IIntegration[]>(url)) || [];
@@ -150,7 +160,7 @@ export class UnifiedDirectory implements OnInit, OnChanges {
         this.CATEGORIES = [];
         this.INTEGRATIONS.forEach((integration) => {
             integration.categories?.forEach((c) => {
-                if (this.CATEGORY_MAP[c as TIntegrationCategoryType] && (!this.categories?.length || this.categories.includes(c))) {
+                if (this.CATEGORY_MAP[c as TIntegrationCategoryType] && (!this.scopedCategories.length || this.scopedCategories.includes(c))) {
                     this.CATEGORIES.push(c as TIntegrationCategoryType);
                 }
             });
